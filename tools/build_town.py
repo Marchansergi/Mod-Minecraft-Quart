@@ -657,7 +657,8 @@ def rect_for(lm, road_geoms):
 
 
 def edge_cols(m):
-    er = m & ~ndimage.binary_erosion(m, structure=np.array([[0, 1, 0], [1, 1, 1], [0, 1, 0]]), border_value=0)
+    # vora amb 8 veïns: les parets diagonals queden tancades (sense forats en escala)
+    er = m & ~ndimage.binary_erosion(m, structure=np.ones((3, 3), bool), border_value=0)
     return er
 
 
@@ -724,8 +725,11 @@ def mark_facade(fu, fl, sl, m, road_geoms, lm):
     tx, tz = b.x - a.x, b.y - a.y
     L = math.hypot(tx, tz) or 1
     tx, tz = tx / L, tz / L
-    # normal que apunta de l'edifici cap al carrer
+    # normal que apunta de l'edifici cap al carrer (o cap a la càmera de Street View, si n'hi ha)
     nx, nz = c.x - cxz.x, c.y - cxz.y
+    if "view" in lm:
+        vx, vz = ll_px(lm["view"][0], lm["view"][1])
+        nx, nz = vx - cxz.x, vz - cxz.y
     nl = math.hypot(nx, nz) or 1
     nx, nz = nx / nl, nz / nl
     # façana = columnes de vora amb projecció màxima sobre la normal

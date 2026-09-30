@@ -12,6 +12,7 @@ public final class Buildings {
     }
 
     private static final int[][] N4 = {{0, -1}, {1, 0}, {0, 1}, {-1, 0}};
+    private static final int[][] D4 = {{1, 1}, {1, -1}, {-1, 1}, {-1, -1}};
 
     public static void column(Sink sink, TownData td, TownData.Building b, int x, int z) {
         int base = b.base;
@@ -28,6 +29,16 @@ public final class Buildings {
                 outCount++;
                 odx = o[0];
                 odz = o[1];
+            }
+        }
+        if (outCount == 0) {
+            // vora només en diagonal (parets girades)
+            for (int[] o : D4) {
+                if (td.buildingId(x + o[0], z + o[1]) != b.id) {
+                    outCount++;
+                    odx = o[0];
+                    odz = 0;
+                }
             }
         }
         boolean edge = outCount > 0;

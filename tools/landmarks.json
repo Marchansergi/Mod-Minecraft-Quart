@@ -22,7 +22,12 @@
       "facade": [
         "#WwDW#WWwWW#WDwW#"
       ],
-      "osm_id": 88955510
+      "osm_id": 88955510,
+      "view": [
+        41.9380805,
+        2.8392814,
+        34.89
+      ]
     },
     {
       "id": "museu_terrissa",
@@ -41,6 +46,11 @@
       "facade": [
         "XXXXDXXXGGGXXXX",
         "XwXXwXXXXXXwXXX"
+      ],
+      "view": [
+        41.9389,
+        2.8377647,
+        53.0
       ]
     },
     {
@@ -60,6 +70,11 @@
       "roof_type": "flat",
       "facade": [
         "#wwww#wwwDDwww#wwww#"
+      ],
+      "view": [
+        41.9389,
+        2.8377647,
+        236.73
       ]
     },
     {
@@ -167,7 +182,12 @@
       "fence": {
         "base": "minecraft:cobblestone",
         "top": "minecraft:gray_concrete"
-      }
+      },
+      "view": [
+        41.9361597,
+        2.8403315,
+        219.99
+      ]
     },
     {
       "id": "casa4",
@@ -204,6 +224,11 @@
         "WwwWDWWwwWDWWwwWDW",
         "WwwWWwwWWwwWWwwWWw",
         "XxxXXxxXXxxXXxxXXx"
+      ],
+      "view": [
+        41.9401838,
+        2.838733,
+        261.23
       ]
     },
     {
@@ -226,7 +251,12 @@
       "fence": {
         "base": "minecraft:bricks",
         "top": "minecraft:gray_concrete"
-      }
+      },
+      "view": [
+        41.9426806,
+        2.8385617,
+        183.99
+      ]
     },
     {
       "id": "casa7",
@@ -248,7 +278,12 @@
       "fence": {
         "base": "minecraft:bricks",
         "top": "minecraft:gray_concrete"
-      }
+      },
+      "view": [
+        41.9425148,
+        2.836843,
+        245.32
+      ]
     },
     {
       "id": "casa8",
