@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "cat.quart.mod.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ChunkGeneratorMixin",
+    "MinecraftServerMixin",
+    "MultiNoiseBiomeSourceMixin",
+    "NoiseChunkGeneratorMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}

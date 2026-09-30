@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "quartmod",
+  "version": "${version}",
+  "name": "Quart",
+  "description": "Genera el poble de Quart (Girona) a escala real al voltant del spawn. La resta del món és Minecraft normal.",
+  "authors": ["marchansergi"],
+  "license": "MIT",
+  "icon": "assets/quartmod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["cat.quart.mod.QuartMod"]
+  },
+  "mixins": ["quartmod.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

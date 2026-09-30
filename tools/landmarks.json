@@ -1,0 +1,375 @@
+{
+  "_comment": "Edificis i llocs destacats de Quart. 'point' = [lat, lon] (WGS84). 'source': 'osm' = usa la planta real del mapa (edifici que conté/és més a prop del punt); 'rect' = planta rectangular dibuixada davant del carrer més proper (per als edificis que falten a OpenStreetMap). Façana: cada cadena és una planta (de baix a dalt), llegida d'esquerra a dreta mirant des del carrer. Caràcters: W paret, X paret secundària (accent), w finestra, x finestra en paret accent, D porta, G porta de garatge, B finestra amb balcó, S aparador de botiga, # pilastra/cantonada (accent), P persiana tancada, - paret llisa. Per a 'rect', 'view' = [lat, lon, rumb] de la càmera de Street View que mira la façana.",
+  "spawn": [
+    41.9380805,
+    2.8392814
+  ],
+  "buildings": [
+    {
+      "id": "estacio",
+      "name": "Estació de Quart",
+      "point": [
+        41.938347,
+        2.83937
+      ],
+      "source": "osm_named",
+      "floors": 1,
+      "floor_height": 5,
+      "wall": "minecraft:smooth_sandstone",
+      "accent": "minecraft:bricks",
+      "roof": "bricks",
+      "roof_type": "hipped",
+      "facade": [
+        "#WwDW#WWwWW#WDwW#"
+      ],
+      "osm_id": 88955510
+    },
+    {
+      "id": "museu_terrissa",
+      "name": "Museu de la Terrissa",
+      "point": [
+        41.93884,
+        2.8379
+      ],
+      "source": "osm_named",
+      "osm_id": 626137786,
+      "floors": 2,
+      "wall": "minecraft:white_terracotta",
+      "accent": "minecraft:bricks",
+      "roof": "bricks",
+      "roof_type": "hipped",
+      "facade": [
+        "XXXXDXXXGGGXXXX",
+        "XwXXwXXXXXXwXXX"
+      ]
+    },
+    {
+      "id": "local_social",
+      "name": "Local social",
+      "point": [
+        41.9387,
+        2.83755
+      ],
+      "source": "osm_named",
+      "osm_id": 253100187,
+      "floors": 1,
+      "floor_height": 4,
+      "wall": "minecraft:light_gray_concrete",
+      "accent": "minecraft:polished_deepslate",
+      "roof": "flat:minecraft:light_gray_concrete",
+      "roof_type": "flat",
+      "facade": [
+        "#wwww#wwwDDwww#wwww#"
+      ]
+    },
+    {
+      "id": "pavello",
+      "name": "Pavelló poliesportiu de Quart",
+      "point": [
+        41.9377,
+        2.8363
+      ],
+      "source": "osm_named",
+      "osm_id": 214690703,
+      "floors": 1,
+      "floor_height": 11,
+      "wall": "minecraft:white_terracotta",
+      "accent": "minecraft:red_terracotta",
+      "roof": "vault:minecraft:red_concrete",
+      "roof_type": "vault",
+      "band": [
+        "minecraft:red_concrete",
+        "minecraft:white_concrete"
+      ],
+      "facade": [
+        "WWWDWWWWWWDWWWWWWDWWW"
+      ]
+    },
+    {
+      "id": "escola_nou",
+      "name": "Escola Nou de Quart",
+      "point": [
+        41.9399,
+        2.8348
+      ],
+      "source": "osm_nearest_school",
+      "floors": 1,
+      "floor_height": 4,
+      "wall": "minecraft:white_concrete",
+      "accent": "minecraft:light_gray_concrete",
+      "roof": "flat:minecraft:light_gray_concrete",
+      "roof_type": "flat",
+      "facade": [
+        "wwWwwWDWwwWwwWwwW"
+      ]
+    },
+    {
+      "id": "el_teu_super",
+      "name": "El teu Súper (C-250z, 65)",
+      "source": "rect",
+      "width": 8,
+      "depth": 13,
+      "floors": 3,
+      "wall": "minecraft:white_concrete",
+      "accent": "minecraft:granite",
+      "roof": "bricks",
+      "roof_type": "hipped",
+      "facade": [
+        "XXSSDSSXX",
+        "WwwwwwWBB",
+        "WWwwWWwWW"
+      ],
+      "view": [
+        41.9379471,
+        2.8414669,
+        279.24
+      ]
+    },
+    {
+      "id": "casa2",
+      "name": "Casa 2 - cases adossades rosades (Pont de la Font del Rei)",
+      "source": "rect",
+      "width": 20,
+      "depth": 12,
+      "floors": 3,
+      "wall": "minecraft:pink_terracotta",
+      "accent": "minecraft:stone",
+      "roof": "granite",
+      "roof_type": "hipped",
+      "facade": [
+        "WDGGGWDGGGWWDGGGWW-W",
+        "WwWwWWwWwWWwWWwWwWWW",
+        "WBBBWWWBBWWWWBBBWWWW"
+      ],
+      "view": [
+        41.9376855,
+        2.8416455,
+        263.38
+      ]
+    },
+    {
+      "id": "casa3",
+      "name": "Casa 3 - Carrer Modeguer 13 (groga)",
+      "point": [
+        41.93608,
+        2.84025
+      ],
+      "source": "osm",
+      "floors": 2,
+      "wall": "minecraft:yellow_terracotta",
+      "accent": "minecraft:yellow_terracotta",
+      "roof": "mud_bricks",
+      "roof_type": "hipped",
+      "facade": [
+        "WwwWWwWDWWwwWGGG",
+        "WWWWWwWWWWwwWWWW"
+      ],
+      "fence": {
+        "base": "minecraft:cobblestone",
+        "top": "minecraft:gray_concrete"
+      }
+    },
+    {
+      "id": "casa4",
+      "name": "Casa 4 (41.9427, 2.8377)",
+      "point": [
+        41.942697,
+        2.837675
+      ],
+      "source": "osm",
+      "floors": 2,
+      "wall": "minecraft:smooth_sandstone",
+      "accent": "minecraft:smooth_sandstone",
+      "roof": "mud_bricks",
+      "roof_type": "hipped",
+      "facade": [
+        "WwwWWDWWwwW",
+        "WwwWWwWWwwW"
+      ]
+    },
+    {
+      "id": "casa5",
+      "name": "Casa 5 - Carrer del Càntir 7 (bloc de maó)",
+      "point": [
+        41.94018,
+        2.83873
+      ],
+      "source": "osm",
+      "floors": 3,
+      "wall": "minecraft:terracotta",
+      "accent": "minecraft:red_terracotta",
+      "roof": "flat:minecraft:terracotta",
+      "roof_type": "flat",
+      "facade": [
+        "WwwWDWWwwWDWWwwWDW",
+        "WwwWWwwWWwwWWwwWWw",
+        "XxxXXxxXXxxXXxxXXx"
+      ]
+    },
+    {
+      "id": "casa6",
+      "name": "Casa 6 - Carrer Mas Abric 1 (maó)",
+      "point": [
+        41.94258,
+        2.83856
+      ],
+      "source": "osm",
+      "floors": 2,
+      "wall": "minecraft:terracotta",
+      "accent": "minecraft:white_terracotta",
+      "roof": "granite",
+      "roof_type": "hipped",
+      "facade": [
+        "WwWWWXwDXWW",
+        "WwWWWWwwWWW"
+      ],
+      "fence": {
+        "base": "minecraft:bricks",
+        "top": "minecraft:gray_concrete"
+      }
+    },
+    {
+      "id": "casa7",
+      "name": "Casa 7 - Carrer Onyar 31 (blanca i maó)",
+      "point": [
+        41.94247,
+        2.83672
+      ],
+      "source": "osm",
+      "floors": 2,
+      "wall": "minecraft:white_concrete",
+      "accent": "minecraft:bricks",
+      "roof": "granite",
+      "roof_type": "hipped",
+      "facade": [
+        "WwWXGGXGGXDWwW",
+        "WwWXBBXBBXWWwW"
+      ],
+      "fence": {
+        "base": "minecraft:bricks",
+        "top": "minecraft:gray_concrete"
+      }
+    },
+    {
+      "id": "casa8",
+      "name": "Casa 8 - Carrer Estació 8 (El Cuc de Seda)",
+      "source": "rect",
+      "width": 15,
+      "depth": 11,
+      "floors": 3,
+      "floor_height": 3,
+      "wall": "minecraft:white_terracotta",
+      "accent": "minecraft:light_gray_terracotta",
+      "roof": "bricks",
+      "roof_type": "hipped",
+      "facade": [
+        "#GG#wD#GGG#-ww#",
+        "#wwB#BBB#-BB-#W",
+        "-w--w---w---w--"
+      ],
+      "view": [
+        41.9383224,
+        2.8406879,
+        166.81
+      ]
+    },
+    {
+      "id": "casa9",
+      "name": "Casa 9 - Carrer Almeda 12 (maó bicolor)",
+      "source": "rect",
+      "width": 12,
+      "depth": 10,
+      "floors": 2,
+      "wall": "minecraft:smooth_sandstone",
+      "accent": "minecraft:terracotta",
+      "roof": "bricks",
+      "roof_type": "hipped",
+      "facade": [
+        "WwWWwWwXXDXX",
+        "WwWWBBWXXwwX"
+      ],
+      "view": [
+        41.937802,
+        2.8407406,
+        55.65
+      ]
+    },
+    {
+      "id": "casa1",
+      "name": "Casa 1 (41.9316, 2.8495)",
+      "point": [
+        41.93158,
+        2.84953
+      ],
+      "source": "osm",
+      "floors": 2,
+      "wall": "minecraft:white_terracotta",
+      "accent": "minecraft:white_terracotta",
+      "roof": "granite",
+      "roof_type": "hipped",
+      "facade": [
+        "WwwWDWWwwW",
+        "WwwWWWWwwW"
+      ]
+    }
+  ],
+  "decorations": [
+    {
+      "type": "locomotive",
+      "point": [
+        41.938203,
+        2.839539
+      ],
+      "yaw": 36
+    },
+    {
+      "type": "benches",
+      "point": [
+        41.93828,
+        2.8395
+      ],
+      "yaw": 36,
+      "count": 3
+    },
+    {
+      "type": "chimney",
+      "point": [
+        41.93886,
+        2.83794
+      ],
+      "height": 26
+    },
+    {
+      "type": "benches_plaza",
+      "point": [
+        41.9388,
+        2.83768
+      ],
+      "yaw": 146,
+      "count": 5
+    },
+    {
+      "type": "sculpture",
+      "point": [
+        41.93884,
+        2.83771
+      ]
+    },
+    {
+      "type": "zipline",
+      "point": [
+        41.93995,
+        2.83812
+      ],
+      "yaw": 160,
+      "length": 24
+    },
+    {
+      "type": "playground",
+      "point": [
+        41.93985,
+        2.83822
+      ]
+    }
+  ]
+}
