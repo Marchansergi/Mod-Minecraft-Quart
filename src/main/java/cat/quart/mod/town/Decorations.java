@@ -27,6 +27,9 @@ public final class Decorations {
                 case "playground" -> playground(f);
                 case "goal" -> goal(f);
                 case "hoop" -> hoop(f);
+                case "roof_chimney" -> roofChimney(sink, td, d);
+                case "porch" -> porch(f, d);
+                case "pocket_park" -> pocketPark(sink, td, d);
                 default -> {
                 }
             }
@@ -246,6 +249,95 @@ public final class Decorations {
         f.setG(1, 1, 2, Blocks.LADDER.getDefaultState().with(net.minecraft.block.LadderBlock.FACING, f.fwd.getOpposite()));
         f.setG(1, 2, 2, Blocks.LADDER.getDefaultState().with(net.minecraft.block.LadderBlock.FACING, f.fwd.getOpposite()));
         f.setG(-3, 1, 3, Blocks.GREEN_CONCRETE.getDefaultState());
+    }
+
+    // ---------------------------------------------------------------- xemeneia sobre la teulada d'una casa
+    private static void roofChimney(Sink sink, TownData td, TownData.Decoration d) {
+        TownData.Building b = td.building(d.x, d.z);
+        if (b == null) return;
+        int y0 = b.wallTop() + Buildings.roofRise(td, b, d.x, d.z);
+        BlockState brick = Blocks.BRICKS.getDefaultState();
+        for (int y = y0; y <= y0 + d.height; y++) sink.set(d.x, y, d.z, brick);
+        sink.set(d.x, y0 + d.height + 1, d.z, Pal.slab(Blocks.BRICK_SLAB, SlabType.BOTTOM));
+    }
+
+    // ---------------------------------------------------------------- porxo amb frontó davant la porta
+    private static void porch(Frame f, TownData.Decoration d) {
+        // a = cap al carrer (yaw), b = al llarg de la façana
+        BlockState pillar = Pal.of(d.wall);
+        BlockState[] fam = Pal.roofFamily(d.roof);
+        int hw = d.width / 2;
+        int h = d.height;
+        for (int a = 0; a <= d.depth; a++)
+            for (int b = -hw; b <= hw; b++) {
+                f.set(a, 0, b, Blocks.SMOOTH_STONE.getDefaultState());
+                boolean post = a == d.depth && (b == -hw || b == hw);
+                if (post) for (int dy = 1; dy < h; dy++) f.set(a, dy, b, pillar);
+                // teulada a dues aigües amb el frontó cap al carrer
+                int rise = hw - Math.abs(b);
+                for (int dy = 0; dy < rise; dy++) f.set(a, h + dy, b, a == d.depth ? Blocks.WHITE_TERRACOTTA.getDefaultState() : fam[0]);
+                f.set(a, h + rise, b, fam[1]);
+            }
+    }
+
+    // ---------------------------------------------------------------- parc amb bancs entre l'escola i el museu
+    private static void pocketPark(Sink sink, TownData td, TownData.Decoration d) {
+        double hx = d.hx, hz = d.hz;           // direcció del camí
+        double nx = -hz, nz = hx;               // perpendicular
+        int L = d.length;
+        BlockState dirt = Blocks.COARSE_DIRT.getDefaultState();
+        BlockState path = Blocks.DIRT_PATH.getDefaultState();
+        // camí de terra i gespa al voltant
+        for (int t = -2; t <= L + 2; t++)
+            for (int n = -8; n <= 8; n++) {
+                int x = (int) Math.round(d.x + hx * t + nx * n), z = (int) Math.round(d.z + hz * t + nz * n);
+                if (!sink.contains(x, z) || td.buildingId(x, z) != 0 || !td.inRaster(x, z)) continue;
+                int s = td.surface(x, z);
+                if (Surf.isRoad(s) || s == Surf.SIDEWALK) continue;
+                int g = td.height(x, z);
+                for (int y = g + 1; y <= g + 3; y++) sink.set(x, y, z, Pal.AIR);
+                if (Math.abs(n) <= 1) sink.set(x, g, z, Pal.hash(x, z, 8) % 3 == 0 ? dirt : path);
+                else if (Math.abs(n) <= 2 && Pal.hash(x, z, 9) % 2 == 0) sink.set(x, g, z, dirt);
+                else sink.set(x, g, z, Pal.GRASS);
+            }
+        // pilones de fusta a l'entrada (com a la foto)
+        for (int n = -5; n <= 5; n += 2) {
+            int x = (int) Math.round(d.x + hx * -1 + nx * n), z = (int) Math.round(d.z + hz * -1 + nz * n);
+            if (td.buildingId(x, z) != 0) continue;
+            sink.set(x, td.height(x, z) + 1, z, Blocks.STRIPPED_SPRUCE_LOG.getDefaultState());
+        }
+        // arbres a banda i banda i bancs mirant al camí
+        Direction toPathA = facing(-nx, -nz), toPathB = facing(nx, nz);
+        int i = 0;
+        for (int t = 3; t <= L; t += 5, i++) {
+            for (int side : new int[]{-1, 1}) {
+                int x = (int) Math.round(d.x + hx * t + nx * 5 * side), z = (int) Math.round(d.z + hz * t + nz * 5 * side);
+                if (td.inRaster(x, z) && td.buildingId(x, z) == 0 && !Surf.isRoad(td.surface(x, z)))
+                    Trees.planeTree(sink, td, x, td.height(x, z), z, Pal.hash(x, z, 77));
+                if ((i + (side > 0 ? 1 : 0)) % 2 == 0) {
+                    // banc de dos seients a 2,5 m del centre del camí
+                    for (int k = 0; k <= 1; k++) {
+                        int bx = (int) Math.round(d.x + hx * (t + 2 + k) + nx * 2.6 * side);
+                        int bz = (int) Math.round(d.z + hz * (t + 2 + k) + nz * 2.6 * side);
+                        if (td.inRaster(bx, bz) && td.buildingId(bx, bz) == 0)
+                            sink.set(bx, td.height(bx, bz) + 1, bz, Pal.stairs(Blocks.SPRUCE_STAIRS, side > 0 ? toPathB : toPathA));
+                    }
+                }
+            }
+        }
+        // fanal a mig camí
+        int lx = (int) Math.round(d.x + hx * (L / 2.0) + nx * 2.5), lz = (int) Math.round(d.z + hz * (L / 2.0) + nz * 2.5);
+        if (td.inRaster(lx, lz) && td.buildingId(lx, lz) == 0) {
+            int g = td.height(lx, lz);
+            for (int y = 1; y <= 4; y++) sink.set(lx, g + y, lz, Blocks.ANDESITE_WALL.getDefaultState());
+            sink.set(lx, g + 5, lz, Blocks.LANTERN.getDefaultState());
+        }
+    }
+
+    /** direcció cardinal més propera a un vector (per orientar escales/bancs) */
+    private static Direction facing(double dx, double dz) {
+        if (Math.abs(dx) >= Math.abs(dz)) return dx > 0 ? Direction.EAST : Direction.WEST;
+        return dz > 0 ? Direction.SOUTH : Direction.NORTH;
     }
 
     // ---------------------------------------------------------------- porteria de futbol

@@ -77,6 +77,7 @@ public final class Buildings {
         boolean isFacade = b.facade.length > 0 && (fl & TownData.F_FACADE) != 0 && b.facadeWidth > 0;
         boolean door = (fl & TownData.F_DOOR) != 0;
         boolean vault = rt.equals("vault");
+        boolean outsideFree = td.buildingId(x + odx, z + odz) != b.id;
 
         for (int y = base + 1; y <= top; y++) {
             int rel = y - base;
@@ -93,9 +94,16 @@ public final class Buildings {
             if (b.band.length == 2 && y >= top - 4 && y < top) {
                 st = Pal.of(b.band[((u + y) & 1)]);
             } else if (r == 0 || y == top) {
-                st = (isFacade && facadeChar(b, Math.max(0, k - 1), fu) == '#') || corner ? accent : wall;
+                char below = isFacade ? facadeChar(b, Math.max(0, k - 1), fu) : 'W';
+                st = below == '#' || below == 'X' && b.accent != null || corner ? accent : wall;
+                // marquesina sobre la planta baixa (porxo de teula)
+                if (isFacade && k == b.canopyFloor && r == 0 && outsideFree) {
+                    BlockState sl = Pal.roofFamily(b.roof)[1];
+                    sink.set(x + odx, y, z + odz, sl);
+                    sink.set(x + 2 * odx, y, z + 2 * odz, sl);
+                }
             } else if (isFacade) {
-                st = facadeBlock(sink, b, wall, accent, facadeChar(b, k, fu), x, y, z, r, fh, k, base, out);
+                st = facadeBlock(sink, td, b, wall, accent, facadeChar(b, k, fu), x, y, z, r, fh, k, out);
             } else if (corner) {
                 st = b.accent != null ? accent : wall;
             } else {
@@ -109,7 +117,8 @@ public final class Buildings {
             }
             sink.set(x, y, z, st);
         }
-        roof(sink, td, b, x, z, edge, top, wall);
+        roof(sink, td, b, x, z, edge, top, wall, accent, fl, isFacade ? facadeChar(b, b.floors - 1, fu) : 'W',
+                odx, odz, outsideFree);
     }
 
     private static BlockState ceiling(TownData.Building b) {
@@ -131,40 +140,61 @@ public final class Buildings {
     static char facadeChar(TownData.Building b, int k, int u) {
         String row = b.facade[Math.min(k, b.facade.length - 1)];
         if (row.isEmpty()) return 'W';
-        int i = Math.min(row.length() - 1, u * row.length() / Math.max(1, b.facadeWidth));
+        int i = b.repeat ? Math.floorMod(u, row.length())
+                : Math.min(row.length() - 1, u * row.length() / Math.max(1, b.facadeWidth));
         return row.charAt(i);
     }
 
-    private static BlockState facadeBlock(Sink sink, TownData.Building b, BlockState wall, BlockState accent, char c,
-                                          int x, int y, int z, int r, int fh, int k, int base, Direction out) {
+    private static BlockState rail(TownData.Building b, int odx) {
+        BlockState s = Pal.of(b.rail);
+        Block blk = s.getBlock();
+        return odx != 0 ? Pal.connect(blk, true, false, true, false) : Pal.connect(blk, false, true, false, true);
+    }
+
+    private static BlockState facadeBlock(Sink sink, TownData td, TownData.Building b, BlockState wall, BlockState accent, char c,
+                                          int x, int y, int z, int r, int fh, int k, Direction out) {
         int odx = out.getOffsetX(), odz = out.getOffsetZ();
         boolean winRow = fh <= 3 ? r >= 1 : r >= 2;
+        // sòcol (pedra a la part baixa de la planta baixa)
+        if (k == 0 && r == 1 && b.plinth != null && (c == 'W' || c == '-' || c == 'X' || c == '#'))
+            return Pal.of(b.plinth);
         switch (c) {
             case 'X', '#':
                 return accent;
+            case 'C': // pilar de la paret que sobresurt per sobre de la coberta
+                return wall;
+            case 'I': // finestra amb reixa
+                return winRow ? pane(Blocks.IRON_BARS, odx) : wall;
             case 'w':
                 return winRow ? pane(Blocks.GLASS_PANE, odx) : wall;
             case 'x':
                 return winRow ? pane(Blocks.GLASS_PANE, odx) : accent;
+            case 'R': // finestra amb la persiana mig abaixada
+                if (!winRow) return wall;
+                return r == fh - 1 ? Pal.of(b.shutter) : pane(Blocks.GLASS_PANE, odx);
             case 'S':
                 return pane(Blocks.GLASS_PANE, odx);
-            case 'P':
-                return winRow ? Blocks.LIGHT_GRAY_CONCRETE.getDefaultState() : wall;
+            case 'P': // persiana de botiga/garatge metàl·lica
+                return r <= Math.max(2, fh - 1) ? Blocks.LIGHT_GRAY_CONCRETE.getDefaultState() : wall;
             case 'D':
                 if (r <= 2) return Pal.door(Blocks.SPRUCE_DOOR, out, r == 2);
                 return wall;
+            case 'd': // porta blanca
+                if (r <= 2) return Pal.door(Blocks.BIRCH_DOOR, out, r == 2);
+                return wall;
             case 'G':
-                if (r <= 2 || (fh > 4 && r <= 3))
+                if (r <= 2 || (fh > 4 && r <= 3)) {
+                    if (b.garage != null) return Pal.of(b.garage);
                     return wall.isOf(Blocks.WHITE_CONCRETE) ? Blocks.IRON_BLOCK.getDefaultState() : Blocks.SMOOTH_QUARTZ.getDefaultState();
+                }
                 return wall;
             case 'B': {
                 if (k >= 1) {
                     // balcó: llosa i barana a la columna de fora
                     int bx = x + odx, bz = z + odz;
-                    if (r == 1 && TownData.get().buildingId(bx, bz) != b.id) {
+                    if (r == 1 && td.buildingId(bx, bz) != b.id) {
                         sink.set(bx, y - 1, bz, Pal.slab(Blocks.SMOOTH_STONE_SLAB, SlabType.TOP));
-                        sink.set(bx, y, bz, odx != 0 ? Pal.connect(Blocks.IRON_BARS, true, false, true, false)
-                                : Pal.connect(Blocks.IRON_BARS, false, true, false, true));
+                        sink.set(bx, y, bz, rail(b, odx));
                     }
                 }
                 if (r <= 2) return pane(Blocks.GLASS_PANE, odx);
@@ -175,10 +205,25 @@ public final class Buildings {
         }
     }
 
-    private static void roof(Sink sink, TownData td, TownData.Building b, int x, int z, boolean edge, int top, BlockState wall) {
+    /** alçada (en blocs per sobre de la paret) de la teulada en aquesta columna */
+    public static int roofRise(TownData td, TownData.Building b, int x, int z) {
         String rt = b.roofType;
+        if (rt.equals("flat")) return 1;
+        int d = Math.max(1, td.roofDist(x, z));
+        if (rt.equals("vault")) return (int) Math.min(9, Math.floor(2.3 * Math.sqrt(d)));
+        int halves = Math.min(d, 9);
+        return halves / 2 + (halves & 1);
+    }
+
+    private static void roof(Sink sink, TownData td, TownData.Building b, int x, int z, boolean edge, int top,
+                             BlockState wall, BlockState accent, int fl, char topChar, int odx, int odz, boolean outsideFree) {
+        String rt = b.roofType;
+        // pilars que sobresurten per sobre de la coberta
+        if (edge && topChar == 'C') {
+            for (int y = top + 1; y <= top + 3; y++) sink.set(x, y, z, wall);
+        }
         if (rt.equals("flat")) {
-            if (edge) sink.set(x, top + 1, z, wall);
+            if (edge && topChar != 'C') sink.set(x, top + 1, z, wall);
             return;
         }
         int d = Math.max(1, td.roofDist(x, z));
@@ -189,11 +234,23 @@ public final class Buildings {
             if (!edge) sink.set(x, top, z, Pal.AIR);
             return;
         }
-        // teulada a quatre vessants: puja mig bloc per cada bloc cap a dins
+        // teulada: puja mig bloc per cada bloc cap a dins (a quatre vessants o a dues aigües)
         BlockState[] fam = Pal.roofFamily(b.roof);
         int halves = Math.min(d, 9);
         int full = halves / 2;
+        boolean gableEnd = edge && (fl & TownData.F_GABLE_END) != 0 && rt.startsWith("gable");
+        if (gableEnd) {
+            // frontó: la paret puja fins a la teulada
+            for (int i = 1; i <= full; i++) sink.set(x, top + i, z, i == full && (halves & 1) == 0 ? fam[0] : wall);
+            if ((halves & 1) == 1) sink.set(x, top + full + 1, z, fam[1]);
+            return;
+        }
         for (int i = 1; i <= full; i++) sink.set(x, top + i, z, fam[0]);
         if ((halves & 1) == 1) sink.set(x, top + full + 1, z, fam[1]);
+        // ràfec: la teula sobresurt un bloc
+        if (b.eave && edge && outsideFree) {
+            BlockState eave = fam[1].with(net.minecraft.block.SlabBlock.TYPE, SlabType.TOP);
+            sink.setIfAir(x + odx, top, z + odz, eave);
+        }
     }
 }

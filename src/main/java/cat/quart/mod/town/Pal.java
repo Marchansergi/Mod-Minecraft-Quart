@@ -71,6 +71,10 @@ public final class Pal {
             case "mud_bricks" -> new BlockState[]{Blocks.MUD_BRICKS.getDefaultState(), slab(Blocks.MUD_BRICK_SLAB, SlabType.BOTTOM)};
             case "acacia" -> new BlockState[]{Blocks.ACACIA_PLANKS.getDefaultState(), slab(Blocks.ACACIA_SLAB, SlabType.BOTTOM)};
             case "deepslate_tiles" -> new BlockState[]{Blocks.DEEPSLATE_TILES.getDefaultState(), slab(Blocks.DEEPSLATE_TILE_SLAB, SlabType.BOTTOM)};
+            case "spruce" -> new BlockState[]{Blocks.SPRUCE_PLANKS.getDefaultState(), slab(Blocks.SPRUCE_SLAB, SlabType.BOTTOM)};
+            case "dark_oak" -> new BlockState[]{Blocks.DARK_OAK_PLANKS.getDefaultState(), slab(Blocks.DARK_OAK_SLAB, SlabType.BOTTOM)};
+            case "red_sandstone" -> new BlockState[]{Blocks.CUT_RED_SANDSTONE.getDefaultState(), slab(Blocks.CUT_RED_SANDSTONE_SLAB, SlabType.BOTTOM)};
+            case "terracotta" -> new BlockState[]{Blocks.TERRACOTTA.getDefaultState(), slab(Blocks.GRANITE_SLAB, SlabType.BOTTOM)};
             default -> new BlockState[]{Blocks.BRICKS.getDefaultState(), slab(Blocks.BRICK_SLAB, SlabType.BOTTOM)};
         };
     }

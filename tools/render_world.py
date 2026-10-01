@@ -32,7 +32,10 @@ COL = {
     "orange_terracotta": (161, 83, 37), "light_gray_terracotta": (135, 107, 98), "brown_terracotta": (77, 51, 35),
     "polished_deepslate": (72, 72, 73), "sandstone": (216, 203, 155), "clay": (160, 166, 179), "blackstone_slab": (42, 36, 41),
     "iron_bars": (110, 110, 110), "iron_bars": (110, 110, 110), "spruce_slab": (114, 84, 48), "red_carpet": (160, 39, 34),
-    "stone_brick_slab": (122, 121, 122), "polished_blackstone_slab": (53, 48, 56), "black_stained_glass_pane": (25, 25, 25), "iron_bars": (140, 140, 140), "cobblestone": (120, 120, 120), "stone_bricks": (122, 121, 122),
+    "stone_brick_slab": (122, 121, 122), "mangrove_fence": (117, 54, 48), "birch_door": (216, 203, 155), "crimson_fence": (101, 48, 70),
+    "white_stained_glass_pane": (240, 240, 240), "andesite": (136, 136, 136), "granite": (149, 103, 85), "gray_concrete": (54, 57, 61),
+    "stripped_spruce_log": (115, 89, 52), "granite_slab": (149, 103, 85), "spruce_slab": (114, 84, 48), "mud_brick_slab": (137, 104, 79),
+    "brick_stairs": (150, 97, 83), "spruce_stairs": (114, 84, 48), "smooth_quartz": (236, 230, 223), "yellow_terracotta": (186, 133, 35), "polished_blackstone_slab": (53, 48, 56), "black_stained_glass_pane": (25, 25, 25), "iron_bars": (140, 140, 140), "cobblestone": (120, 120, 120), "stone_bricks": (122, 121, 122),
 }
 
 

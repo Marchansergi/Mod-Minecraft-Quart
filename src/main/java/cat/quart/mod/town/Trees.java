@@ -39,7 +39,7 @@ public final class Trees {
                     default -> {
                     }
                 }
-                if (kind < 0 || nearBuilding(td, x, z)) continue;
+                if (kind < 0 || nearBuilding(td, x, z) || nearDecoration(td, x, z)) continue;
                 int g = td.height(x, z);
                 switch (kind) {
                     case 0 -> stonePine(sink, td, x, g, z, h);
@@ -51,6 +51,11 @@ public final class Trees {
                 }
             }
         }
+    }
+
+    private static boolean nearDecoration(TownData td, int x, int z) {
+        for (TownData.Decoration d : td.decorations) if (d.blocksTrees(x, z)) return true;
+        return false;
     }
 
     private static boolean nearBuilding(TownData td, int x, int z) {
@@ -100,7 +105,7 @@ public final class Trees {
     }
 
     /** plàtan de plaça */
-    private static void planeTree(Sink sink, TownData td, int x, int g, int z, int h) {
+    static void planeTree(Sink sink, TownData td, int x, int g, int z, int h) {
         int ht = 4 + h % 3;
         trunk(sink, x, g, z, ht + 2, Blocks.BIRCH_LOG.getDefaultState());
         blob(sink, td, x, g + ht + 2, z, 3.2, 2.6, Pal.leaves(Blocks.OAK_LEAVES), h);

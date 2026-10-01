@@ -458,6 +458,8 @@ def main():
 
     objs = ndimage.find_objects(bid.astype(np.int32))
     rd = np.zeros((H, W), np.uint8)
+    global RD
+    RD = rd
     fu = np.full((H, W), 255, np.uint8)
     fl = np.zeros((H, W), np.uint8)
     out_b = [dict()]
@@ -478,8 +480,10 @@ def main():
         spec["base"] = base
         wall_geometry(fu, fl, sl, m, mb["geom"])
         if lm:
-            front = mark_facade(fu, fl, sl, m, road_geoms, lm)
+            bid_geoms[n] = mb["geom"]
+            front, fw = mark_facade(fu, fl, sl, m, road_geoms, lm, base, spec["fh"], spec["floors"], bid, surf, n)
             spec["facing"] = front
+            spec["fw"] = fw
         else:
             mark_door(fl, sl, m, road_px)
         out_b.append(spec)
@@ -488,11 +492,20 @@ def main():
     # ------------------------------------------------ decoració
     decos = []
     for dcfg in marks["decorations"]:
-        x, z = to_xz(*dcfg["point"])
         e = dict(dcfg)
-        e.pop("point")
+        if "view" in e:
+            # definit des d'una càmera de Street View: comença 'start' metres endavant en la direcció del rumb
+            lat, lon, hd = e.pop("view")
+            cx_, cz_ = to_xz(lat, lon)
+            hx, hz = math.sin(math.radians(hd)), -math.cos(math.radians(hd))
+            st = e.pop("start", 0)
+            x, z = cx_ + hx * st, cz_ + hz * st
+            e["hx"], e["hz"] = round(hx, 4), round(hz, 4)
+        else:
+            x, z = to_xz(*e.pop("point"))
         e["x"], e["z"] = int(round(x)), int(round(z))
         decos.append(e)
+    decos += EXTRA_DECOS
     sx, sz = to_xz(*marks["spawn"])
     spawn = [int(round(sx)), int(round(sz))]
 
@@ -712,41 +725,133 @@ def wall_geometry(fu, fl, sl, m, geom):
     fl_sl[zs, xs] = (corner.astype(np.uint8) * 1) | 8 | (card.astype(np.uint8) << 4)
 
 
-def mark_facade(fu, fl, sl, m, road_geoms, lm):
-    """Marca les columnes de la façana principal amb l'índex u (0..amplada-1) d'esquerra a dreta mirant des del carrer."""
+bid_geoms = {}
+RD = None
+FENCES = []        # muros de parcel·la dels edificis destacats (índex guardat a fu de les columnes sense edifici)
+EXTRA_DECOS = []   # xemeneies, porxos... calculats a partir de la façana
+
+
+def mark_facade(fu, fl, sl, m, road_geoms, lm, base, fh, floors, bid_full, surf_full, n_id):
+    """Façana principal d'un edifici destacat: marca les columnes amb l'índex u (0..amplada-1, d'esquerra a dreta
+    mirant des del carrer), calcula teulades a dues aigües, el mur de la parcel·la, xemeneia i porxo."""
     zs, xs = np.nonzero(edge_cols(m))
     gz, gx = zs + sl[0].start, xs + sl[1].start
     cxz = Point(float(gx.mean()), float(gz.mean()))
-    line, width = min(road_geoms, key=lambda r: r[0].distance(cxz))
-    s = line.project(cxz)
-    c = line.interpolate(s)
-    a = line.interpolate(max(0, s - 2))
-    b = line.interpolate(min(line.length, s + 2))
-    tx, tz = b.x - a.x, b.y - a.y
-    L = math.hypot(tx, tz) or 1
-    tx, tz = tx / L, tz / L
-    # normal que apunta de l'edifici cap al carrer (o cap a la càmera de Street View, si n'hi ha)
-    nx, nz = c.x - cxz.x, c.y - cxz.y
+    # direcció cap a la càmera de Street View o cap al carrer més proper
     if "view" in lm:
         vx, vz = ll_px(lm["view"][0], lm["view"][1])
-        nx, nz = vx - cxz.x, vz - cxz.y
-    nl = math.hypot(nx, nz) or 1
-    nx, nz = nx / nl, nz / nl
-    # façana = columnes de vora amb projecció màxima sobre la normal
+    else:
+        line, width = min(road_geoms, key=lambda r: r[0].distance(cxz))
+        c = line.interpolate(line.project(cxz))
+        vx, vz = c.x, c.y
+    cdx, cdz = vx - cxz.x, vz - cxz.y
+    cl = math.hypot(cdx, cdz) or 1
+    cdx, cdz = cdx / cl, cdz / cl
+    # la normal de la façana és la d'un costat real del polígon (el que mira més cap a la càmera)
+    geom = bid_geoms.get(n_id)
+    nx, nz = cdx, cdz
+    if geom is not None:
+        g = max(geom.geoms, key=lambda q: q.area) if isinstance(geom, MultiPolygon) else geom
+        pts = np.array(g.simplify(0.6).exterior.coords)
+        best = -1e9
+        for (ax, az), (bx, bz) in zip(pts[:-1], pts[1:]):
+            L = math.hypot(bx - ax, bz - az)
+            if L < 2:
+                continue
+            ex, ez = (bx - ax) / L, (bz - az) / L
+            qx, qz = ez, -ex
+            if g.contains(Point((ax + bx) / 2 + qx * 0.4, (az + bz) / 2 + qz * 0.4)):
+                qx, qz = -qx, -qz
+            sc = (qx * cdx + qz * cdz) * math.sqrt(L)
+            if sc > best:
+                best, nx, nz = sc, qx, qz
     proj = (gx - cxz.x) * nx + (gz - cxz.y) * nz
-    front = proj >= proj.max() - 1.6
-    # u creix d'esquerra a dreta mirant cap a l'edifici (mirant en direcció -n): dreta = (-nz, nx)...
-    rx, rz = nz, -nx
+    front = proj >= proj.max() - 1.2
+    rx, rz = nz, -nx  # dreta mirant l'edifici des del carrer
     along = (gx - cxz.x) * rx + (gz - cxz.y) * rz
-    af = along[front]
-    lo = af.min()
+    lo = along[front].min()
+    hi = along[front].max()
+    fw = int(round(hi - lo)) + 1
     u = np.round(along - lo).astype(int)
     fu_sl, fl_sl = fu[sl], fl[sl]
     for k in np.nonzero(front)[0]:
         fu_sl[zs[k], xs[k]] = min(max(u[k], 0), 250)
         fl_sl[zs[k], xs[k]] |= 4
-    # orientació cap on mira la façana (graus: 0 = +X, 90 = +Z)
-    return int(round(math.degrees(math.atan2(nz, nx))))
+    pmax = proj.max()
+
+    # ---- teulada a dues aigües: distància a les vores que fan de ràfec
+    rt = lm.get("roof_type", "hipped")
+    if rt in ("gable_front", "gable_side"):
+        mz, mx = np.nonzero(m)
+        cz_, cx_ = mz + sl[0].start + 0.5, mx + sl[1].start + 0.5
+        pa = (cx_ - cxz.x) * rx + (cz_ - cxz.y) * rz
+        pn = (cx_ - cxz.x) * nx + (cz_ - cxz.y) * nz
+        if rt == "gable_front":   # carener perpendicular al carrer: el frontó mira al carrer
+            d = np.minimum(pa - pa.min(), pa.max() - pa) + 1
+            ends = (pn >= pn.max() - 0.9) | (pn <= pn.min() + 0.9)
+        else:                     # carener paral·lel al carrer
+            d = np.minimum(pn - pn.min(), pn.max() - pn) + 1
+            ends = (pa >= pa.max() - 0.9) | (pa <= pa.min() + 0.9)
+        rd_sl = RD[sl]
+        rd_sl[mz, mx] = np.clip(np.floor(d), 1, 250).astype(np.uint8)
+        er = edge_cols(m)
+        for k in np.nonzero(ends)[0]:
+            if er[mz[k], mx[k]]:
+                fl_sl[mz[k], mx[k]] |= 64
+
+    def to_world(a, nn):
+        """punt a 'a' metres al llarg de la façana i 'nn' metres cap al carrer (negatiu = cap a dins)"""
+        px_ = cxz.x + rx * (lo + a) + nx * (pmax + nn)
+        pz_ = cxz.y + rz * (lo + a) + nz * (pmax + nn)
+        return int(math.floor(px_)) + X0, int(math.floor(pz_)) + Z0
+
+    yaw = int(round(math.degrees(math.atan2(nz, nx))))
+
+    # ---- porta a la planta baixa (per deixar-hi pas al mur)
+    door_u = []
+    if lm.get("facade"):
+        row = lm["facade"][0]
+        for i_, ch in enumerate(row):
+            if ch == "D":
+                door_u.append(i_ if lm.get("repeat") else int(i_ * fw / len(row)))
+
+    # ---- mur de la parcel·la: columnes de jardí entre la façana i la vorera
+    if "fence" in lm:
+        idx = len(FENCES)
+        FENCES.append(lm["fence"])
+        H_, W_ = bid_full.shape
+        x0, x1 = max(0, sl[1].start - 16), min(W_, sl[1].stop + 16)
+        z0, z1 = max(0, sl[0].start - 16), min(H_, sl[0].stop + 16)
+        zz, xx = np.mgrid[z0:z1, x0:x1]
+        ca = (xx + 0.5 - cxz.x) * rx + (zz + 0.5 - cxz.y) * rz - lo
+        cn = (xx + 0.5 - cxz.x) * nx + (zz + 0.5 - cxz.y) * nz - pmax
+        sub_s = surf_full[z0:z1, x0:x1]
+        street = np.isin(sub_s, [S["SIDEWALK"], S["ROAD"], S["ROAD_MAIN"], S["MARKING"]])
+        near_street = ndimage.binary_dilation(street, structure=np.array([[0, 1, 0], [1, 1, 1], [0, 1, 0]]))
+        cand = (~street) & near_street & (bid_full[z0:z1, x0:x1] == 0) & (ca >= -1.5) & (ca <= fw + 0.5) & (cn > 0.5) & (cn < 14)
+        if lm.get("fence_sides"):
+            cand |= (~street) & (bid_full[z0:z1, x0:x1] == 0) & (cn > 0.5) & (cn < 14) & ((np.abs(ca + 1.5) < 0.6) | (np.abs(ca - fw - 0.5) < 0.6))
+        for du in door_u:
+            if lm.get("repeat"):
+                rep = len(lm["facade"][0])
+                cand &= ~(np.abs((np.round(ca).astype(int) - du) % rep) <= 0)
+            else:
+                cand &= ~((np.round(ca) >= du) & (np.round(ca) <= du + 1))
+        fu_sub = fu[z0:z1, x0:x1]
+        fu_sub[cand] = idx
+
+    # ---- xemeneia sobre la teulada
+    if "chimney" in lm:
+        a, depth, hgt = lm["chimney"]
+        x_, z_ = to_world(a * fw if a < 1 else a, -depth)
+        EXTRA_DECOS.append(dict(type="roof_chimney", x=x_, z=z_, height=hgt))
+    # ---- porxo davant la porta
+    if "porch" in lm:
+        pc = lm["porch"]
+        x_, z_ = to_world(pc["u"] + pc["width"] / 2.0, 0.5)
+        EXTRA_DECOS.append(dict(type="porch", x=x_, z=z_, yaw=yaw, width=pc["width"], depth=pc["depth"],
+                                height=fh, roof=lm.get("roof", "bricks"), wall=lm.get("accent") or lm["wall"]))
+    return yaw, fw
 
 
 def mark_door(fl, sl, m, road_px):
@@ -802,10 +907,9 @@ def style_for(n, mb, road_px, sl, m):
         return spec
     spec.update(wall=lm["wall"], accent=lm.get("accent"), roof=lm["roof"], roof_type=lm["roof_type"],
                 floors=lm["floors"], fh=lm.get("floor_height", 3), landmark=lm["id"], facade=lm.get("facade", []))
-    if "band" in lm:
-        spec["band"] = lm["band"]
-    if "fence" in lm:
-        spec["fence"] = lm["fence"]
+    for k in ("band", "plinth", "rail", "garage", "shutter", "eave", "repeat", "canopy_floor"):
+        if k in lm:
+            spec[k] = lm[k]
     return spec
 
 
@@ -828,7 +932,7 @@ def write_output(hy, surf, bid, rd, fu, fl, deco, blds, decos, spawn):
     sx, sz = px(*spawn)
     sy = int(hy[int(sz), int(sx)]) + 1
     meta = dict(origin=[LAT0, LON0], core=list(CORE), spawn=[spawn[0], sy, spawn[1]],
-                buildings=blds, decorations=[dict(d, y=int(hy[int(d["z"] - Z0), int(d["x"] - X0)])) for d in decos],
+                buildings=blds, fences=FENCES, decorations=[dict(d, y=int(hy[int(d["z"] - Z0), int(d["x"] - X0)])) for d in decos],
                 surface_codes=S,
                 attribution="Dades: (c) OpenStreetMap contributors (ODbL); Microsoft Global ML Building Footprints (ODbL); "
                             "ESA WorldCover 2021 (CC BY 4.0); AWS Terrain Tiles (EU-DEM, SRTM).")

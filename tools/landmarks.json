@@ -1,5 +1,5 @@
 {
-  "_comment": "Edificis i llocs destacats de Quart. 'point' = [lat, lon] (WGS84). 'source': 'osm' = usa la planta real del mapa (edifici que conté/és més a prop del punt); 'rect' = planta rectangular dibuixada davant del carrer més proper (per als edificis que falten a OpenStreetMap). Façana: cada cadena és una planta (de baix a dalt), llegida d'esquerra a dreta mirant des del carrer. Caràcters: W paret, X paret secundària (accent), w finestra, x finestra en paret accent, D porta, G porta de garatge, B finestra amb balcó, S aparador de botiga, # pilastra/cantonada (accent), P persiana tancada, - paret llisa. Per a 'rect', 'view' = [lat, lon, rumb] de la càmera de Street View que mira la façana.",
+  "_comment": "Edificis i llocs destacats de Quart. 'point' = [lat, lon] (WGS84). 'source': 'osm' = usa la planta real del mapa (edifici que conté/és més a prop del punt); 'rect' = planta rectangular dibuixada davant del carrer més proper (per als edificis que falten a OpenStreetMap). Façana: cada cadena és una planta (de baix a dalt), llegida d'esquerra a dreta mirant des del carrer. Caràcters: W paret, X paret secundària (accent), w finestra, x finestra en paret accent, D porta, G porta de garatge, B finestra amb balcó, S aparador de botiga, # pilastra/cantonada (accent), P persiana tancada, - paret llisa. Per a 'rect', 'view' = [lat, lon, rumb] de la càmera de Street View que mira la façana. Altres caràcters: R finestra amb persiana, I finestra amb reixa, d porta blanca, P persiana metàl·lica, C pilar que sobresurt de la coberta. Opcions: repeat (la façana es repeteix per habitatge), plinth (sòcol), rail (barana dels balcons), garage, shutter, eave (ràfec), canopy_floor (teuladeta sobre una planta), fence (mur de parcel·la), chimney [u, fondària, alçada], porch {u, width, depth}, roof_type hipped/gable_front/gable_side/flat/vault.",
   "spawn": [
     41.9380805,
     2.8392814
@@ -15,19 +15,21 @@
       "source": "osm_named",
       "floors": 1,
       "floor_height": 5,
-      "wall": "minecraft:smooth_sandstone",
+      "wall": "minecraft:smooth_quartz",
       "accent": "minecraft:bricks",
       "roof": "bricks",
       "roof_type": "hipped",
       "facade": [
-        "#WwDW#WWwWW#WDwW#"
+        "#WXDXWXwXWXDXW#"
       ],
       "osm_id": 88955510,
       "view": [
         41.9380805,
         2.8392814,
         34.89
-      ]
+      ],
+      "plinth": "minecraft:bricks",
+      "eave": true
     },
     {
       "id": "museu_terrissa",
@@ -51,7 +53,9 @@
         41.9389,
         2.8377647,
         53.0
-      ]
+      ],
+      "plinth": "minecraft:bricks",
+      "eave": true
     },
     {
       "id": "local_social",
@@ -124,43 +128,50 @@
       "source": "rect",
       "width": 8,
       "depth": 13,
-      "floors": 3,
+      "floors": 2,
       "wall": "minecraft:white_concrete",
       "accent": "minecraft:granite",
       "roof": "bricks",
-      "roof_type": "hipped",
+      "roof_type": "gable_side",
       "facade": [
-        "XXSSDSSXX",
-        "WwwwwwWBB",
-        "WWwwWWwWW"
+        "XXSDSSXX",
+        "WRRRWWBB"
       ],
       "view": [
         41.9379471,
         2.8414669,
         279.24
-      ]
+      ],
+      "rail": "minecraft:iron_bars",
+      "eave": true
     },
     {
       "id": "casa2",
       "name": "Casa 2 - cases adossades rosades (Pont de la Font del Rei)",
       "source": "rect",
-      "width": 20,
+      "width": 21,
       "depth": 12,
       "floors": 3,
-      "wall": "minecraft:pink_terracotta",
-      "accent": "minecraft:stone",
+      "wall": "minecraft:white_terracotta",
+      "accent": "minecraft:white_terracotta",
       "roof": "granite",
       "roof_type": "hipped",
       "facade": [
-        "WDGGGWDGGGWWDGGGWW-W",
-        "WwWwWWwWwWWwWWwWwWWW",
-        "WBBBWWWBBWWWWBBBWWWW"
+        "dWGGGWW",
+        "WRWRWwW",
+        "WWBBBWW"
       ],
       "view": [
         41.9376855,
         2.8416455,
         263.38
-      ]
+      ],
+      "plinth": "minecraft:andesite",
+      "rail": "minecraft:mangrove_fence",
+      "garage": "minecraft:smooth_quartz",
+      "shutter": "minecraft:white_concrete",
+      "eave": true,
+      "repeat": true
     },
     {
       "id": "casa3",
@@ -173,11 +184,11 @@
       "floors": 2,
       "wall": "minecraft:yellow_terracotta",
       "accent": "minecraft:yellow_terracotta",
-      "roof": "mud_bricks",
+      "roof": "spruce",
       "roof_type": "hipped",
       "facade": [
-        "WwwWWwWDWWwwWGGG",
-        "WWWWWwWWWWwwWWWW"
+        "RRW-RWDWWRRWGGG",
+        "---WRW---RR----"
       ],
       "fence": {
         "base": "minecraft:cobblestone",
@@ -187,7 +198,11 @@
         41.9361597,
         2.8403315,
         219.99
-      ]
+      ],
+      "garage": "minecraft:smooth_quartz",
+      "shutter": "minecraft:white_concrete",
+      "eave": true,
+      "canopy_floor": 1
     },
     {
       "id": "casa4",
@@ -203,9 +218,10 @@
       "roof": "mud_bricks",
       "roof_type": "hipped",
       "facade": [
-        "WwwWWDWWwwW",
-        "WwwWWwWWwwW"
-      ]
+        "WRRWWDWWRRW",
+        "WRRWWRWWRRW"
+      ],
+      "eave": true
     },
     {
       "id": "casa5",
@@ -217,19 +233,24 @@
       "source": "osm",
       "floors": 3,
       "wall": "minecraft:terracotta",
-      "accent": "minecraft:red_terracotta",
+      "accent": "minecraft:pink_terracotta",
       "roof": "flat:minecraft:terracotta",
       "roof_type": "flat",
       "facade": [
-        "WwwWDWWwwWDWWwwWDW",
-        "WwwWWwwWWwwWWwwWWw",
-        "XxxXXxxXXxxXXxxXXx"
+        "CwwWDWW",
+        "CwwWwwW",
+        "CxxXxxX"
       ],
       "view": [
         41.9401838,
         2.838733,
         261.23
-      ]
+      ],
+      "repeat": true,
+      "fence": {
+        "base": "minecraft:smooth_sandstone",
+        "top": "minecraft:crimson_fence"
+      }
     },
     {
       "id": "casa6",
@@ -243,10 +264,10 @@
       "wall": "minecraft:terracotta",
       "accent": "minecraft:white_terracotta",
       "roof": "granite",
-      "roof_type": "hipped",
+      "roof_type": "gable_front",
       "facade": [
-        "WwWWWXwDXWW",
-        "WwWWWWwwWWW"
+        "WWRRWWWDWWW",
+        "WRRWWWWRRWW"
       ],
       "fence": {
         "base": "minecraft:bricks",
@@ -256,7 +277,19 @@
         41.9426806,
         2.8385617,
         183.99
-      ]
+      ],
+      "shutter": "minecraft:white_concrete",
+      "eave": true,
+      "chimney": [
+        0.12,
+        2,
+        2
+      ],
+      "porch": {
+        "u": 6,
+        "width": 4,
+        "depth": 2
+      }
     },
     {
       "id": "casa7",
@@ -272,8 +305,8 @@
       "roof": "granite",
       "roof_type": "hipped",
       "facade": [
-        "WwWXGGXGGXDWwW",
-        "WwWXBBXBBXWWwW"
+        "WWRWXGGXGGXWdW",
+        "WRRWXBBXBBXWRW"
       ],
       "fence": {
         "base": "minecraft:bricks",
@@ -283,30 +316,35 @@
         41.9425148,
         2.836843,
         245.32
-      ]
+      ],
+      "rail": "minecraft:white_stained_glass_pane",
+      "garage": "minecraft:smooth_quartz",
+      "shutter": "minecraft:white_concrete",
+      "eave": true
     },
     {
       "id": "casa8",
       "name": "Casa 8 - Carrer Estació 8 (El Cuc de Seda)",
       "source": "rect",
-      "width": 15,
+      "width": 17,
       "depth": 11,
       "floors": 3,
       "floor_height": 3,
-      "wall": "minecraft:white_terracotta",
-      "accent": "minecraft:light_gray_terracotta",
+      "wall": "minecraft:smooth_sandstone",
+      "accent": "minecraft:mud_bricks",
       "roof": "bricks",
-      "roof_type": "hipped",
+      "roof_type": "gable_side",
       "facade": [
-        "#GG#wD#GGG#-ww#",
-        "#wwB#BBB#-BB-#W",
-        "-w--w---w---w--"
+        "-PP#DI#PPP#-II--",
+        "-BB-----BBB--BB-",
+        "-w---w----w---w-"
       ],
       "view": [
         41.9383224,
         2.8406879,
         166.81
-      ]
+      ],
+      "eave": true
     },
     {
       "id": "casa9",
@@ -316,18 +354,20 @@
       "depth": 10,
       "floors": 2,
       "wall": "minecraft:smooth_sandstone",
-      "accent": "minecraft:terracotta",
-      "roof": "bricks",
-      "roof_type": "hipped",
+      "accent": "minecraft:bricks",
+      "roof": "granite",
+      "roof_type": "gable_side",
       "facade": [
-        "WwWWwWwXXDXX",
-        "WwWWBBWXXwwX"
+        "WwwWwWWXXDXX",
+        "WBBWBBWXxxXX"
       ],
       "view": [
         41.937802,
         2.8407406,
         55.65
-      ]
+      ],
+      "rail": "minecraft:white_stained_glass_pane",
+      "eave": true
     },
     {
       "id": "casa1",
@@ -343,9 +383,10 @@
       "roof": "granite",
       "roof_type": "hipped",
       "facade": [
-        "WwwWDWWwwW",
-        "WwwWWWWwwW"
-      ]
+        "WRRWDWWRRW",
+        "WRRWWWWRRW"
+      ],
+      "eave": true
     }
   ],
   "decorations": [
@@ -405,6 +446,16 @@
         41.93985,
         2.83822
       ]
+    },
+    {
+      "type": "pocket_park",
+      "view": [
+        41.9389203,
+        2.8377311,
+        30.55
+      ],
+      "start": 8,
+      "length": 26
     }
   ]
 }

@@ -38,7 +38,11 @@ Estació (spawn, con la locomotora y los bancos de la plaza), Museu de la Terris
 de la bòbila), Local social (con la zona de bancos, olivos y escultura), Pavelló, Escola Nou de Quart,
 Parc de la Tirolina (tirolina y parque infantil), El teu Súper y las casas 1 a 9 de las fotos.
 Cada uno tiene materiales, número de plantas, tejado y una **fachada dibujada a mano** a partir
-de Street View (puertas, ventanas, garajes, balcones, escaparates).
+de Street View (puertas, ventanas con persiana o reja, garajes, balcones con su barandilla, escaparates,
+zócalo, alero, tejado a cuatro o a dos aguas, chimenea, porche y el muro de la parcela con sus paneles).
+
+Entre la escuela/Local social y el Museu de la Terrissa hay un **parque con bancos**: camino de tierra,
+árboles a los dos lados, bancos mirando al camino, postes de madera en la entrada y una farola.
 
 ## Limitaciones (importante)
 
@@ -86,6 +90,8 @@ tools/
   build_town.py              datos reales -> ráster del mod
   landmarks.json             edificios destacados
   render_world.py            dibuja un mundo generado visto desde arriba (para comprobar)
+  iso_render.py              vista isométrica de una zona del mundo generado
+  elevation.py               fachada vista de frente (para comparar con Street View)
   data/                      datos de origen
 docs/
   preview.png                vista previa del ráster

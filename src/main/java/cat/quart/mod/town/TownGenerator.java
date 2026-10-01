@@ -228,6 +228,11 @@ public final class TownGenerator {
         int s = td.surface(x, z);
         int h = Pal.hash(x, z, 21);
         int d = td.deco(x, z);
+        int fi = td.facadeU(x, z);
+        if (fi < td.fences.size() && !Surf.isRoad(s) && s != Surf.SIDEWALK) {
+            landmarkFence(sink, td, td.fences.get(fi), fi, x, z, g);
+            return;
+        }
         if (d != 0 && s != Surf.POOL && !Surf.isRoad(s)) {
             barrier(sink, td, x, z, g, d);
             return;
@@ -297,8 +302,28 @@ public final class TownGenerator {
         sink.set(x, g + 2, z, Pal.connect(Blocks.IRON_BARS, n, e, s, w));
     }
 
+    /** mur de parcel·la d'una casa destacada: sòcol de pedra/maó i panell fosc a sobre */
+    private static void landmarkFence(Sink sink, TownData td, TownData.Fence f, int fi, int x, int z, int g) {
+        sink.set(x, g + 1, z, Pal.of(f.base));
+        if (f.top == null) return;
+        BlockState top = Pal.of(f.top);
+        Block tb = top.getBlock();
+        if (top.contains(net.minecraft.block.HorizontalConnectingBlock.NORTH)) {
+            boolean n = isFence(td, fi, x, z - 1), e = isFence(td, fi, x + 1, z), s = isFence(td, fi, x, z + 1), w = isFence(td, fi, x - 1, z);
+            top = Pal.connect(tb, n, e, s, w);
+        }
+        // pilars de maó/pedra cada 3 blocs, panells entremig
+        boolean pillar = Math.floorMod(x + z, 3) == 0;
+        sink.set(x, g + 2, z, pillar ? Pal.of(f.base) : top);
+    }
+
+    private static boolean isFence(TownData td, int fi, int x, int z) {
+        return td.inRaster(x, z) && td.buildingId(x, z) == 0 && td.facadeU(x, z) == fi;
+    }
+
     private static boolean isWallCol(TownData td, int x, int z) {
-        return td.inRaster(x, z) && td.surface(x, z) == Surf.GARDEN && td.buildingId(x, z) == 0 && td.deco(x, z) == 0 && gardenWall(td, x, z);
+        return td.inRaster(x, z) && td.surface(x, z) == Surf.GARDEN && td.buildingId(x, z) == 0 && td.deco(x, z) == 0
+                && td.facadeU(x, z) >= td.fences.size() && gardenWall(td, x, z);
     }
 
     private static void barrier(Sink sink, TownData td, int x, int z, int g, int d) {
