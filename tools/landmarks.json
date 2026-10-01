@@ -1,5 +1,5 @@
 {
-  "_comment": "Edificis i llocs destacats de Quart. 'point' = [lat, lon] (WGS84). 'source': 'osm' = usa la planta real del mapa (edifici que conté/és més a prop del punt); 'rect' = planta rectangular dibuixada davant del carrer més proper (per als edificis que falten a OpenStreetMap). Façana: cada cadena és una planta (de baix a dalt), llegida d'esquerra a dreta mirant des del carrer. Caràcters: W paret, X paret secundària (accent), w finestra, x finestra en paret accent, D porta, G porta de garatge, B finestra amb balcó, S aparador de botiga, # pilastra/cantonada (accent), P persiana tancada, - paret llisa. Per a 'rect', 'view' = [lat, lon, rumb] de la càmera de Street View que mira la façana. Altres caràcters: R finestra amb persiana, I finestra amb reixa, d porta blanca, P persiana metàl·lica, C pilar que sobresurt de la coberta. Opcions: repeat (la façana es repeteix per habitatge), plinth (sòcol), rail (barana dels balcons), garage, shutter, eave (ràfec), canopy_floor (teuladeta sobre una planta), fence (mur de parcel·la), chimney [u, fondària, alçada], porch {u, width, depth}, roof_type hipped/gable_front/gable_side/flat/vault.",
+  "_comment": "Edificis i llocs destacats de Quart. 'point' = [lat, lon] (WGS84). 'source': 'osm' = usa la planta real del mapa (edifici que conté/és més a prop del punt); 'rect' = planta rectangular dibuixada davant del carrer més proper (per als edificis que falten a OpenStreetMap). Façana: cada cadena és una planta (de baix a dalt), llegida d'esquerra a dreta mirant des del carrer. Caràcters: W paret, X paret secundària (accent), w finestra, x finestra en paret accent, D porta, G porta de garatge, B finestra amb balcó, S aparador de botiga, # pilastra/cantonada (accent), P persiana tancada, - paret llisa. Per a 'rect', 'view' = [lat, lon, rumb] de la càmera de Street View que mira la façana. Altres caràcters: R finestra amb persiana, I finestra amb reixa, d porta blanca, P persiana metàl·lica, C pilar que sobresurt de la coberta. Opcions: repeat (la façana es repeteix per habitatge), plinth (sòcol), rail (barana dels balcons), garage, shutter, eave (ràfec), canopy_floor (teuladeta sobre una planta), fence (mur de parcel·la), chimney [u, fondària, alçada], porch {u, width, depth}, roof_type hipped/gable_front/gable_side/flat/vault. 'pools': piscines amb el contorn exacte [lat, lon] i 'deck' (metres de vorada de pedra al voltant).",
   "spawn": [
     41.9380805,
     2.8392814
@@ -456,6 +456,111 @@
       ],
       "start": 8,
       "length": 26
+    }
+  ],
+  "pools": [
+    {
+      "id": "piscina_casa1",
+      "name": "Piscina de la Casa 1 (contorn tret de la vista aèria de Google Earth)",
+      "polygon": [
+        [
+          41.9315648,
+          2.849849
+        ],
+        [
+          41.9315648,
+          2.8498336
+        ],
+        [
+          41.9315686,
+          2.8498274
+        ],
+        [
+          41.9315724,
+          2.849811
+        ],
+        [
+          41.9315805,
+          2.8498044
+        ],
+        [
+          41.9315958,
+          2.8498003
+        ],
+        [
+          41.9316038,
+          2.8497926
+        ],
+        [
+          41.9316069,
+          2.8497854
+        ],
+        [
+          41.9316069,
+          2.8497772
+        ],
+        [
+          41.9316038,
+          2.849769
+        ],
+        [
+          41.9316088,
+          2.8497624
+        ],
+        [
+          41.9316126,
+          2.8497613
+        ],
+        [
+          41.931621,
+          2.8497726
+        ],
+        [
+          41.9316348,
+          2.8497757
+        ],
+        [
+          41.9316436,
+          2.8497895
+        ],
+        [
+          41.9316459,
+          2.8498008
+        ],
+        [
+          41.9316444,
+          2.8498121
+        ],
+        [
+          41.9316382,
+          2.8498264
+        ],
+        [
+          41.9316256,
+          2.8498433
+        ],
+        [
+          41.9316049,
+          2.8498628
+        ],
+        [
+          41.9315942,
+          2.8498679
+        ],
+        [
+          41.9315851,
+          2.8498679
+        ],
+        [
+          41.9315766,
+          2.8498628
+        ],
+        [
+          41.9315648,
+          2.849849
+        ]
+      ],
+      "deck": 1.5
     }
   ]
 }

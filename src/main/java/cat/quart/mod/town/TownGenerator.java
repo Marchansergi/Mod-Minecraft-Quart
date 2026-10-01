@@ -192,6 +192,11 @@ public final class TownGenerator {
                 sub = Pal.STONE;
             }
             case Surf.BARE -> top = Blocks.COARSE_DIRT.getDefaultState();
+            case Surf.POOL_DECK -> {
+                // vorada de pedra clara al voltant de la piscina
+                top = Blocks.SMOOTH_SANDSTONE.getDefaultState();
+                sub = Pal.STONE;
+            }
             case Surf.PLAZA_TREES -> {
                 top = Pal.hash(x, z, 9) % 7 == 0 ? Blocks.COARSE_DIRT.getDefaultState() : Blocks.SAND.getDefaultState();
                 sub = Blocks.SANDSTONE.getDefaultState();

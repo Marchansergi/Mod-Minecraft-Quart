@@ -78,7 +78,7 @@ S = dict(
     GRASS=0, FOREST=1, FARMLAND=2, ROAD=3, MARKING=4, SIDEWALK=5, PATH=6, TRACK=7,
     CYCLEWAY=8, PARKING=9, PLAZA=10, PARK=11, TURF=12, TURF_LINE=13, COURT=14,
     WATER=15, POOL=16, GARDEN=17, SAND=18, GRAVEL=19, SHRUB=20, BARE=21, CEMETERY=22,
-    PLAZA_TREES=23, STREAM=24, MEADOW=25, COURT_LINE=26, ROAD_MAIN=27,
+    PLAZA_TREES=23, STREAM=24, MEADOW=25, COURT_LINE=26, ROAD_MAIN=27, POOL_DECK=28,
 )
 DECO = dict(NONE=0, WALL=1, HEDGE=2, FENCE=3, GOAL=10, HOOP=11, RETAINING=4, FENCE_LOW=5)
 
@@ -311,6 +311,14 @@ def main():
         surf[m] = S[code]
     log(f"areas {len(areas)} pitches {len(pitches)}")
 
+    # ------------------------------------------------ piscines dibuixades a mà (contorn exacte)
+    for pl in marks.get("pools", []):
+        g = Polygon([ll_px(la, lo) for la, lo in pl["polygon"]]).buffer(0)
+        if pl.get("deck"):
+            surf[poly_mask(g.buffer(pl["deck"]))] = S["POOL_DECK"]
+        surf[poly_mask(g)] = S["POOL"]
+        log(f"piscina {pl['id']}: {g.area:.0f} m2")
+
     # ------------------------------------------------ pistes esportives
     for g, t in pitches:
         m = poly_mask(g)
@@ -455,6 +463,18 @@ def main():
     # carrers: suavitzem més perquè no facin esglaons bruscos
     smooth = np.round(ndimage.gaussian_filter(heightf, 5.0)).astype(np.int16)
     hy[road_px] = smooth[road_px]
+
+    # piscines planes: tota l'aigua (i la vorada) a un sol nivell
+    pool_lab, npools = ndimage.label(surf == S["POOL"])
+    for k, sl_p in enumerate(ndimage.find_objects(pool_lab), start=1):
+        if sl_p is None:
+            continue
+        sl_p = (slice(max(sl_p[0].start - 3, 0), min(sl_p[0].stop + 3, H)), slice(max(sl_p[1].start - 3, 0), min(sl_p[1].stop + 3, W)))
+        pm = pool_lab[sl_p] == k
+        level = int(np.round(np.median(hy[sl_p][pm])))
+        ring = ndimage.binary_dilation(pm, iterations=2) & (bid[sl_p] == 0)
+        hy[sl_p][ring] = level
+    log(f"piscines aplanades: {npools}")
 
     objs = ndimage.find_objects(bid.astype(np.int32))
     rd = np.zeros((H, W), np.uint8)
@@ -946,7 +966,7 @@ COLORS = {
     "ROAD_MAIN": (75, 75, 78), "MARKING": (240, 240, 240), "SIDEWALK": (215, 170, 170), "PATH": (170, 140, 90),
     "TRACK": (150, 130, 100), "CYCLEWAY": (170, 70, 60), "PARKING": (130, 130, 130), "PLAZA": (190, 185, 175),
     "PARK": (100, 180, 90), "TURF": (40, 140, 60), "TURF_LINE": (250, 250, 250), "COURT": (180, 70, 60),
-    "COURT_LINE": (250, 250, 250), "WATER": (60, 110, 200), "STREAM": (60, 110, 200), "POOL": (80, 200, 230),
+    "COURT_LINE": (250, 250, 250), "POOL_DECK": (225, 215, 180), "WATER": (60, 110, 200), "STREAM": (60, 110, 200), "POOL": (80, 200, 230),
     "GARDEN": (140, 185, 95), "SAND": (225, 205, 150), "GRAVEL": (160, 155, 150), "SHRUB": (95, 140, 70),
     "BARE": (175, 150, 120), "CEMETERY": (150, 150, 140), "PLAZA_TREES": (200, 180, 140), "MEADOW": (150, 180, 90),
 }
