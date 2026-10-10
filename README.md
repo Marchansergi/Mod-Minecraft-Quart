@@ -52,6 +52,15 @@ zócalo, alero, tejado a cuatro o a dos aguas, chimenea, porche y el muro de la 
 - Pavelló: pista con líneas, canastas y gradas. El teu Súper: pasillos, neveras, fruta y caja; piso arriba.
 - Casa 8: la tienda de telas "El Cuc de Seda" en la planta baja (con su rótulo) y pisos arriba.
 
+**Plaza del Pavelló:** explanada de hormigón con el dibujo de líneas blancas sacado de la foto aérea.
+Las cintas de líneas paralelas forman una lágrima alrededor de la **montañita** (asfalto oscuro con anillos
+blancos) y unas horquillas hacia el sur. También tiene las farolas altas y el banco largo de hormigón. El
+pabellón tiene su fachada de Street View: planta baja ocre con puertas, porche plano sobre pilares, franja
+de paneles granate y beige con montantes, y la bóveda roja con borde blanco.
+
+**Calles:** pasos de cebra donde están registrados en OpenStreetMap, y los bancos, fuentes y paradas de
+autobús que constan allí.
+
 Entre la escuela/Local social y el Museu de la Terrissa hay un **parque con bancos**: camino de tierra,
 árboles a los dos lados, bancos mirando al camino, postes de madera en la entrada y una farola.
 
@@ -67,6 +76,10 @@ Entre la escuela/Local social y el Museu de la Terrissa hay un **parque con banc
 - **Google Maps / Earth / Street View no se usan directamente:** sus imágenes no se pueden descargar de
   forma automatizada (lo prohíben sus condiciones). Lo de Street View sale de tus capturas; la vista
   aérea sale de la ortofoto oficial PNOA del IGN, que es abierta.
+- **Pasos de cebra:** solo salen los 10 registrados en OpenStreetMap. Intenté detectarlos en la foto aérea,
+  pero a 0,5 m las franjas casi no se distinguen del asfalto y no era fiable.
+- En la plaza del Pavelló, las líneas reales son muchas y muy finas. A 1 bloque = 1 m se dibujan como
+  líneas de 1 bloque alternas, siguiendo el contorno de cada cinta.
 - Los interiores son una distribución típica según el uso de cada edificio: nadie ha publicado cómo
   son por dentro, así que no son copias del interior real.
 - El modelo de elevación es de ~30 m, así que los desniveles pequeños (un muro, un talud) no salen.

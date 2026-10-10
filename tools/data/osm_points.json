@@ -1,0 +1,189 @@
+[
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9426478,
+  "lon": 2.840987,
+  "id": 1641779427,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "stop",
+  "lat": 41.9358148,
+  "lon": 2.837606,
+  "id": 2951335264,
+  "tags": {
+   "highway": "stop"
+  }
+ },
+ {
+  "kind": "stop",
+  "lat": 41.9360147,
+  "lon": 2.8381341,
+  "id": 2951335265,
+  "tags": {
+   "highway": "stop"
+  }
+ },
+ {
+  "kind": "drinking_water",
+  "lat": 41.9432459,
+  "lon": 2.836119,
+  "id": 3579085790,
+  "tags": {
+   "amenity": "drinking_water"
+  }
+ },
+ {
+  "kind": "drinking_water",
+  "lat": 41.9381932,
+  "lon": 2.8394499,
+  "id": 3579088619,
+  "tags": {
+   "amenity": "drinking_water"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9377499,
+  "lon": 2.8416366,
+  "id": 5563106466,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Quart, Centre (direcció Palamós)",
+   "operator": "Sarbus - Sarfa",
+   "public_transport": "platform",
+   "ref": "16942"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9378465,
+  "lon": 2.8414688,
+  "id": 5563106486,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Quart, Centre (direcció Palamos)",
+   "operator": "Sarbus - Sarfa",
+   "public_transport": "platform",
+   "ref": "16942"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9352272,
+  "lon": 2.8408178,
+  "id": 6497539473,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9385001,
+  "lon": 2.8377076,
+  "id": 6546254868,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9307525,
+  "lon": 2.8460579,
+  "id": 6554122807,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9291772,
+  "lon": 2.848459,
+  "id": 12100601901,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9429235,
+  "lon": 2.837742,
+  "id": 12426458562,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9425378,
+  "lon": 2.8380519,
+  "id": 12426458563,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "stop",
+  "lat": 41.9424874,
+  "lon": 2.8380923,
+  "id": 12426458564,
+  "tags": {
+   "direction": "forward",
+   "highway": "stop"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9329584,
+  "lon": 2.8434102,
+  "id": 12534156848,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9329408,
+  "lon": 2.8435043,
+  "id": 12534156849,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "stop",
+  "lat": 41.933449,
+  "lon": 2.8431098,
+  "id": 12645497038,
+  "tags": {
+   "direction": "forward",
+   "highway": "stop"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.940002,
+  "lon": 2.8379797,
+  "id": 12723374744,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9393085,
+  "lon": 2.8395081,
+  "id": 12723374745,
+  "tags": {
+   "highway": "crossing"
+  }
+ }
+]

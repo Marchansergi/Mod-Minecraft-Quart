@@ -202,6 +202,19 @@ public final class TownGenerator {
                 top = ((x + z) & 1) == 0 ? Blocks.SMOOTH_STONE.getDefaultState() : Blocks.POLISHED_DIORITE.getDefaultState();
                 sub = Pal.STONE;
             }
+            case Surf.CONCRETE -> {
+                // formigó de la plaça del Pavelló
+                top = Blocks.LIGHT_GRAY_CONCRETE.getDefaultState();
+                sub = Pal.STONE;
+            }
+            case Surf.CONCRETE_LINE -> {
+                top = Blocks.WHITE_CONCRETE.getDefaultState();
+                sub = Pal.STONE;
+            }
+            case Surf.MOUND -> {
+                top = Blocks.GRAY_CONCRETE.getDefaultState();
+                sub = Pal.STONE;
+            }
             case Surf.POOL_DECK -> {
                 // vorada de pedra clara al voltant de la piscina
                 top = Blocks.SMOOTH_SANDSTONE.getDefaultState();

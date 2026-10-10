@@ -32,6 +32,12 @@ public final class Decorations {
                 case "porch" -> porch(f, d);
                 case "pocket_park" -> pocketPark(sink, td, d);
                 case "wall_sign" -> wallSign(sink, d);
+                case "mound" -> mound(sink, td, d);
+                case "tall_lamp" -> tallLamp(sink, td, d);
+                case "long_bench" -> longBench(sink, td, d);
+                case "street_bench" -> streetBench(f);
+                case "street_drinking_water" -> fountain(f);
+                case "street_bus_stop" -> busStop(f);
                 default -> {
                 }
             }
@@ -144,6 +150,82 @@ public final class Decorations {
                 }
         for (int a = 6; a <= 8; a++)
             for (int b = -1; b <= 1; b++) f.set(a, 7, b, Pal.slab(Blocks.BLACKSTONE_SLAB, SlabType.BOTTOM));
+    }
+
+    // ---------------------------------------------------------------- muntanyeta de la plaça del Pavelló
+    /** cúpula d'asfalt amb cercles blancs: alçada h(d) = H·(1 - (d/R)²), amb lloses per suavitzar */
+    private static void mound(Sink sink, TownData td, TownData.Decoration d) {
+        int R = Math.max(2, d.length);
+        double Hm = d.height / 10.0;
+        for (int dz = -R; dz <= R; dz++)
+            for (int dx = -R; dx <= R; dx++) {
+                int x = d.x + dx, z = d.z + dz;
+                if (!sink.contains(x, z) || !td.inRaster(x, z) || td.buildingId(x, z) != 0) continue;
+                double dist = Math.hypot(dx, dz);
+                if (dist >= R) continue;
+                double h = Hm * (1 - (dist / R) * (dist / R));
+                int full = (int) Math.floor(h);
+                boolean half = h - full >= 0.5;
+                boolean line = td.surface(x, z) == Surf.CONCRETE_LINE;
+                BlockState blk = line ? Blocks.WHITE_CONCRETE.getDefaultState() : Blocks.GRAY_CONCRETE.getDefaultState();
+                BlockState slab = line ? Pal.slab(Blocks.SMOOTH_QUARTZ_SLAB, SlabType.BOTTOM) : Pal.slab(Blocks.DEEPSLATE_TILE_SLAB, SlabType.BOTTOM);
+                int g = td.height(x, z);
+                for (int y = 1; y <= full; y++) sink.set(x, g + y, z, blk);
+                if (half) sink.set(x, g + full + 1, z, slab);
+                if (full > 0) sink.set(x, g, z, Pal.STONE);
+            }
+    }
+
+    // ---------------------------------------------------------------- fanal alt de la plaça (Street View)
+    private static void tallLamp(Sink sink, TownData td, TownData.Decoration d) {
+        if (!td.inRaster(d.x, d.z)) return;
+        int g = td.height(d.x, d.z);
+        for (int y = 1; y <= 8; y++) sink.set(d.x, g + y, d.z, Blocks.ANDESITE_WALL.getDefaultState());
+        sink.set(d.x, g + 9, d.z, Blocks.POLISHED_ANDESITE_SLAB.getDefaultState());
+        // dos braços amb llum, com els fanals de la plaça
+        sink.set(d.x + 1, g + 9, d.z, Blocks.POLISHED_ANDESITE_SLAB.getDefaultState());
+        sink.set(d.x + 1, g + 8, d.z, Blocks.LANTERN.getDefaultState().with(net.minecraft.block.LanternBlock.HANGING, true));
+        sink.set(d.x - 1, g + 6, d.z, Blocks.LANTERN.getDefaultState());
+    }
+
+    // ---------------------------------------------------------------- banc llarg de formigó
+    private static void longBench(Sink sink, TownData td, TownData.Decoration d) {
+        double len = Math.max(1, Math.hypot(d.hx, d.hz));
+        int n = (int) Math.ceil(len);
+        for (int i = 0; i <= n; i++) {
+            int x = (int) Math.round(d.x + d.hx * i / len), z = (int) Math.round(d.z + d.hz * i / len);
+            if (!td.inRaster(x, z) || td.buildingId(x, z) != 0) continue;
+            int g = td.height(x, z);
+            sink.set(x, g + 1, z, i % 4 == 0 ? Blocks.SMOOTH_STONE.getDefaultState() : Pal.slab(Blocks.SMOOTH_STONE_SLAB, SlabType.BOTTOM));
+        }
+    }
+
+    // ---------------------------------------------------------------- mobiliari urbà de l'OSM
+    /** banc de fusta mirant al carrer */
+    private static void streetBench(Frame f) {
+        BlockState seat = Pal.stairs(Blocks.SPRUCE_STAIRS, f.fwd.getOpposite());
+        f.setG(0, 1, -1, seat);
+        f.setG(0, 1, 0, seat);
+        f.setG(0, 1, 1, seat);
+    }
+
+    /** font d'aigua potable: pilar de pedra amb una pica */
+    private static void fountain(Frame f) {
+        f.setG(0, 1, 0, Blocks.POLISHED_ANDESITE.getDefaultState());
+        f.setG(1, 1, 0, Blocks.WATER_CAULDRON.getDefaultState().with(net.minecraft.block.LeveledCauldronBlock.LEVEL, 3));
+        f.setG(0, 2, 0, Blocks.ANDESITE_WALL.getDefaultState());
+    }
+
+    /** marquesina de l'autobús: banc, vidre al darrere i teulada plana */
+    private static void busStop(Frame f) {
+        for (int b = -2; b <= 2; b++) {
+            f.setG(-1, 1, b, Blocks.GLASS_PANE.getDefaultState());
+            f.setG(-1, 2, b, Blocks.GLASS_PANE.getDefaultState());
+            for (int a = -1; a <= 0; a++) f.setG(a, 3, b, Pal.slab(Blocks.SMOOTH_STONE_SLAB, SlabType.BOTTOM));
+        }
+        for (int b = -1; b <= 1; b++) f.setG(0, 1, b, Pal.stairs(Blocks.SPRUCE_STAIRS, f.fwd.getOpposite()));
+        f.setG(0, 1, 2, Blocks.IRON_BARS.getDefaultState());
+        f.setG(0, 2, 2, Blocks.IRON_BARS.getDefaultState());
     }
 
     // ---------------------------------------------------------------- rètol de façana

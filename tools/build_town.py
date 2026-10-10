@@ -79,6 +79,7 @@ S = dict(
     CYCLEWAY=8, PARKING=9, PLAZA=10, PARK=11, TURF=12, TURF_LINE=13, COURT=14,
     WATER=15, POOL=16, GARDEN=17, SAND=18, GRAVEL=19, SHRUB=20, BARE=21, CEMETERY=22,
     PLAZA_TREES=23, STREAM=24, MEADOW=25, COURT_LINE=26, ROAD_MAIN=27, POOL_DECK=28, SOIL=29, PAVING=30,
+    CONCRETE=31, CONCRETE_LINE=32, MOUND=33,
 )
 DECO = dict(NONE=0, WALL=1, HEDGE=2, FENCE=3, GOAL=10, HOOP=11, RETAINING=4, FENCE_LOW=5)
 
@@ -269,6 +270,76 @@ OC = dict(UNKNOWN=0, LAWN=1, TREE=2, SOIL=3, PAVING=4, ASPHALT=5, POOL=6, ROOF_R
 SOFT = None  # superfícies "toves" que l'ortofoto pot corregir (s'omple a main)
 
 
+def paint_crossings(ways, nodes, surf, carriage, road_geoms):
+    """Passos de zebra on n'hi ha de veritat (nodes highway=crossing i vies footway=crossing de l'OSM).
+    Les franges van paral·leles al carrer i s'alternen d'un costat a l'altre, cada metre."""
+    pts_path = os.path.join(DATA, "osm_points.json")
+    points = json.load(open(pts_path)) if os.path.exists(pts_path) else []
+    crossings = []  # (centre, direcció travessant, mig-llarg)
+    for p in points:
+        if p["kind"] != "crossing" or p["tags"].get("crossing") in ("unmarked", "no"):
+            continue
+        c = Point(*ll_px(p["lat"], p["lon"]))
+        line, width = min(road_geoms, key=lambda r: r[0].distance(c))
+        if line.distance(c) > width / 2 + 2:
+            continue
+        sp = line.project(c)
+        a_ = line.interpolate(max(0, sp - 1.5))
+        b_ = line.interpolate(min(line.length, sp + 1.5))
+        tx, tz = b_.x - a_.x, b_.y - a_.y
+        L = math.hypot(tx, tz) or 1
+        cc = line.interpolate(sp)
+        crossings.append(((cc.x, cc.y), (-tz / L, tx / L), width / 2 + 1))
+    for w in ways.values():
+        t = w.get("tags", {})
+        if t.get("footway") == "crossing" or t.get("highway") == "crossing":
+            xy = way_xy(w, nodes)
+            if len(xy) < 2:
+                continue
+            (x0_, z0_), (x1_, z1_) = xy[0], xy[-1]
+            L = math.hypot(x1_ - x0_, z1_ - z0_) or 1
+            crossings.append((((x0_ + x1_) / 2, (z0_ + z1_) / 2), ((x1_ - x0_) / L, (z1_ - z0_) / L), L / 2 + 1))
+    n = 0
+    for (cx, cz), (nx, nz), half in crossings:
+        r = int(math.ceil(half)) + 3
+        for zz in range(int(cz) - r, int(cz) + r + 1):
+            for xx in range(int(cx) - r, int(cx) + r + 1):
+                if not (0 <= xx < W and 0 <= zz < H) or not carriage[zz, xx]:
+                    continue
+                dx, dz = xx + 0.5 - cx, zz + 0.5 - cz
+                across = dx * nx + dz * nz
+                along = -dx * nz + dz * nx
+                if abs(along) > 1.6 or abs(across) > half:
+                    continue
+                surf[zz, xx] = S["MARKING"] if math.floor(across + 100) % 2 == 0 else S["ROAD"]
+        n += 1
+    log(f"passos de vianants: {n}")
+    return [p for p in points if p["kind"] in ("bench", "drinking_water", "bus_stop")]
+
+
+def apply_plazas(surf, bid, carriage, marks):
+    """Places de formigó amb línies (capa 'plaza' de ortho_features.npz). Torna la màscara de la plaça."""
+    p = os.path.join(DATA, "ortho_features.npz")
+    if not os.path.exists(p):
+        return np.zeros((H, W), bool)
+    d = np.load(p)
+    if "plaza" not in d.files:
+        return np.zeros((H, W), bool)
+    pl = d["plaza"]
+    over = np.zeros((H, W), bool)
+    for pz in marks.get("plazas", []):
+        if pz.get("over_roads"):
+            # el carrer que l'OSM hi dibuixa és, en realitat, el carril de formigó de la mateixa plaça
+            over |= poly_mask(Polygon([ll_px(la, lo) for la, lo in pz["polygon"]]))
+    free = (bid == 0) & (~carriage | over)
+    m = (pl > 0) & free
+    surf[m & (pl == 1)] = S["CONCRETE"]
+    surf[m & (pl == 2)] = S["CONCRETE_LINE"]
+    surf[m & (pl == 3)] = S["MOUND"]
+    log(f"places pintades: {int(m.sum())} m2")
+    return m
+
+
 def load_ortho():
     p = os.path.join(DATA, "ortho_features.npz")
     pj = os.path.join(DATA, "ortho_1m.jpg")
@@ -403,7 +474,8 @@ def ortho_trees(ortho, surf, bid, road_px, urban, core_mask):
         if bid[iz, ix] or road_px[iz, ix]:
             continue
         s = surf[iz, ix]
-        if s in (S["POOL"], S["POOL_DECK"], S["TURF"], S["TURF_LINE"], S["COURT"], S["COURT_LINE"], S["STREAM"], S["WATER"]):
+        if s in (S["POOL"], S["POOL_DECK"], S["TURF"], S["TURF_LINE"], S["COURT"], S["COURT_LINE"], S["STREAM"], S["WATER"],
+                 S["MOUND"], S["CONCRETE_LINE"]):
             continue
         r = float(min(max(r, 1.0), 7.0))
         h = hash32(ix, iz) % 100
@@ -562,6 +634,9 @@ def main():
             if 0 <= x < W and 0 <= z < H and carriage[z, x]:
                 surf[z, x] = S["MARKING"]
 
+    # ------------------------------------------------ passos de vianants (OSM) i mobiliari urbà
+    street_points = paint_crossings(ways, nodes, surf, carriage, road_geoms)
+
     # ------------------------------------------------ barreres
     for w in ways.values():
         t = w.get("tags", {})
@@ -629,6 +704,8 @@ def main():
             bid[m] = n
             meta_buildings.append(dict(src="ortho", osm_id=0, tags={"building": "shed"}, area=float(g.area), landmark=None, geom=g))
         apply_ortho_ground(ortho, surf, bid, road_px, urban, core_mask)
+    plaza_mask = apply_plazas(surf, bid, carriage, marks)
+    if ortho is not None:
         trees_out = ortho_trees(ortho, surf, bid, road_px, urban, core_mask)
         # color de teulada de cada edifici (mitjana dels píxels visibles del sostre)
         oc, _, rgb = ortho
@@ -650,6 +727,15 @@ def main():
     # carrers: suavitzem més perquè no facin esglaons bruscos
     smooth = np.round(ndimage.gaussian_filter(heightf, 5.0)).astype(np.int16)
     hy[road_px] = smooth[road_px]
+
+    # places pintades: superfície plana (pla ajustat per mínims quadrats al relleu)
+    if plaza_mask.any():
+        lab_p, npl = ndimage.label(plaza_mask)
+        for k in range(1, npl + 1):
+            zz, xx = np.nonzero(lab_p == k)
+            A = np.c_[xx, zz, np.ones(len(xx))]
+            coef, *_ = np.linalg.lstsq(A, heightf[zz, xx], rcond=None)
+            hy[zz, xx] = np.round(A @ coef).astype(np.int16)
 
     # piscines planes: tota l'aigua (i la vorada) a un sol nivell
     pool_lab, npools = ndimage.label(surf == S["POOL"])
@@ -716,6 +802,35 @@ def main():
         e["x"], e["z"] = int(round(x)), int(round(z))
         decos.append(e)
     decos += EXTRA_DECOS
+    for p in street_points:
+        x_, z_ = to_xz(p["lat"], p["lon"])
+        ix, iz = int(round(x_)), int(round(z_))
+        # orientació cap al carrer més proper
+        c = Point(*px(ix, iz))
+        line, width = min(road_geoms, key=lambda r: r[0].distance(c))
+        q = line.interpolate(line.project(c))
+        yaw = int(round(math.degrees(math.atan2(q.y - c.y, q.x - c.x))))
+        decos.append(dict(type="street_" + p["kind"], x=ix, z=iz, yaw=yaw))
+    for pz in marks.get("plazas", []):
+        if "mound" in pz:
+            mx_, mz_ = to_xz(*pz["mound"]["center"])
+            decos.append(dict(type="mound", x=int(round(mx_)), z=int(round(mz_)), length=int(round(pz["mound"]["radius"])),
+                              height=int(round(pz["mound"]["height"] * 10))))
+        for lp in pz.get("lamps", []):
+            lx, lz = to_xz(*lp)
+            if "mound" in pz:
+                # la posició ve d'una estimació des de Street View: que no caigui sobre la muntanyeta
+                mx_, mz_ = to_xz(*pz["mound"]["center"])
+                dd = math.hypot(lx - mx_, lz - mz_)
+                need = pz["mound"]["radius"] + 2
+                if dd < need:
+                    k_ = need / max(dd, 0.1)
+                    lx, lz = mx_ + (lx - mx_) * k_, mz_ + (lz - mz_) * k_
+            decos.append(dict(type="tall_lamp", x=int(round(lx)), z=int(round(lz))))
+        if "bench" in pz:
+            (ax, az), (bx_, bz_) = [to_xz(*q) for q in pz["bench"]]
+            decos.append(dict(type="long_bench", x=int(round(ax)), z=int(round(az)),
+                              hx=round(bx_ - ax, 2), hz=round(bz_ - az, 2), length=int(round(math.hypot(bx_ - ax, bz_ - az)))))
     sx, sz = to_xz(*marks["spawn"])
     spawn = [int(round(sx)), int(round(sz))]
 
@@ -1139,7 +1254,7 @@ def style_for(n, mb, road_px, sl, m):
         return spec
     spec.update(wall=lm["wall"], accent=lm.get("accent"), roof=lm["roof"], roof_type=lm["roof_type"],
                 floors=lm["floors"], fh=lm.get("floor_height", 3), landmark=lm["id"], facade=lm.get("facade", []))
-    for k in ("band", "plinth", "rail", "garage", "shutter", "eave", "repeat", "canopy_floor", "interior", "frieze", "eave_block"):
+    for k in ("band", "plinth", "rail", "garage", "shutter", "eave", "repeat", "canopy_floor", "interior", "frieze", "eave_block", "rows", "mullions", "canopy"):
         if k in lm:
             spec[k] = lm[k]
     return spec
@@ -1179,7 +1294,8 @@ COLORS = {
     "ROAD_MAIN": (75, 75, 78), "MARKING": (240, 240, 240), "SIDEWALK": (215, 170, 170), "PATH": (170, 140, 90),
     "TRACK": (150, 130, 100), "CYCLEWAY": (170, 70, 60), "PARKING": (130, 130, 130), "PLAZA": (190, 185, 175),
     "PARK": (100, 180, 90), "TURF": (40, 140, 60), "TURF_LINE": (250, 250, 250), "COURT": (180, 70, 60),
-    "COURT_LINE": (250, 250, 250), "POOL_DECK": (225, 215, 180), "SOIL": (185, 160, 110), "PAVING": (205, 205, 200), "WATER": (60, 110, 200), "STREAM": (60, 110, 200), "POOL": (80, 200, 230),
+    "COURT_LINE": (250, 250, 250), "POOL_DECK": (225, 215, 180), "SOIL": (185, 160, 110), "PAVING": (205, 205, 200),
+    "CONCRETE": (175, 175, 170), "CONCRETE_LINE": (255, 255, 255), "MOUND": (70, 70, 75), "WATER": (60, 110, 200), "STREAM": (60, 110, 200), "POOL": (80, 200, 230),
     "GARDEN": (140, 185, 95), "SAND": (225, 205, 150), "GRAVEL": (160, 155, 150), "SHRUB": (95, 140, 70),
     "BARE": (175, 150, 120), "CEMETERY": (150, 150, 140), "PLAZA_TREES": (200, 180, 140), "MEADOW": (150, 180, 90),
 }

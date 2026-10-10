@@ -105,6 +105,68 @@ def detect_trees(cls05, o):
     return np.array(out, np.float32)
 
 
+PLAZA_NONE, PLAZA_CONCRETE, PLAZA_LINE, PLAZA_MOUND = 0, 1, 2, 3
+
+
+def painted_plazas(o):
+    """Places de formigó amb dibuix de línies blanques (p. ex. la del Pavelló): el formigó és el gris de la plaça,
+    les "cintes" són les franges més clares (fetes de moltes línies paral·leles) i les línies es dibuixen paral·leles
+    a la vora de cada cinta, cada `stripe` metres, com a la realitat. Torna una capa a 1 m alineada amb el ràster."""
+    import json
+    from PIL import Image, ImageDraw
+    marks = json.load(open(os.path.join(ROOT, "tools", "landmarks.json")))
+    out = np.zeros((bt.H, bt.W), np.uint8)
+    for pz in marks.get("plazas", []):
+        pts = [bt.to_xz(la, lo) for la, lo in pz["polygon"]]
+        xs = [p[0] for p in pts]
+        zs = [p[1] for p in pts]
+        x0, x1 = int(np.floor(min(xs))) - 2, int(np.ceil(max(xs))) + 2
+        z0, z1 = int(np.floor(min(zs))) - 2, int(np.ceil(max(zs))) + 2
+        a = o[2 * (z0 - bt.Z0):2 * (z1 - bt.Z0), 2 * (x0 - bt.X0):2 * (x1 - bt.X0)].astype(np.float32)
+        img = Image.new("1", (a.shape[1], a.shape[0]), 0)
+        ImageDraw.Draw(img).polygon([((x - x0) * 2, (z - z0) * 2) for x, z in pts], fill=1)
+        P = np.array(img, bool)
+        L = a.mean(-1)
+        mx, mn = a.max(-1), a.min(-1)
+        sat = (mx - mn) / np.maximum(mx, 1)
+        Ls = ndimage.gaussian_filter(L, 1.0)
+        concrete = P & (sat < 0.13) & (L > 165)
+        base = float(np.median(Ls[concrete]))
+        rib = P & (Ls > base + pz.get("ribbon_delta", 10)) & (sat < 0.13)
+        rib = ndimage.binary_closing(ndimage.binary_opening(rib, iterations=1), iterations=2)
+        # contorn suau (les cintes reals són corbes contínues)
+        rib = P & (ndimage.gaussian_filter(rib.astype(np.float32), 1.5) > 0.5)
+        lab, n = ndimage.label(rib)
+        if n:
+            sz = ndimage.sum(rib, lab, range(1, n + 1))
+            rib = np.isin(lab, np.nonzero(sz >= 40)[0] + 1)
+        d = ndimage.distance_transform_edt(rib) / 2.0  # metres fins a la vora de la cinta
+        # a 1 m: mitjana de la distància dels 4 subpíxels
+        Hc, Wc = (z1 - z0), (x1 - x0)
+        d1 = d[:Hc * 2, :Wc * 2].reshape(Hc, 2, Wc, 2).mean((1, 3))
+        rib1 = rib[:Hc * 2, :Wc * 2].reshape(Hc, 2, Wc, 2).mean((1, 3)) >= 0.5
+        P1 = P[:Hc * 2, :Wc * 2].reshape(Hc, 2, Wc, 2).mean((1, 3)) >= 0.5
+        st = pz.get("stripe", 2)
+        line = rib1 & ((np.floor(d1) % st) == 0)
+        layer = np.where(P1, PLAZA_CONCRETE, PLAZA_NONE).astype(np.uint8)
+        layer[line] = PLAZA_LINE
+        if "mound" in pz:
+            mx_, mz_ = bt.to_xz(*pz["mound"]["center"])
+            zz, xx = np.mgrid[z0:z1, x0:x1]
+            dist = np.hypot(xx + 0.5 - mx_, zz + 0.5 - mz_)
+            R = pz["mound"]["radius"]
+            inner = dist < R * 0.62
+            layer[inner & P1] = PLAZA_MOUND
+            # cercles de nivell blancs al flanc de la muntanyeta
+            ring = (dist >= R * 0.62) & (dist < R) & P1
+            layer[ring] = np.where((np.floor(dist[ring]) % 2) == 0, PLAZA_LINE, PLAZA_MOUND)
+        sl = (slice(z0 - bt.Z0, z1 - bt.Z0), slice(x0 - bt.X0, x1 - bt.X0))
+        cur = out[sl]
+        cur[layer > 0] = layer[layer > 0]
+        print(f"plaça {pz['id']}: {int((layer > 0).sum())} m2, {int((layer == PLAZA_LINE).sum())} m2 de línia", file=sys.stderr)
+    return out
+
+
 def main():
     o = np.load(SRC)
     print("ortofoto", o.shape, file=sys.stderr)
@@ -120,7 +182,8 @@ def main():
         oc[small] = C["UNKNOWN"]
     print("classes", {k: int((oc == v).sum()) for k, v in C.items()}, file=sys.stderr)
     print("arbres", len(trees), file=sys.stderr)
-    np.savez_compressed(OUT, oc=oc, trees=trees)
+    plaza = painted_plazas(o)
+    np.savez_compressed(OUT, oc=oc, trees=trees, plaza=plaza)
     # color mitjà de cada metre quadrat (per triar el material de les teulades)
     from PIL import Image
     rgb1 = o[:bt.H * 2, :bt.W * 2].reshape(bt.H, 2, bt.W, 2, 3).mean((1, 3)).astype(np.uint8)

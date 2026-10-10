@@ -1,5 +1,5 @@
 {
-  "_comment": "Edificis i llocs destacats de Quart. 'point' = [lat, lon] (WGS84). 'source': 'osm' = usa la planta real del mapa (edifici que conté/és més a prop del punt); 'rect' = planta rectangular dibuixada davant del carrer més proper (per als edificis que falten a OpenStreetMap). Façana: cada cadena és una planta (de baix a dalt), llegida d'esquerra a dreta mirant des del carrer. Caràcters: W paret, X paret secundària (accent), w finestra, x finestra en paret accent, D porta, G porta de garatge, B finestra amb balcó, S aparador de botiga, # pilastra/cantonada (accent), P persiana tancada, - paret llisa. Per a 'rect', 'view' = [lat, lon, rumb] de la càmera de Street View que mira la façana. Altres caràcters: R finestra amb persiana, I finestra amb reixa, d porta blanca, P persiana metàl·lica, C pilar que sobresurt de la coberta. Opcions: repeat (la façana es repeteix per habitatge), plinth (sòcol), rail (barana dels balcons), garage, shutter, eave (ràfec), canopy_floor (teuladeta sobre una planta), fence (mur de parcel·la), chimney [u, fondària, alçada], porch {u, width, depth}, roof_type hipped/gable_front/gable_side/flat/vault. 'pools': piscines amb el contorn exacte [lat, lon] i 'deck' (metres de vorada de pedra al voltant). 'interior': {type: house|info_point|museum|social|gym|school|supermarket|shop_flats, dwellings: N habitatges en filera, rooms: N aules}. 'sign': rètol a la façana (lines, wood, floor_row). 'frieze': fris de maó sota el ràfec. 'eave_block': material del ràfec.",
+  "_comment": "Edificis i llocs destacats de Quart. 'point' = [lat, lon] (WGS84). 'source': 'osm' = usa la planta real del mapa (edifici que conté/és més a prop del punt); 'rect' = planta rectangular dibuixada davant del carrer més proper (per als edificis que falten a OpenStreetMap). Façana: cada cadena és una planta (de baix a dalt), llegida d'esquerra a dreta mirant des del carrer. Caràcters: W paret, X paret secundària (accent), w finestra, x finestra en paret accent, D porta, G porta de garatge, B finestra amb balcó, S aparador de botiga, # pilastra/cantonada (accent), P persiana tancada, - paret llisa. Per a 'rect', 'view' = [lat, lon, rumb] de la càmera de Street View que mira la façana. Altres caràcters: R finestra amb persiana, I finestra amb reixa, d porta blanca, P persiana metàl·lica, C pilar que sobresurt de la coberta. Opcions: repeat (la façana es repeteix per habitatge), plinth (sòcol), rail (barana dels balcons), garage, shutter, eave (ràfec), canopy_floor (teuladeta sobre una planta), fence (mur de parcel·la), chimney [u, fondària, alçada], porch {u, width, depth}, roof_type hipped/gable_front/gable_side/flat/vault. 'pools': piscines amb el contorn exacte [lat, lon] i 'deck' (metres de vorada de pedra al voltant). 'interior': {type: house|info_point|museum|social|gym|school|supermarket|shop_flats, dwellings: N habitatges en filera, rooms: N aules}. 'sign': rètol a la façana (lines, wood, floor_row). 'frieze': fris de maó sota el ràfec. 'eave_block': material del ràfec. 'plazas': places de formigó amb el dibuix de línies blanques tret de l'ortofoto (ribbon_delta: quant més clares que el formigó han de ser les cintes; stripe: separació de les línies) i una muntanyeta (mound) opcional. 'rows': material de cada filera de la paret (de baix a dalt). 'mullions': muntants verticals {every, from_row, block}. 'canopy': porxo pla {row, depth, every, block, pillar}.",
   "spawn": [
     41.9380805,
     2.8392814
@@ -132,21 +132,46 @@
       "source": "osm_named",
       "osm_id": 214690703,
       "floors": 1,
-      "floor_height": 11,
+      "floor_height": 10,
       "wall": "minecraft:white_terracotta",
-      "accent": "minecraft:red_terracotta",
+      "accent": "minecraft:white_terracotta",
       "roof": "vault:minecraft:red_concrete",
       "roof_type": "vault",
-      "band": [
-        "minecraft:red_concrete",
-        "minecraft:white_concrete"
-      ],
       "facade": [
-        "WWWDWWWWWWDWWWWWWDWWW"
+        "WWWDDWWWWWWDDWWWWWWWW"
       ],
       "interior": {
         "type": "gym"
-      }
+      },
+      "rows": [
+        "minecraft:white_terracotta",
+        "minecraft:white_terracotta",
+        "minecraft:white_terracotta",
+        "minecraft:white_terracotta",
+        "minecraft:white_terracotta",
+        "minecraft:red_terracotta",
+        "minecraft:white_terracotta",
+        "minecraft:red_terracotta",
+        "minecraft:light_gray_terracotta",
+        "minecraft:red_terracotta"
+      ],
+      "mullions": {
+        "every": 5,
+        "from_row": 5,
+        "block": "minecraft:smooth_stone"
+      },
+      "canopy": {
+        "row": 5,
+        "depth": 3,
+        "every": 6,
+        "block": "minecraft:smooth_quartz_slab",
+        "pillar": "minecraft:smooth_quartz"
+      },
+      "view": [
+        41.9379425,
+        2.8368293,
+        264.9
+      ]
     },
     {
       "id": "escola_nou",
@@ -664,6 +689,109 @@
         ]
       ],
       "deck": 1.5
+    }
+  ],
+  "plazas": [
+    {
+      "id": "placa_pavello",
+      "name": "Plaça del Pavelló (formigó amb línies blanques)",
+      "polygon": [
+        [
+          41.9381489,
+          2.8365845
+        ],
+        [
+          41.9381399,
+          2.8366689
+        ],
+        [
+          41.9380049,
+          2.8367895
+        ],
+        [
+          41.9378248,
+          2.8369583
+        ],
+        [
+          41.9377258,
+          2.8371272
+        ],
+        [
+          41.9377078,
+          2.8372477
+        ],
+        [
+          41.9376267,
+          2.8372477
+        ],
+        [
+          41.9375907,
+          2.8370548
+        ],
+        [
+          41.9375097,
+          2.8369945
+        ],
+        [
+          41.9374737,
+          2.8368136
+        ],
+        [
+          41.9374107,
+          2.8366689
+        ],
+        [
+          41.9374737,
+          2.8365242
+        ],
+        [
+          41.9375997,
+          2.8364037
+        ],
+        [
+          41.9376988,
+          2.836464
+        ],
+        [
+          41.9378788,
+          2.836476
+        ],
+        [
+          41.9380769,
+          2.8365242
+        ]
+      ],
+      "ribbon_delta": 10,
+      "stripe": 2,
+      "mound": {
+        "center": [
+          41.9379221,
+          2.8366388
+        ],
+        "radius": 5.0,
+        "height": 1.6
+      },
+      "lamps": [
+        [
+          41.9379657,
+          2.8367128
+        ],
+        [
+          41.9378251,
+          2.8365581
+        ]
+      ],
+      "bench": [
+        [
+          41.9375367,
+          2.8368739
+        ],
+        [
+          41.9376087,
+          2.8370066
+        ]
+      ],
+      "over_roads": true
     }
   ]
 }

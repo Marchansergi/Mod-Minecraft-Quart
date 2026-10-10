@@ -234,6 +234,11 @@ public final class TownData {
         public final int dwellings, rooms;
         public final int[] bbox;
         public final boolean frieze;
+        public final String[] rows;
+        public final int mullionEvery, mullionFrom;
+        public final String mullion;
+        public final int canopyRow, canopyDepth, canopyEvery;
+        public final String canopyBlock, canopyPillar;
         public int facadeWidth;
         int fwFromMeta;
 
@@ -267,6 +272,17 @@ public final class TownData {
                     o.getAsJsonArray("bbox").get(2).getAsInt(), o.getAsJsonArray("bbox").get(3).getAsInt()} : null;
             frieze = o.has("frieze") && o.get("frieze").getAsBoolean();
             eaveBlock = str(o, "eave_block", null);
+            rows = arr(o, "rows");
+            JsonObject mu = o.has("mullions") && o.get("mullions").isJsonObject() ? o.getAsJsonObject("mullions") : null;
+            mullionEvery = mu != null ? mu.get("every").getAsInt() : 0;
+            mullionFrom = mu != null && mu.has("from_row") ? mu.get("from_row").getAsInt() : 0;
+            mullion = mu != null ? str(mu, "block", "minecraft:smooth_stone") : null;
+            JsonObject cp = o.has("canopy") && o.get("canopy").isJsonObject() ? o.getAsJsonObject("canopy") : null;
+            canopyRow = cp != null ? cp.get("row").getAsInt() : 0;
+            canopyDepth = cp != null && cp.has("depth") ? cp.get("depth").getAsInt() : 3;
+            canopyEvery = cp != null && cp.has("every") ? cp.get("every").getAsInt() : 5;
+            canopyBlock = cp != null ? str(cp, "block", "minecraft:smooth_quartz_slab") : null;
+            canopyPillar = cp != null ? str(cp, "pillar", "minecraft:light_gray_concrete") : null;
             if (o.has("fw")) facadeWidth = fwFromMeta = o.get("fw").getAsInt();
         }
 
@@ -341,6 +357,11 @@ public final class TownData {
                 return t > -3 && t < length + 3 && n < 8;
             }
             if (type.equals("goal") || type.equals("hoop") || type.equals("roof_chimney") || type.equals("wall_sign")) return false;
+            if (type.equals("long_bench")) {
+                double len = Math.max(1, Math.hypot(hx, hz));
+                double t = ((px - x) * hx + (pz - z) * hz) / len, nn = Math.abs(-(px - x) * hz + (pz - z) * hx) / len;
+                return t > -2 && t < len + 2 && nn < 2;
+            }
             int r = radius() - 2;
             return Math.abs(px - x) <= r && Math.abs(pz - z) <= r;
         }
@@ -357,6 +378,11 @@ public final class TownData {
                 case "benches_plaza" -> 14;
                 case "locomotive" -> 12;
                 case "wall_sign" -> 1;
+                case "mound" -> length + 1;
+                case "tall_lamp" -> 2;
+                case "street_bench", "street_drinking_water" -> 3;
+                case "street_bus_stop" -> 4;
+                case "long_bench" -> length + 2;
                 case "playground" -> 8;
                 case "goal", "hoop" -> 5;
                 default -> 6;

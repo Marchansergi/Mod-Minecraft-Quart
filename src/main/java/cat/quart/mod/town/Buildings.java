@@ -99,12 +99,15 @@ public final class Buildings {
                 sink.set(x, y, z, st);
                 continue;
             }
-            // vora
+            // vora: material de la paret en aquesta filera (franges horitzontals i muntants verticals)
+            BlockState wallY = wall;
+            if (b.rows.length > 0 && rel - 1 < b.rows.length) wallY = Pal.of(b.rows[rel - 1]);
+            if (b.mullionEvery > 0 && rel - 1 >= b.mullionFrom && Math.floorMod(u, b.mullionEvery) == 0) wallY = Pal.of(b.mullion);
             if (b.band.length == 2 && y >= top - 4 && y < top) {
                 st = Pal.of(b.band[((u + y) & 1)]);
             } else if (r == 0 || y == top) {
                 char below = isFacade ? facadeChar(b, Math.max(0, k - 1), fu) : 'W';
-                st = below == '#' || below == 'X' && b.accent != null || corner ? accent : wall;
+                st = below == '#' || below == 'X' && b.accent != null || corner ? accent : wallY;
                 // marquesina sobre la planta baixa (porxo de teula)
                 if (isFacade && k == b.canopyFloor && r == 0 && outsideFree) {
                     BlockState sl = Pal.roofFamily(b.roof)[1];
@@ -114,15 +117,15 @@ public final class Buildings {
             } else if (b.frieze && k == b.floors - 1 && r == fh - 1) {
                 st = accent; // fris de maó sota el ràfec
             } else if (isFacade) {
-                st = facadeBlock(sink, td, b, wall, accent, facadeChar(b, k, fu), x, y, z, r, fh, k, out);
+                st = facadeBlock(sink, td, b, wallY, accent, facadeChar(b, k, fu), x, y, z, r, fh, k, out);
             } else if (corner) {
-                st = b.accent != null ? accent : wall;
+                st = b.accent != null ? accent : wallY;
             } else {
-                st = wall;
+                st = wallY;
                 boolean winRow = fh <= 3 ? (r >= 1) : (r >= 2 && r <= fh - 1);
                 if (k == 0 && door && r <= 2) {
                     st = Pal.door(Blocks.SPRUCE_DOOR, out, r == 2);
-                } else if (winRow && Math.floorMod(u, 4) >= 2 && y < top) {
+                } else if (b.rows.length == 0 && winRow && Math.floorMod(u, 4) >= 2 && y < top) {
                     st = pane(Blocks.GLASS_PANE, odx);
                 }
             }
@@ -130,6 +133,17 @@ public final class Buildings {
         }
         roof(sink, td, b, x, z, edge, top, wall, accent, fl, isFacade ? facadeChar(b, b.floors - 1, fu) : 'W',
                 odx, odz, outsideFree);
+        // porxo pla sobre pilars al llarg de la façana principal
+        if (isFacade && b.canopyRow > 0 && outsideFree) {
+            int cy = base + b.canopyRow;
+            BlockState slab = Pal.of(b.canopyBlock);
+            if (slab.contains(net.minecraft.block.SlabBlock.TYPE)) slab = slab.with(net.minecraft.block.SlabBlock.TYPE, SlabType.TOP);
+            for (int i = 1; i <= b.canopyDepth; i++) sink.set(x + odx * i, cy, z + odz * i, slab);
+            if (Math.floorMod(u, b.canopyEvery) == 0) {
+                int px = x + odx * b.canopyDepth, pz = z + odz * b.canopyDepth;
+                for (int yy = base + 1; yy < cy; yy++) sink.set(px, yy, pz, Pal.of(b.canopyPillar));
+            }
+        }
     }
 
     private static BlockState ceiling(TownData.Building b) {
@@ -242,6 +256,7 @@ public final class Buildings {
             BlockState m = roofFlat(b);
             int h = (int) Math.min(9, Math.floor(2.3 * Math.sqrt(d)));
             for (int y = top + 1; y <= top + h; y++) sink.set(x, y, z, m);
+            if (edge) sink.set(x, top + 1, z, Blocks.WHITE_CONCRETE.getDefaultState()); // ràfec blanc de la volta
             if (!edge) sink.set(x, top, z, Pal.AIR);
             return;
         }
