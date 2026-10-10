@@ -79,7 +79,7 @@ S = dict(
     CYCLEWAY=8, PARKING=9, PLAZA=10, PARK=11, TURF=12, TURF_LINE=13, COURT=14,
     WATER=15, POOL=16, GARDEN=17, SAND=18, GRAVEL=19, SHRUB=20, BARE=21, CEMETERY=22,
     PLAZA_TREES=23, STREAM=24, MEADOW=25, COURT_LINE=26, ROAD_MAIN=27, POOL_DECK=28, SOIL=29, PAVING=30,
-    CONCRETE=31, CONCRETE_LINE=32, MOUND=33,
+    CONCRETE=31, CONCRETE_LINE=32, MOUND=33, PATIO_TILES=34, SAND_LOT=35,
 )
 DECO = dict(NONE=0, WALL=1, HEDGE=2, FENCE=3, GOAL=10, HOOP=11, RETAINING=4, FENCE_LOW=5)
 
@@ -270,11 +270,14 @@ OC = dict(UNKNOWN=0, LAWN=1, TREE=2, SOIL=3, PAVING=4, ASPHALT=5, POOL=6, ROOF_R
 SOFT = None  # superfícies "toves" que l'ortofoto pot corregir (s'omple a main)
 
 
-def paint_crossings(ways, nodes, surf, carriage, road_geoms):
-    """Passos de zebra on n'hi ha de veritat (nodes highway=crossing i vies footway=crossing de l'OSM).
+def paint_crossings(ways, nodes, surf, carriage, road_geoms, marks=None):
+    """Passos de zebra on n'hi ha de veritat (nodes highway=crossing i vies footway=crossing de l'OSM, i els que
+    s'afegeixen a mà a landmarks.json -> "crossings" mirant l'ortofoto o Street View).
     Les franges van paral·leles al carrer i s'alternen d'un costat a l'altre, cada metre."""
     pts_path = os.path.join(DATA, "osm_points.json")
     points = json.load(open(pts_path)) if os.path.exists(pts_path) else []
+    for la, lo in (marks or {}).get("crossings", []):
+        points.append(dict(kind="crossing", lat=la, lon=lo, tags={}))
     crossings = []  # (centre, direcció travessant, mig-llarg)
     for p in points:
         if p["kind"] != "crossing" or p["tags"].get("crossing") in ("unmarked", "no"):
@@ -315,6 +318,119 @@ def paint_crossings(ways, nodes, surf, carriage, road_geoms):
         n += 1
     log(f"passos de vianants: {n}")
     return [p for p in points if p["kind"] in ("bench", "drinking_water", "bus_stop")]
+
+
+# ---------------------------------------------------------------- parcel·les detallades (sistema local de cada casa)
+# Cada casa destacada pot tenir "frame": {"center": [lat, lon], "angle": graus}. Coordenades locals (u, v) en metres:
+# u en la direcció de l'angle (0 = est, 90 = sud) i v perpendicular (u girat 90° en sentit horari).
+F_GATE = 128  # bit de la capa de vores: porta de tanca (només en columnes sense edifici)
+
+
+def lm_frame(lm):
+    fr = lm["frame"]
+    cx, cz = to_xz(*fr["center"])
+    t = math.radians(fr["angle"])
+    return cx, cz, (math.cos(t), math.sin(t)), (-math.sin(t), math.cos(t))
+
+
+def lpt(fr, u, v):
+    cx, cz, e1, e2 = fr
+    return cx + u * e1[0] + v * e2[0], cz + u * e1[1] + v * e2[1]
+
+
+def lpoly(fr, pts):
+    """polígon (coordenades locals) -> Polygon en píxels del ràster"""
+    return Polygon([px(*lpt(fr, u, v)) for u, v in pts]).buffer(0)
+
+
+def lbox(fr, box):
+    u0, v0, u1, v1 = box
+    return lpoly(fr, [(u0, v0), (u1, v0), (u1, v1), (u0, v1)])
+
+
+def front_vec(fr, side):
+    cx, cz, e1, e2 = fr
+    sgn = -1 if side.startswith("-") else 1
+    e = e1 if side.endswith("u") else e2
+    return sgn * e[0], sgn * e[1]
+
+
+def cells_4conn(pts):
+    """cel·les d'una polilínia (en píxels) connectades per costat, sense forats en diagonal"""
+    out = []
+    for (x0, z0), (x1, z1) in zip(pts, pts[1:]):
+        n = max(2, int(math.hypot(x1 - x0, z1 - z0) * 4))
+        prev = None
+        for i in range(n + 1):
+            t = i / n
+            c = (int(math.floor(x0 + (x1 - x0) * t)), int(math.floor(z0 + (z1 - z0) * t)))
+            if prev is not None and c != prev and c[0] != prev[0] and c[1] != prev[1]:
+                out.append((c[0], prev[1]))
+            if c != prev:
+                out.append(c)
+            prev = c
+    return out
+
+
+def apply_parcels(marks, surf, bid, carriage, deco):
+    """Terra de les parcel·les detallades (pati, gespa, terrassa) i solars descrits a mà."""
+    names = {k: v for k, v in S.items()}
+    n = 0
+    for lm in marks["buildings"]:
+        if "frame" not in lm:
+            continue
+        fr = lm_frame(lm)
+        for pc in lm.get("parcel", []):
+            g = lbox(fr, pc["box"]) if "box" in pc else lpoly(fr, pc["poly"])
+            m = poly_mask(g) & (bid == 0) & ~carriage & (surf != S["POOL"])
+            surf[m] = names[pc["surface"]]
+            n += int(m.sum())
+        for hl in lm.get("hedges", []):
+            for x, z in cells_4conn([px(*lpt(fr, u, v)) for u, v in hl]):
+                if 0 <= x < W and 0 <= z < H and bid[z, x] == 0 and not carriage[z, x]:
+                    deco[z, x] = DECO["HEDGE"]
+    for lot in marks.get("lots", []):
+        g = Polygon([px(x, z) for x, z in lot["poly_xz"]]).buffer(0)
+        m = poly_mask(g) & (bid == 0) & ~carriage & (surf != S["SIDEWALK"])
+        surf[m] = names[lot["surface"]]
+        n += int(m.sum())
+    log(f"parcel·les detallades: {n} m2")
+
+
+def draw_fences(marks, fu, fl, bid, carriage, ways, nodes):
+    """Tanques de les parcel·les (polilínies locals) i del recinte de l'escola (vora d'un polígon de l'OSM)."""
+    def put_line(cells, idx, gates):
+        k = 0
+        for x, z in cells:
+            if not (0 <= x < W and 0 <= z < H) or bid[z, x] != 0 or carriage[z, x]:
+                continue
+            fu[z, x] = idx
+            k += 1
+            for gate in gates:
+                if gate.contains(Point(x + 0.5, z + 0.5)):
+                    fl[z, x] |= F_GATE
+        return k
+
+    total = 0
+    for lm in marks["buildings"]:
+        if "frame" not in lm:
+            continue
+        fr = lm_frame(lm)
+        for fc in lm.get("fences", []):
+            idx = len(FENCES)
+            FENCES.append({k: fc[k] for k in ("base", "top", "pillar", "pillar_every", "cap", "gate") if k in fc})
+            gates = [lbox(fr, gb) for gb in fc.get("gates", [])]
+            total += put_line(cells_4conn([px(*lpt(fr, u, v)) for u, v in fc["line"]]), idx, gates)
+    for af in marks.get("area_fences", []):
+        w = ways.get(af["osm_id"])
+        if not w:
+            continue
+        pts = way_xy(w, nodes)
+        idx = len(FENCES)
+        FENCES.append({k: af[k] for k in ("base", "top", "pillar", "pillar_every", "cap", "gate") if k in af})
+        gates = [Polygon([px(x, z) for x, z in [(g[0], g[1]), (g[2], g[1]), (g[2], g[3]), (g[0], g[3])]]) for g in af.get("gates_xz", [])]
+        total += put_line(cells_4conn(pts), idx, gates)
+    log(f"tanques de parcel·la: {total} m")
 
 
 def apply_plazas(surf, bid, carriage, marks):
@@ -607,6 +723,9 @@ def main():
                 width = float(t["width"].split()[0])
             except ValueError:
                 pass
+        for ro in marks.get("road_overrides", []):
+            if ro["osm_id"] == w["id"]:
+                width = ro.get("width", width)
         road_lines.append((pts, width, walk, code, hw))
         if hw in ("footway", "path", "track", "cycleway", "steps", "bridleway"):
             continue
@@ -635,7 +754,7 @@ def main():
                 surf[z, x] = S["MARKING"]
 
     # ------------------------------------------------ passos de vianants (OSM) i mobiliari urbà
-    street_points = paint_crossings(ways, nodes, surf, carriage, road_geoms)
+    street_points = paint_crossings(ways, nodes, surf, carriage, road_geoms, marks)
 
     # ------------------------------------------------ barreres
     for w in ways.values():
@@ -667,9 +786,49 @@ def main():
             landmark_of[idx] = lm
             log(f"landmark {lm['id']} -> {blds[idx]['src']} {blds[idx]['osm_id']}")
 
+    # planta exacta de les cases amb sistema local (mesurada a l'ortofoto): substitueix la de l'OSM
+    lm_idx = {id(lm): i for i, lm in landmark_of.items()}
+    for lm in lm_list:
+        if "frame" not in lm or "body" not in lm:
+            continue
+        fr = lm_frame(lm)
+        g = lbox(fr, lm["body"])
+        shapes = [g]
+        idx = lm_idx.get(id(lm))
+        if idx is not None:
+            blds[idx]["geom"] = g
+        else:
+            custom.append((lm, g))
+        for part in lm.get("parts", []):
+            pg = lbox(fr, part["box"])
+            shapes.append(pg)
+            spec = {k: v for k, v in lm.items() if k in ("wall", "accent", "roof", "roof_type", "frame", "front", "eave",
+                                                          "plinth", "gable_wall", "shutter", "rail", "garage")}
+            spec.update({k: v for k, v in part.items() if k not in ("box", "name")})
+            spec["id"] = lm["id"] + "_" + part["name"]
+            spec["source"] = "part"
+            spec.setdefault("floors", 1)
+            spec.setdefault("facade", [])
+            custom.append((spec, pg))
+        # treu els edificis de l'OSM/Microsoft que hi queden a sota (eren la mateixa casa mal situada)
+        allg = unary_union(shapes)
+        for j, ob in enumerate(blds):
+            if j == idx or ob.get("drop"):
+                continue
+            inter = ob["geom"].intersection(allg).area
+            if inter <= 0:
+                continue
+            if inter > 0.3 * ob["geom"].area:
+                ob["drop"] = True
+            else:
+                ob["geom"] = ob["geom"].difference(allg)
+        log(f"planta exacta {lm['id']}: {g.area:.0f} m2 + {len(shapes) - 1} parts")
+
     order = sorted(range(len(blds)), key=lambda i: -blds[i]["geom"].area)
     for i in order:
         b = blds[i]
+        if b.get("drop"):
+            continue
         g = b["geom"]
         m = poly_mask(g)
         if m.sum() < 4:
@@ -687,8 +846,8 @@ def main():
         m = poly_mask(g)
         n = len(meta_buildings)
         bid[m] = n
-        meta_buildings.append(dict(src="rect", osm_id=0, tags={}, area=float(g.area), landmark=lm, geom=g))
-        log(f"landmark {lm['id']} rect {int(g.area)} m2")
+        meta_buildings.append(dict(src=lm.get("source", "rect"), osm_id=0, tags={}, area=float(g.area), landmark=lm, geom=g))
+        log(f"landmark {lm['id']} {lm.get('source', 'rect')} {int(g.area)} m2")
 
     # ------------------------------------------------ ortofoto: terra, piscines, coberts i arbres
     ortho = load_ortho()
@@ -705,6 +864,7 @@ def main():
             meta_buildings.append(dict(src="ortho", osm_id=0, tags={"building": "shed"}, area=float(g.area), landmark=None, geom=g))
         apply_ortho_ground(ortho, surf, bid, road_px, urban, core_mask)
     plaza_mask = apply_plazas(surf, bid, carriage, marks)
+    apply_parcels(marks, surf, bid, carriage, deco)
     if ortho is not None:
         trees_out = ortho_trees(ortho, surf, bid, road_px, urban, core_mask)
         # color de teulada de cada edifici (mitjana dels píxels visibles del sostre)
@@ -717,6 +877,31 @@ def main():
         for k, n in enumerate(idxs):
             if cnt[k] >= 4:
                 meta_buildings[n]["roof_rgb"] = (means[0][k], means[1][k], means[2][k])
+
+    # edificis destacats amb "grow_from_ortho": s'hi afegeixen els trossos de coberta blanca que l'OSM no inclou
+    # (mòduls de l'escola més llargs del que diu el mapa). Només coberta clara, tocant l'edifici i dins el recinte.
+    if ortho is not None:
+        rgb = ortho[2].astype(np.float32)
+        lum = rgb.mean(-1)
+        satur = (rgb.max(-1) - rgb.min(-1)) / np.maximum(rgb.max(-1), 1)
+        whiteroof = (lum > 218) & (satur < 0.09)
+        for n_, mb in enumerate(meta_buildings):
+            lm_ = mb["landmark"] if mb else None
+            if not lm_ or not lm_.get("grow_from_ortho"):
+                continue
+            own = bid == n_
+            zone = ndimage.binary_dilation(own, iterations=12)
+            cand = whiteroof & zone & (bid == 0) & ~road_px & ~carriage
+            cand = ndimage.binary_opening(cand, iterations=2)
+            lab_, nl_ = ndimage.label(cand)
+            touch = ndimage.binary_dilation(own, iterations=1)
+            added = 0
+            for k_ in range(1, nl_ + 1):
+                comp = lab_ == k_
+                if comp.sum() >= 10 and (comp & touch).any():
+                    bid[comp] = n_
+                    added += int(comp.sum())
+            log(f"{lm_['id']}: +{added} m2 de coberta vista a l'ortofoto")
 
     # neteja fragments minúsculs que han quedat tapats
     counts = np.bincount(bid.ravel(), minlength=len(meta_buildings))
@@ -784,6 +969,8 @@ def main():
             mark_door(fl, sl, m, road_px)
         out_b.append(spec)
 
+    draw_fences(marks, fu, fl, bid, carriage, ways, nodes)
+
     # piscines: una mica per sota del terra ja es fa al mod
     # ------------------------------------------------ decoració
     decos = []
@@ -797,10 +984,36 @@ def main():
             st = e.pop("start", 0)
             x, z = cx_ + hx * st, cz_ + hz * st
             e["hx"], e["hz"] = round(hx, 4), round(hz, 4)
+        elif "xz" in e:
+            x, z = e.pop("xz")
         else:
             x, z = to_xz(*e.pop("point"))
         e["x"], e["z"] = int(round(x)), int(round(z))
         decos.append(e)
+    # arbres d'alineació en escocells, al llarg d'un carrer (a un costat i a una distància de l'eix)
+    for st in marks.get("street_trees", []):
+        w = ways.get(st["osm_id"])
+        if not w:
+            continue
+        line = LineString(way_xy(w, nodes))
+        tx_, tz_ = px(*st["toward_xz"])
+        cands = []
+        for side in ("left", "right"):
+            off = line.parallel_offset(st["offset"], side)
+            if off.is_empty:
+                continue
+            if off.geom_type == "MultiLineString":
+                off = max(off.geoms, key=lambda q: q.length)
+            cands.append((off.distance(Point(tx_, tz_)), off))
+        off = min(cands, key=lambda c: c[0])[1]
+        a0, a1 = st.get("from", 0.0) * off.length, st.get("to", 1.0) * off.length
+        d_ = a0
+        while d_ <= a1:
+            q = off.interpolate(d_)
+            ix, iz = int(math.floor(q.x)), int(math.floor(q.y))
+            if 0 <= ix < W and 0 <= iz < H and bid[iz, ix] == 0 and not carriage[iz, ix]:
+                decos.append(dict(type="street_tree", x=ix + X0, z=iz + Z0))
+            d_ += st["spacing"]
     decos += EXTRA_DECOS
     for p in street_points:
         x_, z_ = to_xz(p["lat"], p["lon"])
@@ -953,7 +1166,7 @@ def collect_buildings(ways, rels, nodes):
 
 
 def find_building(blds, lm):
-    p = Point(*ll_px(*lm["point"]))
+    p = Point(*ll_px(*(lm["point"] if "point" in lm else lm["frame"]["center"])))
     if lm["source"] == "osm_named":
         for i, b in enumerate(blds):
             if b["osm_id"] == lm["osm_id"]:
@@ -1063,7 +1276,10 @@ def mark_facade(fu, fl, sl, m, road_geoms, lm, base, fh, floors, bid_full, surf_
     gz, gx = zs + sl[0].start, xs + sl[1].start
     cxz = Point(float(gx.mean()), float(gz.mean()))
     # direcció cap a la càmera de Street View o cap al carrer més proper
-    if "view" in lm:
+    if "frame" in lm and "front" in lm:
+        fvx, fvz = front_vec(lm_frame(lm), lm["front"])
+        vx, vz = cxz.x + fvx * 50, cxz.y + fvz * 50
+    elif "view" in lm:
         vx, vz = ll_px(lm["view"][0], lm["view"][1])
     else:
         line, width = min(road_geoms, key=lambda r: r[0].distance(cxz))
@@ -1254,7 +1470,7 @@ def style_for(n, mb, road_px, sl, m):
         return spec
     spec.update(wall=lm["wall"], accent=lm.get("accent"), roof=lm["roof"], roof_type=lm["roof_type"],
                 floors=lm["floors"], fh=lm.get("floor_height", 3), landmark=lm["id"], facade=lm.get("facade", []))
-    for k in ("band", "plinth", "rail", "garage", "shutter", "eave", "repeat", "canopy_floor", "interior", "frieze", "eave_block", "rows", "mullions", "canopy"):
+    for k in ("band", "plinth", "rail", "garage", "shutter", "eave", "repeat", "canopy_floor", "interior", "frieze", "eave_block", "rows", "mullions", "canopy", "gable_wall"):
         if k in lm:
             spec[k] = lm[k]
     return spec
@@ -1295,7 +1511,8 @@ COLORS = {
     "TRACK": (150, 130, 100), "CYCLEWAY": (170, 70, 60), "PARKING": (130, 130, 130), "PLAZA": (190, 185, 175),
     "PARK": (100, 180, 90), "TURF": (40, 140, 60), "TURF_LINE": (250, 250, 250), "COURT": (180, 70, 60),
     "COURT_LINE": (250, 250, 250), "POOL_DECK": (225, 215, 180), "SOIL": (185, 160, 110), "PAVING": (205, 205, 200),
-    "CONCRETE": (175, 175, 170), "CONCRETE_LINE": (255, 255, 255), "MOUND": (70, 70, 75), "WATER": (60, 110, 200), "STREAM": (60, 110, 200), "POOL": (80, 200, 230),
+    "CONCRETE": (175, 175, 170), "CONCRETE_LINE": (255, 255, 255), "MOUND": (70, 70, 75),
+    "PATIO_TILES": (215, 180, 175), "SAND_LOT": (225, 200, 185), "WATER": (60, 110, 200), "STREAM": (60, 110, 200), "POOL": (80, 200, 230),
     "GARDEN": (140, 185, 95), "SAND": (225, 205, 150), "GRAVEL": (160, 155, 150), "SHRUB": (95, 140, 70),
     "BARE": (175, 150, 120), "CEMETERY": (150, 150, 140), "PLAZA_TREES": (200, 180, 140), "MEADOW": (150, 180, 90),
 }

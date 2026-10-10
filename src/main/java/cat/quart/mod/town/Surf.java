@@ -6,7 +6,8 @@ public final class Surf {
             TRACK = 7, CYCLEWAY = 8, PARKING = 9, PLAZA = 10, PARK = 11, TURF = 12, TURF_LINE = 13, COURT = 14,
             WATER = 15, POOL = 16, GARDEN = 17, SAND = 18, GRAVEL = 19, SHRUB = 20, BARE = 21, CEMETERY = 22,
             PLAZA_TREES = 23, STREAM = 24, MEADOW = 25, COURT_LINE = 26, ROAD_MAIN = 27, POOL_DECK = 28, SOIL = 29, PAVING = 30,
-            CONCRETE = 31, CONCRETE_LINE = 32, MOUND = 33;
+            CONCRETE = 31, CONCRETE_LINE = 32, MOUND = 33,
+            PATIO_TILES = 34, SAND_LOT = 35;
 
     public static final int DECO_WALL = 1, DECO_HEDGE = 2, DECO_FENCE = 3, DECO_RETAINING = 4;
 

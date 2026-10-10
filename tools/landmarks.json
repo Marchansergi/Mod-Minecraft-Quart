@@ -1,5 +1,5 @@
 {
-  "_comment": "Edificis i llocs destacats de Quart. 'point' = [lat, lon] (WGS84). 'source': 'osm' = usa la planta real del mapa (edifici que conté/és més a prop del punt); 'rect' = planta rectangular dibuixada davant del carrer més proper (per als edificis que falten a OpenStreetMap). Façana: cada cadena és una planta (de baix a dalt), llegida d'esquerra a dreta mirant des del carrer. Caràcters: W paret, X paret secundària (accent), w finestra, x finestra en paret accent, D porta, G porta de garatge, B finestra amb balcó, S aparador de botiga, # pilastra/cantonada (accent), P persiana tancada, - paret llisa. Per a 'rect', 'view' = [lat, lon, rumb] de la càmera de Street View que mira la façana. Altres caràcters: R finestra amb persiana, I finestra amb reixa, d porta blanca, P persiana metàl·lica, C pilar que sobresurt de la coberta. Opcions: repeat (la façana es repeteix per habitatge), plinth (sòcol), rail (barana dels balcons), garage, shutter, eave (ràfec), canopy_floor (teuladeta sobre una planta), fence (mur de parcel·la), chimney [u, fondària, alçada], porch {u, width, depth}, roof_type hipped/gable_front/gable_side/flat/vault. 'pools': piscines amb el contorn exacte [lat, lon] i 'deck' (metres de vorada de pedra al voltant). 'interior': {type: house|info_point|museum|social|gym|school|supermarket|shop_flats, dwellings: N habitatges en filera, rooms: N aules}. 'sign': rètol a la façana (lines, wood, floor_row). 'frieze': fris de maó sota el ràfec. 'eave_block': material del ràfec. 'plazas': places de formigó amb el dibuix de línies blanques tret de l'ortofoto (ribbon_delta: quant més clares que el formigó han de ser les cintes; stripe: separació de les línies) i una muntanyeta (mound) opcional. 'rows': material de cada filera de la paret (de baix a dalt). 'mullions': muntants verticals {every, from_row, block}. 'canopy': porxo pla {row, depth, every, block, pillar}.",
+  "_comment": "Edificis i llocs destacats de Quart. 'point' = [lat, lon] (WGS84). 'source': 'osm' = usa la planta real del mapa (edifici que conté/és més a prop del punt); 'rect' = planta rectangular dibuixada davant del carrer més proper (per als edificis que falten a OpenStreetMap). Façana: cada cadena és una planta (de baix a dalt), llegida d'esquerra a dreta mirant des del carrer. Caràcters: W paret, X paret secundària (accent), w finestra, x finestra en paret accent, D porta, G porta de garatge, B finestra amb balcó, S aparador de botiga, # pilastra/cantonada (accent), P persiana tancada, - paret llisa. Per a 'rect', 'view' = [lat, lon, rumb] de la càmera de Street View que mira la façana. Altres caràcters: R finestra amb persiana, I finestra amb reixa, d porta blanca, P persiana metàl·lica, C pilar que sobresurt de la coberta. Opcions: repeat (la façana es repeteix per habitatge), plinth (sòcol), rail (barana dels balcons), garage, shutter, eave (ràfec), canopy_floor (teuladeta sobre una planta), fence (mur de parcel·la), chimney [u, fondària, alçada], porch {u, width, depth}, roof_type hipped/gable_front/gable_side/flat/vault. 'pools': piscines amb el contorn exacte [lat, lon] i 'deck' (metres de vorada de pedra al voltant). 'interior': {type: house|info_point|museum|social|gym|school|supermarket|shop_flats, dwellings: N habitatges en filera, rooms: N aules}. 'sign': rètol a la façana (lines, wood, floor_row). 'frieze': fris de maó sota el ràfec. 'eave_block': material del ràfec. 'plazas': places de formigó amb el dibuix de línies blanques tret de l'ortofoto (ribbon_delta: quant més clares que el formigó han de ser les cintes; stripe: separació de les línies) i una muntanyeta (mound) opcional. 'rows': material de cada filera de la paret (de baix a dalt). 'mullions': muntants verticals {every, from_row, block}. 'canopy': porxo pla {row, depth, every, block, pillar}. Cases amb 'frame' {center, angle}: coordenades locals (u, v) en metres (u cap a l'angle, v girat 90° horari); 'body' [u0,v0,u1,v1] parets; 'front' costat de la façana (-u/+u/-v/+v); 'parts' volums afegits (porxo...); 'parcel' terra (surface + box); 'fences' tanques (line, base, top, pillar, pillar_every, cap, gate, gates=[caixes]); 'hedges' bardisses. 'area_fences': tanca a la vora d'un polígon de l'OSM. 'lots': solars (poly_xz en coordenades del món). 'road_overrides': amplada de carrers. 'crossings': passos de zebra afegits a mà [lat, lon]. 'street_trees': arbres d'alineació al llarg d'un carrer.",
   "spawn": [
     41.9380805,
     2.8392814
@@ -185,7 +185,7 @@
       "floor_height": 4,
       "wall": "minecraft:white_concrete",
       "accent": "minecraft:light_gray_concrete",
-      "roof": "flat:minecraft:light_gray_concrete",
+      "roof": "flat:minecraft:white_concrete",
       "roof_type": "flat",
       "facade": [
         "wwWwwWDWwwWwwWwwW"
@@ -193,7 +193,8 @@
       "interior": {
         "type": "school",
         "rooms": 4
-      }
+      },
+      "grow_from_ortho": true
     },
     {
       "id": "el_teu_super",
@@ -311,13 +312,163 @@
       "roof": "mud_bricks",
       "roof_type": "hipped",
       "facade": [
-        "WRRWWDWWRRW",
-        "WRRWWRWWRRW"
+        "WRRWWWDWWWWRRW",
+        "WRRWWWRRWWWRRW"
       ],
       "eave": true,
       "interior": {
         "type": "house"
-      }
+      },
+      "frame": {
+        "center": [
+          41.94256318,
+          2.83755523
+        ],
+        "angle": 60.5
+      },
+      "body": [
+        -10.6,
+        -7.6,
+        3.2,
+        3.2
+      ],
+      "front": "+v",
+      "parcel": [
+        {
+          "surface": "PATIO_TILES",
+          "box": [
+            -14.4,
+            3.2,
+            4.6,
+            5.8
+          ]
+        },
+        {
+          "surface": "PAVING",
+          "box": [
+            3.2,
+            -7.6,
+            4.6,
+            3.2
+          ]
+        },
+        {
+          "surface": "GARDEN",
+          "box": [
+            -14.4,
+            -7.6,
+            -10.6,
+            3.2
+          ]
+        },
+        {
+          "surface": "GARDEN",
+          "box": [
+            -14.4,
+            -29.3,
+            4.6,
+            -7.6
+          ]
+        },
+        {
+          "surface": "POOL_DECK",
+          "box": [
+            -12.9,
+            -28.5,
+            1.5,
+            -19.4
+          ]
+        }
+      ],
+      "fences": [
+        {
+          "line": [
+            [
+              -14.7,
+              6.0
+            ],
+            [
+              4.9,
+              6.0
+            ]
+          ],
+          "base": "minecraft:smooth_sandstone",
+          "top": "minecraft:gray_concrete",
+          "pillar": "minecraft:smooth_sandstone",
+          "pillar_every": 3,
+          "gate": "minecraft:dark_oak_fence_gate",
+          "gates": [
+            [
+              -5.0,
+              5.4,
+              -2.8,
+              6.6
+            ]
+          ]
+        },
+        {
+          "line": [
+            [
+              -14.7,
+              -29.6
+            ],
+            [
+              4.9,
+              -29.6
+            ]
+          ],
+          "base": "minecraft:white_concrete",
+          "top": "minecraft:green_stained_glass_pane"
+        },
+        {
+          "line": [
+            [
+              -14.7,
+              -29.6
+            ],
+            [
+              -14.7,
+              6.0
+            ]
+          ],
+          "base": "minecraft:bricks"
+        },
+        {
+          "line": [
+            [
+              4.9,
+              -29.6
+            ],
+            [
+              4.9,
+              6.0
+            ]
+          ],
+          "base": "minecraft:bricks"
+        }
+      ],
+      "hedges": [
+        [
+          [
+            -14.3,
+            -29.2
+          ],
+          [
+            -14.3,
+            -8.0
+          ]
+        ],
+        [
+          [
+            4.5,
+            -29.2
+          ],
+          [
+            4.5,
+            -8.0
+          ]
+        ]
+      ]
     },
     {
       "id": "casa5",
@@ -361,38 +512,189 @@
       ],
       "source": "osm",
       "floors": 2,
-      "wall": "minecraft:terracotta",
-      "accent": "minecraft:white_terracotta",
+      "wall": "minecraft:bricks",
+      "accent": "minecraft:bricks",
       "roof": "granite",
       "roof_type": "gable_front",
       "facade": [
-        "WWRRWWWDWWW",
-        "WRRWWWWRRWW"
-      ],
-      "fence": {
-        "base": "minecraft:bricks",
-        "top": "minecraft:gray_concrete"
-      },
-      "view": [
-        41.9426806,
-        2.8385617,
-        183.99
+        "WWWRRWDW",
+        "WWWRRWRW"
       ],
       "shutter": "minecraft:white_concrete",
       "eave": true,
       "chimney": [
-        0.12,
-        2,
+        0.1,
+        1.5,
         2
       ],
-      "porch": {
-        "u": 6,
-        "width": 4,
-        "depth": 2
-      },
       "interior": {
         "type": "house"
-      }
+      },
+      "frame": {
+        "center": [
+          41.94244524,
+          2.83858501
+        ],
+        "angle": 58.1
+      },
+      "body": [
+        -11.0,
+        -5.75,
+        3.75,
+        2.0
+      ],
+      "front": "-u",
+      "gable_wall": "minecraft:white_terracotta",
+      "rows": [
+        "minecraft:bricks",
+        "minecraft:bricks",
+        "minecraft:smooth_quartz",
+        "minecraft:bricks",
+        "minecraft:bricks",
+        "minecraft:bricks"
+      ],
+      "parts": [
+        {
+          "name": "porxo",
+          "box": [
+            -13.5,
+            -1.75,
+            -11.0,
+            2.0
+          ],
+          "floors": 1,
+          "floor_height": 3,
+          "roof_type": "gable_front",
+          "facade": [
+            "WSSW"
+          ],
+          "rows": []
+        }
+      ],
+      "parcel": [
+        {
+          "surface": "PATIO_TILES",
+          "box": [
+            -15.6,
+            -9.0,
+            -11.0,
+            4.6
+          ]
+        },
+        {
+          "surface": "PATIO_TILES",
+          "box": [
+            -11.0,
+            -9.0,
+            -5.0,
+            -5.75
+          ]
+        },
+        {
+          "surface": "GARDEN",
+          "box": [
+            -5.0,
+            -9.0,
+            8.0,
+            -5.75
+          ]
+        },
+        {
+          "surface": "PATIO_TILES",
+          "box": [
+            -11.0,
+            2.0,
+            4.5,
+            4.6
+          ]
+        },
+        {
+          "surface": "GARDEN",
+          "box": [
+            3.75,
+            -5.75,
+            8.0,
+            4.6
+          ]
+        }
+      ],
+      "fences": [
+        {
+          "line": [
+            [
+              -15.8,
+              -9.2
+            ],
+            [
+              -15.8,
+              4.8
+            ]
+          ],
+          "base": "minecraft:bricks",
+          "top": "minecraft:gray_concrete",
+          "pillar": "minecraft:bricks",
+          "pillar_every": 3,
+          "cap": "minecraft:lantern",
+          "gate": "minecraft:dark_oak_fence_gate",
+          "gates": [
+            [
+              -16.4,
+              -2.1,
+              -15.2,
+              -0.9
+            ],
+            [
+              -16.4,
+              2.2,
+              -15.2,
+              4.6
+            ]
+          ]
+        },
+        {
+          "line": [
+            [
+              -15.8,
+              -9.2
+            ],
+            [
+              8.2,
+              -9.2
+            ]
+          ],
+          "base": "minecraft:white_concrete",
+          "top": "minecraft:green_stained_glass_pane"
+        },
+        {
+          "line": [
+            [
+              -15.8,
+              4.8
+            ],
+            [
+              8.2,
+              4.8
+            ],
+            [
+              8.2,
+              -9.2
+            ]
+          ],
+          "base": "minecraft:bricks"
+        }
+      ],
+      "hedges": [
+        [
+          [
+            -15.2,
+            -8.7
+          ],
+          [
+            8.0,
+            -8.7
+          ]
+        ]
+      ]
     },
     {
       "id": "casa7",
@@ -408,17 +710,8 @@
       "roof": "granite",
       "roof_type": "hipped",
       "facade": [
-        "WWRWXGGXGGXWdW",
-        "WRRWXBBXBBXWRW"
-      ],
-      "fence": {
-        "base": "minecraft:bricks",
-        "top": "minecraft:gray_concrete"
-      },
-      "view": [
-        41.9425148,
-        2.836843,
-        245.32
+        "WRRWXGGGXGGXDRW",
+        "WIIWXBBBXBBXWRW"
       ],
       "rail": "minecraft:white_stained_glass_pane",
       "garage": "minecraft:smooth_quartz",
@@ -426,7 +719,137 @@
       "eave": true,
       "interior": {
         "type": "house"
-      }
+      },
+      "frame": {
+        "center": [
+          41.94240743,
+          2.83668221
+        ],
+        "angle": 60.2
+      },
+      "body": [
+        -10.4,
+        -7.4,
+        4.4,
+        4.3
+      ],
+      "front": "-v",
+      "parcel": [
+        {
+          "surface": "PATIO_TILES",
+          "box": [
+            -12.4,
+            -11.0,
+            6.8,
+            -7.4
+          ]
+        },
+        {
+          "surface": "GARDEN",
+          "box": [
+            4.4,
+            -7.4,
+            6.8,
+            9.5
+          ]
+        },
+        {
+          "surface": "PAVING",
+          "box": [
+            -10.4,
+            4.3,
+            4.4,
+            9.5
+          ]
+        },
+        {
+          "surface": "GARDEN",
+          "box": [
+            -12.4,
+            -7.4,
+            -10.4,
+            9.5
+          ]
+        }
+      ],
+      "fences": [
+        {
+          "line": [
+            [
+              -12.7,
+              -11.3
+            ],
+            [
+              7.0,
+              -11.3
+            ]
+          ],
+          "base": "minecraft:bricks",
+          "top": "minecraft:gray_concrete",
+          "pillar": "minecraft:bricks",
+          "pillar_every": 3,
+          "gate": "minecraft:spruce_fence_gate",
+          "gates": [
+            [
+              -7.1,
+              -12.0,
+              -4.5,
+              -10.6
+            ],
+            [
+              -9.4,
+              -12.0,
+              -8.1,
+              -10.6
+            ]
+          ]
+        },
+        {
+          "line": [
+            [
+              -12.7,
+              -11.3
+            ],
+            [
+              -12.7,
+              9.8
+            ]
+          ],
+          "base": "minecraft:bricks",
+          "top": "minecraft:gray_concrete",
+          "pillar": "minecraft:bricks",
+          "pillar_every": 3
+        },
+        {
+          "line": [
+            [
+              7.0,
+              -11.3
+            ],
+            [
+              7.0,
+              9.8
+            ],
+            [
+              -12.7,
+              9.8
+            ]
+          ],
+          "base": "minecraft:bricks"
+        }
+      ],
+      "hedges": [
+        [
+          [
+            6.5,
+            -10.6
+          ],
+          [
+            6.5,
+            9.3
+          ]
+        ]
+      ]
     },
     {
       "id": "casa8",
@@ -584,6 +1007,14 @@
       ],
       "start": 8,
       "length": 26
+    },
+    {
+      "type": "shelter",
+      "xz": [
+        -366,
+        -148
+      ],
+      "yaw": 0
     }
   ],
   "pools": [
@@ -792,6 +1223,99 @@
         ]
       ],
       "over_roads": true
+    }
+  ],
+  "area_fences": [
+    {
+      "osm_id": 867676712,
+      "name": "Tanca de l'Escola Nou de Quart",
+      "base": "minecraft:iron_bars",
+      "top": "minecraft:iron_bars",
+      "pillar": "minecraft:andesite_wall",
+      "pillar_every": 3,
+      "gate": "minecraft:iron_bars",
+      "gates_xz": [
+        [
+          -386,
+          -200,
+          -379,
+          -193
+        ]
+      ]
+    }
+  ],
+  "lots": [
+    {
+      "name": "Aparcament de terra del carrer de Mas Ferriol",
+      "surface": "SAND_LOT",
+      "poly_xz": [
+        [
+          -372,
+          -226
+        ],
+        [
+          -352,
+          -228
+        ],
+        [
+          -349,
+          -224
+        ],
+        [
+          -333,
+          -170
+        ],
+        [
+          -329,
+          -150
+        ],
+        [
+          -326,
+          -128
+        ],
+        [
+          -331,
+          -112
+        ],
+        [
+          -340,
+          -112
+        ],
+        [
+          -372,
+          -200
+        ]
+      ]
+    }
+  ],
+  "road_overrides": [
+    {
+      "osm_id": 239855367,
+      "name": "Carrer Mas Ferriol: calçada + carril d'aparcament",
+      "width": 9
+    }
+  ],
+  "crossings": [
+    [
+      41.93970558,
+      2.83513514
+    ],
+    [
+      41.94023316,
+      2.83486021
+    ]
+  ],
+  "street_trees": [
+    {
+      "osm_id": 239855367,
+      "offset": 6.2,
+      "toward_xz": [
+        -400,
+        -185
+      ],
+      "spacing": 8,
+      "from": 0.12,
+      "to": 0.85
     }
   ]
 }

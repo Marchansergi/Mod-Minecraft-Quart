@@ -36,6 +36,8 @@ public final class Decorations {
                 case "tall_lamp" -> tallLamp(sink, td, d);
                 case "long_bench" -> longBench(sink, td, d);
                 case "street_bench" -> streetBench(f);
+                case "shelter" -> shelter(f);
+                case "street_tree" -> streetTree(sink, td, d);
                 case "street_drinking_water" -> fountain(f);
                 case "street_bus_stop" -> busStop(f);
                 default -> {
@@ -198,6 +200,32 @@ public final class Decorations {
             int g = td.height(x, z);
             sink.set(x, g + 1, z, i % 4 == 0 ? Blocks.SMOOTH_STONE.getDefaultState() : Pal.slab(Blocks.SMOOTH_STONE_SLAB, SlabType.BOTTOM));
         }
+    }
+
+    // ---------------------------------------------------------------- caseta de fusta del pati de l'escola (Street View)
+    private static void shelter(Frame f) {
+        BlockState post = Blocks.STRIPPED_SPRUCE_LOG.getDefaultState();
+        BlockState slat = Blocks.SPRUCE_FENCE.getDefaultState();
+        BlockState plank = Blocks.SPRUCE_PLANKS.getDefaultState();
+        for (int a = -2; a <= 2; a++)
+            for (int b = -2; b <= 1; b++) {
+                boolean corner = (a == -2 || a == 2) && (b == -2 || b == 1);
+                boolean wall = a == -2 || a == 2 || b == -2 || b == 1;
+                f.setG(a, 0, b, Blocks.SPRUCE_PLANKS.getDefaultState());
+                for (int dy = 1; dy <= 2; dy++) {
+                    if (corner) f.setG(a, dy, b, post);
+                    else if (wall && !(b == 1 && a == 0)) f.setG(a, dy, b, dy == 1 ? plank : slat);
+                }
+                f.setG(a, 3, b, Pal.slab(Blocks.SPRUCE_SLAB, SlabType.BOTTOM));
+            }
+    }
+
+    // ---------------------------------------------------------------- arbre d'alineació en escocell
+    private static void streetTree(Sink sink, TownData td, TownData.Decoration d) {
+        if (!td.inRaster(d.x, d.z)) return;
+        int g = td.height(d.x, d.z);
+        sink.set(d.x, g, d.z, Blocks.COARSE_DIRT.getDefaultState());
+        Trees.planeTree(sink, td, d.x, g, d.z, 1.8, Pal.hash(d.x, d.z, 5));
     }
 
     // ---------------------------------------------------------------- mobiliari urbà de l'OSM

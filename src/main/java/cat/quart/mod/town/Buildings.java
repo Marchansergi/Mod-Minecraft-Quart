@@ -267,7 +267,8 @@ public final class Buildings {
         boolean gableEnd = edge && (fl & TownData.F_GABLE_END) != 0 && rt.startsWith("gable");
         if (gableEnd) {
             // frontó: la paret puja fins a la teulada
-            for (int i = 1; i <= full; i++) sink.set(x, top + i, z, i == full && (halves & 1) == 0 ? fam[0] : wall);
+            BlockState gw = b.gableWall != null ? Pal.of(b.gableWall) : wall;
+            for (int i = 1; i <= full; i++) sink.set(x, top + i, z, i == full && (halves & 1) == 0 ? fam[0] : gw);
             if ((halves & 1) == 1) sink.set(x, top + full + 1, z, fam[1]);
             return;
         }

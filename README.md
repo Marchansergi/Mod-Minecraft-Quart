@@ -58,6 +58,20 @@ blancos) y unas horquillas hacia el sur. También tiene las farolas altas y el b
 pabellón tiene su fachada de Street View: planta baja ocre con puertas, porche plano sobre pilares, franja
 de paneles granate y beige con montantes, y la bóveda roja con borde blanco.
 
+**Zona de la Escola Nou de Quart (casas 4, 6 y 7):**
+- Plantas de las tres casas medidas sobre la foto aérea en un sistema de coordenadas alineado con cada casa
+  (el mapa de OpenStreetMap las tenía desplazadas 1–3 m y con medidas aproximadas). Cada parcela tiene su
+  terreno: patio de baldosa escaqueada, jardín de césped, gravilla, y la piscina de la Casa 4 con su borde.
+- Vallas de cada parcela con la forma de las fotos: muro de ladrillo con paneles grises y pilares
+  (Casa 7 y Casa 6, con las farolitas en los pilares de las puertas), muro claro con verja (Casa 4),
+  setos y vallas verdes en las medianeras, y puertas donde están en la realidad.
+- Casa 6: ladrillo con línea blanca entre plantas, frontón blanco hacia la calle, porche con frontón y
+  chimenea. Casa 7: blanca con el cuerpo central de ladrillo, dos garajes y balcón.
+- Escuela: los módulos prefabricados completos (el mapa los tenía más cortos), valla metálica del recinto
+  con la puerta de entrada, y la caseta de madera del patio.
+- Carrer de Mas Ferriol: calzada con carril de aparcamiento, árboles en alcorque, la explanada de sauló
+  con pilones y los dos pasos de cebra que se ven en la foto.
+
 **Calles:** pasos de cebra donde están registrados en OpenStreetMap, y los bancos, fuentes y paradas de
 autobús que constan allí.
 

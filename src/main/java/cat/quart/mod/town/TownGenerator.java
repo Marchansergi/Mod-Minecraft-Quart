@@ -215,6 +215,16 @@ public final class TownGenerator {
                 top = Blocks.GRAY_CONCRETE.getDefaultState();
                 sub = Pal.STONE;
             }
+            case Surf.PATIO_TILES -> {
+                // pati d'entrada de rajola escacada blanca i rosa (com les voreres de Quart)
+                top = ((x + z) & 1) == 0 ? Blocks.WHITE_TERRACOTTA.getDefaultState() : Blocks.PINK_TERRACOTTA.getDefaultState();
+                sub = Pal.STONE;
+            }
+            case Surf.SAND_LOT -> {
+                // aparcament de sauló rosat
+                int k = Pal.hash(x, z, 17) % 10;
+                top = k < 8 ? Blocks.WHITE_TERRACOTTA.getDefaultState() : Blocks.SMOOTH_SANDSTONE.getDefaultState();
+            }
             case Surf.POOL_DECK -> {
                 // vorada de pedra clara al voltant de la piscina
                 top = Blocks.SMOOTH_SANDSTONE.getDefaultState();
@@ -257,7 +267,7 @@ public final class TownGenerator {
         int h = Pal.hash(x, z, 21);
         int d = td.deco(x, z);
         int fi = td.facadeU(x, z);
-        if (fi < td.fences.size() && !Surf.isRoad(s) && s != Surf.SIDEWALK) {
+        if (fi < td.fences.size() && !Surf.isRoad(s)) {
             landmarkFence(sink, td, td.fences.get(fi), fi, x, z, g);
             return;
         }
@@ -293,6 +303,12 @@ public final class TownGenerator {
                 if (gardenWall(td, x, z)) {
                     frontWall(sink, td, x, z, g);
                 } else plants(sink, x, g, z, h, 5, 1);
+            }
+            case Surf.SAND_LOT -> {
+                // pilones a la vora de la vorera, cada 2 m aprox.
+                boolean edgeWalk = td.surfaceOr(x + 1, z, 0) == Surf.SIDEWALK || td.surfaceOr(x - 1, z, 0) == Surf.SIDEWALK
+                        || td.surfaceOr(x, z + 1, 0) == Surf.SIDEWALK || td.surfaceOr(x, z - 1, 0) == Surf.SIDEWALK;
+                if (edgeWalk && Math.floorMod(x + 2 * z, 3) == 0) sink.set(x, g + 1, z, Blocks.POLISHED_DEEPSLATE_WALL.getDefaultState());
             }
             case Surf.SIDEWALK -> {
                 if (isLampSpot(td, x, z)) lamp(sink, x, g, z);
@@ -335,19 +351,45 @@ public final class TownGenerator {
         sink.set(x, g + 2, z, Pal.connect(Blocks.IRON_BARS, n, e, s, w));
     }
 
-    /** mur de parcel·la d'una casa destacada: sòcol de pedra/maó i panell fosc a sobre */
+    /** tanca de parcel·la: sòcol (o reixa) i panell a sobre, pilars cada N blocs, portes on toca */
     private static void landmarkFence(Sink sink, TownData td, TownData.Fence f, int fi, int x, int z, int g) {
-        sink.set(x, g + 1, z, Pal.of(f.base));
-        if (f.top == null) return;
-        BlockState top = Pal.of(f.top);
-        Block tb = top.getBlock();
-        if (top.contains(net.minecraft.block.HorizontalConnectingBlock.NORTH)) {
-            boolean n = isFence(td, fi, x, z - 1), e = isFence(td, fi, x + 1, z), s = isFence(td, fi, x, z + 1), w = isFence(td, fi, x - 1, z);
-            top = Pal.connect(tb, n, e, s, w);
+        boolean n = isFence(td, fi, x, z - 1), e = isFence(td, fi, x + 1, z), s = isFence(td, fi, x, z + 1), w = isFence(td, fi, x - 1, z);
+        if ((td.flags(x, z) & TownData.F_GATE) != 0) {
+            // porta: s'obre perpendicular a la tanca
+            BlockState gate = Pal.of(f.gate);
+            if (gate.contains(net.minecraft.block.FenceGateBlock.FACING)) {
+                boolean alongX = e || w;
+                gate = gate.with(net.minecraft.block.FenceGateBlock.FACING, alongX ? net.minecraft.util.math.Direction.SOUTH
+                        : net.minecraft.util.math.Direction.EAST);
+            } else {
+                gate = connectAs(gate, n, e, s, w);
+            }
+            sink.set(x, g + 1, z, gate);
+            if (f.top != null) sink.set(x, g + 2, z, gate);
+            return;
         }
-        // pilars de maó/pedra cada 3 blocs, panells entremig
-        boolean pillar = Math.floorMod(x + z, 3) == 0;
-        sink.set(x, g + 2, z, pillar ? Pal.of(f.base) : top);
+        boolean pillar = f.pillarEvery > 0 && Math.floorMod(x + z, f.pillarEvery) == 0 && f.top != null;
+        // els pilars també van a les cantonades i al costat de les portes
+        if (f.top != null && !pillar) {
+            boolean straight = (n && s && !e && !w) || (e && w && !n && !s);
+            boolean nextToGate = gateAt(td, fi, x + 1, z) || gateAt(td, fi, x - 1, z) || gateAt(td, fi, x, z + 1) || gateAt(td, fi, x, z - 1);
+            pillar = !straight && (n || s) && (e || w) && f.pillarEvery > 0 || nextToGate;
+        }
+        sink.set(x, g + 1, z, connectAs(Pal.of(pillar ? f.pillar : f.base), n, e, s, w));
+        if (f.top == null) return;
+        sink.set(x, g + 2, z, connectAs(Pal.of(pillar ? f.pillar : f.top), n, e, s, w));
+        // llumetes només als pilars del costat de les portes (com a la foto)
+        if (pillar && f.cap != null && (gateAt(td, fi, x + 1, z) || gateAt(td, fi, x - 1, z) || gateAt(td, fi, x, z + 1)
+                || gateAt(td, fi, x, z - 1))) sink.set(x, g + 3, z, Pal.of(f.cap));
+    }
+
+    private static boolean gateAt(TownData td, int fi, int x, int z) {
+        return isFence(td, fi, x, z) && (td.flags(x, z) & TownData.F_GATE) != 0;
+    }
+
+    private static BlockState connectAs(BlockState st, boolean n, boolean e, boolean s, boolean w) {
+        if (st.contains(net.minecraft.block.HorizontalConnectingBlock.NORTH)) return Pal.connect(st.getBlock(), n, e, s, w);
+        return st;
     }
 
     private static boolean isFence(TownData td, int fi, int x, int z) {

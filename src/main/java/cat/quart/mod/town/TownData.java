@@ -21,7 +21,7 @@ import java.util.zip.GZIPInputStream;
 public final class TownData {
     public static final int FU_NONE = 255;
     /** bits de la capa de vores */
-    public static final int F_CORNER = 1, F_DOOR = 2, F_FACADE = 4, F_HASDIR = 8, F_GABLE_END = 64;
+    public static final int F_CORNER = 1, F_DOOR = 2, F_FACADE = 4, F_HASDIR = 8, F_GABLE_END = 64, F_GATE = 128;
 
     private static volatile TownData instance;
 
@@ -234,6 +234,7 @@ public final class TownData {
         public final int dwellings, rooms;
         public final int[] bbox;
         public final boolean frieze;
+        public final String gableWall;
         public final String[] rows;
         public final int mullionEvery, mullionFrom;
         public final String mullion;
@@ -272,6 +273,7 @@ public final class TownData {
                     o.getAsJsonArray("bbox").get(2).getAsInt(), o.getAsJsonArray("bbox").get(3).getAsInt()} : null;
             frieze = o.has("frieze") && o.get("frieze").getAsBoolean();
             eaveBlock = str(o, "eave_block", null);
+            gableWall = str(o, "gable_wall", null);
             rows = arr(o, "rows");
             JsonObject mu = o.has("mullions") && o.get("mullions").isJsonObject() ? o.getAsJsonObject("mullions") : null;
             mullionEvery = mu != null ? mu.get("every").getAsInt() : 0;
@@ -311,11 +313,16 @@ public final class TownData {
     }
 
     public static final class Fence {
-        public final String base, top;
+        public final String base, top, pillar, cap, gate;
+        public final int pillarEvery;
 
         Fence(JsonObject o) {
             base = o.has("base") ? o.get("base").getAsString() : "minecraft:bricks";
             top = o.has("top") && !o.get("top").isJsonNull() ? o.get("top").getAsString() : null;
+            pillar = o.has("pillar") ? o.get("pillar").getAsString() : base;
+            pillarEvery = o.has("pillar_every") ? o.get("pillar_every").getAsInt() : 3;
+            cap = o.has("cap") ? o.get("cap").getAsString() : null;
+            gate = o.has("gate") ? o.get("gate").getAsString() : "minecraft:spruce_fence_gate";
         }
     }
 
@@ -383,6 +390,8 @@ public final class TownData {
                 case "street_bench", "street_drinking_water" -> 3;
                 case "street_bus_stop" -> 4;
                 case "long_bench" -> length + 2;
+                case "shelter" -> 5;
+                case "street_tree" -> 5;
                 case "playground" -> 8;
                 case "goal", "hoop" -> 5;
                 default -> 6;
