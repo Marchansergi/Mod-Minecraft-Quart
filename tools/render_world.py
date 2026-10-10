@@ -19,7 +19,9 @@ COL = {
     "red_terracotta": (143, 61, 47), "sand": (219, 207, 163), "gravel": (136, 126, 126), "coarse_dirt": (119, 85, 59),
     "podzol": (92, 63, 24), "farmland": (100, 60, 30), "wheat": (200, 180, 70), "short_grass": (100, 160, 60),
     "oak_leaves": (60, 130, 40), "dark_oak_leaves": (40, 90, 30), "spruce_leaves": (50, 80, 50), "birch_leaves": (90, 140, 60),
-    "azalea_leaves": (100, 140, 60), "jungle_leaves": (60, 140, 40), "bricks": (150, 80, 65), "polished_granite": (154, 106, 89),
+    "azalea_leaves": (100, 140, 60), "polished_andesite_slab": (132, 135, 134), "deepslate_tile_slab": (54, 54, 55),
+    "dead_bush": (107, 79, 41), "polished_diorite": (192, 193, 194), "pearlescent_froglight": (245, 235, 240),
+    "polished_granite_slab": (154, 106, 89), "terracotta": (152, 94, 67), "orange_terracotta": (161, 83, 37), "jungle_leaves": (60, 140, 40), "bricks": (150, 80, 65), "polished_granite": (154, 106, 89),
     "mud_bricks": (137, 104, 79), "acacia_planks": (168, 90, 50), "deepslate_tiles": (54, 54, 55), "brick_slab": (150, 80, 65),
     "polished_granite_slab": (154, 106, 89), "mud_brick_slab": (137, 104, 79), "acacia_slab": (168, 90, 50),
     "deepslate_tile_slab": (54, 54, 55), "light_gray_concrete": (125, 125, 115), "green_concrete": (73, 91, 36),
@@ -35,7 +37,8 @@ COL = {
     "stone_brick_slab": (122, 121, 122), "mangrove_fence": (117, 54, 48), "birch_door": (216, 203, 155), "crimson_fence": (101, 48, 70),
     "white_stained_glass_pane": (240, 240, 240), "andesite": (136, 136, 136), "granite": (149, 103, 85), "gray_concrete": (54, 57, 61),
     "stripped_spruce_log": (115, 89, 52), "granite_slab": (149, 103, 85), "spruce_slab": (114, 84, 48), "mud_brick_slab": (137, 104, 79),
-    "brick_stairs": (150, 97, 83), "spruce_stairs": (114, 84, 48), "smooth_quartz": (236, 230, 223), "yellow_terracotta": (186, 133, 35), "polished_blackstone_slab": (53, 48, 56), "black_stained_glass_pane": (25, 25, 25), "iron_bars": (140, 140, 140), "cobblestone": (120, 120, 120), "stone_bricks": (122, 121, 122),
+    "brick_stairs": (150, 97, 83), "birch_wall_sign": (216, 203, 155), "spruce_wall_sign": (114, 84, 48), "decorated_pot": (150, 90, 60),
+    "azalea_leaves": (100, 140, 60), "polished_blackstone_button": (53, 48, 56), "blackstone_slab": (42, 36, 41), "spruce_stairs": (114, 84, 48), "smooth_quartz": (236, 230, 223), "yellow_terracotta": (186, 133, 35), "polished_blackstone_slab": (53, 48, 56), "black_stained_glass_pane": (25, 25, 25), "iron_bars": (140, 140, 140), "cobblestone": (120, 120, 120), "stone_bricks": (122, 121, 122),
 }
 
 

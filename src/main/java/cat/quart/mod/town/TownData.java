@@ -41,6 +41,8 @@ public final class TownData {
     public final List<Building> buildings = new ArrayList<>();
     public final List<Decoration> decorations = new ArrayList<>();
     public final List<Fence> fences = new ArrayList<>();
+    /** arbres reals indexats per chunk (clau = chunkX, chunkZ) */
+    private final java.util.Map<Long, List<Tree>> treeIndex = new java.util.HashMap<>();
 
     public static TownData get() {
         TownData d = instance;
@@ -120,12 +122,30 @@ public final class TownData {
         if (meta.has("fences")) {
             for (JsonElement e : meta.getAsJsonArray("fences")) fences.add(new Fence(e.getAsJsonObject()));
         }
+        if (meta.has("trees")) {
+            for (JsonElement e : meta.getAsJsonArray("trees")) {
+                JsonArray a = e.getAsJsonArray();
+                Tree t = new Tree(a.get(0).getAsInt(), a.get(1).getAsInt(), a.get(2).getAsDouble(), a.get(3).getAsInt());
+                int r = (int) Math.ceil(t.radius) + 3;
+                for (int cz = (t.z - r) >> 4; cz <= (t.z + r) >> 4; cz++)
+                    for (int cx = (t.x - r) >> 4; cx <= (t.x + r) >> 4; cx++)
+                        treeIndex.computeIfAbsent(key(cx, cz), k -> new ArrayList<>()).add(t);
+            }
+        }
         for (JsonElement e : meta.getAsJsonArray("decorations")) {
             decorations.add(Decoration.fromJson(e.getAsJsonObject()));
         }
     }
 
     // ------------------------------------------------------------------ consultes
+
+    private static long key(int cx, int cz) {
+        return ((long) cx << 32) ^ (cz & 0xffffffffL);
+    }
+
+    public List<Tree> treesNear(int chunkX, int chunkZ) {
+        return treeIndex.getOrDefault(key(chunkX, chunkZ), List.of());
+    }
 
     public boolean inRaster(int x, int z) {
         return x >= x0 && z >= z0 && x < x0 + w && z < z0 + h;
@@ -209,6 +229,11 @@ public final class TownData {
         public final boolean repeat, eave;
         public final String plinth, rail, garage, shutter;
         public final int canopyFloor;
+        public final int facing;
+        public final String interior, shop, eaveBlock;
+        public final int dwellings, rooms;
+        public final int[] bbox;
+        public final boolean frieze;
         public int facadeWidth;
         int fwFromMeta;
 
@@ -232,6 +257,16 @@ public final class TownData {
             garage = str(o, "garage", null);
             shutter = str(o, "shutter", "minecraft:white_concrete");
             canopyFloor = o.has("canopy_floor") ? o.get("canopy_floor").getAsInt() : -1;
+            facing = o.has("facing") ? o.get("facing").getAsInt() : 0;
+            JsonObject in = o.has("interior") && o.get("interior").isJsonObject() ? o.getAsJsonObject("interior") : null;
+            interior = in != null ? str(in, "type", null) : null;
+            shop = in != null ? str(in, "shop", null) : null;
+            dwellings = in != null && in.has("dwellings") ? in.get("dwellings").getAsInt() : 1;
+            rooms = in != null && in.has("rooms") ? in.get("rooms").getAsInt() : 1;
+            bbox = o.has("bbox") ? new int[]{o.getAsJsonArray("bbox").get(0).getAsInt(), o.getAsJsonArray("bbox").get(1).getAsInt(),
+                    o.getAsJsonArray("bbox").get(2).getAsInt(), o.getAsJsonArray("bbox").get(3).getAsInt()} : null;
+            frieze = o.has("frieze") && o.get("frieze").getAsBoolean();
+            eaveBlock = str(o, "eave_block", null);
             if (o.has("fw")) facadeWidth = fwFromMeta = o.get("fw").getAsInt();
         }
 
@@ -256,6 +291,9 @@ public final class TownData {
         }
     }
 
+    public record Tree(int x, int z, double radius, int kind) {
+    }
+
     public static final class Fence {
         public final String base, top;
 
@@ -269,7 +307,8 @@ public final class TownData {
         public final String type;
         public final int x, y, z, yaw, count, length, height, width, depth;
         public final double hx, hz;
-        public final String roof, wall;
+        public final String roof, wall, wood;
+        public final String[] lines;
 
         private Decoration(JsonObject o) {
             type = o.get("type").getAsString();
@@ -286,6 +325,12 @@ public final class TownData {
             hz = o.has("hz") ? o.get("hz").getAsDouble() : 0;
             roof = o.has("roof") ? o.get("roof").getAsString() : "bricks";
             wall = o.has("wall") ? o.get("wall").getAsString() : "minecraft:bricks";
+            wood = o.has("wood") ? o.get("wood").getAsString() : "spruce";
+            if (o.has("lines")) {
+                JsonArray a = o.getAsJsonArray("lines");
+                lines = new String[a.size()];
+                for (int i = 0; i < lines.length; i++) lines[i] = a.get(i).getAsString();
+            } else lines = new String[0];
         }
 
         /** zona on no s'han de plantar arbres aleatoris */
@@ -295,7 +340,7 @@ public final class TownData {
                 double t = ax * hx + az * hz, n = Math.abs(-ax * hz + az * hx);
                 return t > -3 && t < length + 3 && n < 8;
             }
-            if (type.equals("goal") || type.equals("hoop") || type.equals("roof_chimney")) return false;
+            if (type.equals("goal") || type.equals("hoop") || type.equals("roof_chimney") || type.equals("wall_sign")) return false;
             int r = radius() - 2;
             return Math.abs(px - x) <= r && Math.abs(pz - z) <= r;
         }
@@ -310,7 +355,8 @@ public final class TownData {
                 case "zipline" -> length + 4;
                 case "pocket_park" -> length + 12;
                 case "benches_plaza" -> 14;
-                case "locomotive" -> 9;
+                case "locomotive" -> 12;
+                case "wall_sign" -> 1;
                 case "playground" -> 8;
                 case "goal", "hoop" -> 5;
                 default -> 6;

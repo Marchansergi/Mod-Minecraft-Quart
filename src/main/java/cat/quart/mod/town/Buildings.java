@@ -70,7 +70,12 @@ public final class Buildings {
             return;
         }
 
-        sink.set(x, base, z, edge ? wall : Blocks.POLISHED_ANDESITE.getDefaultState());
+        BlockState groundFloor = edge ? wall : Blocks.POLISHED_ANDESITE.getDefaultState();
+        if (!edge && b.interior != null) {
+            BlockState o = Interiors.at(td, b, x, base, z);
+            if (o != null) groundFloor = o;
+        }
+        sink.set(x, base, z, groundFloor);
         int fu = td.facadeU(x, z);
         int u = fu < TownData.FU_NONE ? fu : (odx != 0 ? z : x); // coordenada al llarg de la paret
         Direction out = TownGenerator.dirOf(odx, odz);
@@ -87,6 +92,10 @@ public final class Buildings {
                 if (y == top) st = vault ? Pal.AIR : ceiling(b);
                 else if (r == 0 && !vault) st = Blocks.SPRUCE_PLANKS.getDefaultState();
                 else st = Pal.AIR;
+                if (b.interior != null) {
+                    BlockState o = Interiors.at(td, b, x, y, z);
+                    if (o != null) st = o;
+                }
                 sink.set(x, y, z, st);
                 continue;
             }
@@ -102,6 +111,8 @@ public final class Buildings {
                     sink.set(x + odx, y, z + odz, sl);
                     sink.set(x + 2 * odx, y, z + 2 * odz, sl);
                 }
+            } else if (b.frieze && k == b.floors - 1 && r == fh - 1) {
+                st = accent; // fris de maó sota el ràfec
             } else if (isFacade) {
                 st = facadeBlock(sink, td, b, wall, accent, facadeChar(b, k, fu), x, y, z, r, fh, k, out);
             } else if (corner) {
@@ -249,7 +260,8 @@ public final class Buildings {
         if ((halves & 1) == 1) sink.set(x, top + full + 1, z, fam[1]);
         // ràfec: la teula sobresurt un bloc
         if (b.eave && edge && outsideFree) {
-            BlockState eave = fam[1].with(net.minecraft.block.SlabBlock.TYPE, SlabType.TOP);
+            BlockState eave = (b.eaveBlock != null ? Pal.of(b.eaveBlock) : fam[1]);
+            if (eave.contains(net.minecraft.block.SlabBlock.TYPE)) eave = eave.with(net.minecraft.block.SlabBlock.TYPE, SlabType.TOP);
             sink.setIfAir(x + odx, top, z + odz, eave);
         }
     }

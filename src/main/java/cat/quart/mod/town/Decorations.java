@@ -1,5 +1,6 @@
 package cat.quart.mod.town;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ChainBlock;
@@ -30,6 +31,7 @@ public final class Decorations {
                 case "roof_chimney" -> roofChimney(sink, td, d);
                 case "porch" -> porch(f, d);
                 case "pocket_park" -> pocketPark(sink, td, d);
+                case "wall_sign" -> wallSign(sink, d);
                 default -> {
                 }
             }
@@ -85,50 +87,81 @@ public final class Decorations {
 
     // ---------------------------------------------------------------- locomotora de vapor sobre pedestal
     private static void locomotive(Frame f) {
+        // Monument al tren de Sant Feliu de Guíxols a Girona (1892-1969): locomotora negra "S.F.G." sobre un pedestal
+        // de rajola de terracota, dins d'un parterre de maó amb plantes (foto de Wikimedia Commons).
+        BlockState tile = Blocks.TERRACOTTA.getDefaultState();
+        BlockState tileDark = Blocks.ORANGE_TERRACOTTA.getDefaultState();
         BlockState brick = Blocks.BRICKS.getDefaultState();
         BlockState black = Blocks.BLACK_CONCRETE.getDefaultState();
         BlockState dark = Blocks.POLISHED_BLACKSTONE.getDefaultState();
+        BlockState white = Blocks.WHITE_CONCRETE.getDefaultState();
         BlockState red = Blocks.RED_CONCRETE.getDefaultState();
-        // pedestal de maó
-        for (int a = -1; a <= 10; a++)
-            for (int b = -2; b <= 2; b++) {
-                f.set(a, 1, b, brick);
-                f.set(a, 0, b, brick);
+        // parterre de maó (1 bloc) amb romanís i farigola
+        for (int a = -2; a <= 10; a++)
+            for (int b = -3; b <= 3; b++) {
+                boolean ring = a == -2 || a == 10 || b == -3 || b == 3;
+                if (ring) f.set(a, 1, b, brick);
+                else {
+                    f.set(a, 0, b, Blocks.COARSE_DIRT.getDefaultState());
+                    if (Math.abs(b) == 2 || a == -1 || a == 9) f.set(a, 1, b, Pal.leaves(Blocks.AZALEA_LEAVES));
+                }
             }
-        // via
-        for (int a = -1; a <= 10; a++) {
-            f.set(a, 2, -1, Blocks.IRON_BLOCK.getDefaultState());
-            f.set(a, 2, 1, Blocks.IRON_BLOCK.getDefaultState());
-            f.set(a, 2, 0, Blocks.SPRUCE_SLAB.getDefaultState());
+        // pedestal de rajola de terracota (2 blocs d'alt), amb les gerres en relleu
+        for (int a = 0; a <= 8; a++)
+            for (int b = -1; b <= 1; b++) {
+                f.set(a, 1, b, tile);
+                f.set(a, 2, b, (a + b) % 4 == 0 ? tileDark : tile);
+            }
+        f.set(2, 2, -1, Blocks.DECORATED_POT.getDefaultState());
+        f.set(6, 2, -1, Blocks.DECORATED_POT.getDefaultState());
+        // xassís i rodes blanques amb la biela vermella
+        for (int a = 0; a <= 8; a++) f.set(a, 3, 0, dark);
+        for (int a : new int[]{2, 4, 6}) {
+            f.set(a, 3, -1, white);
+            f.set(a, 3, 1, white);
         }
-        // rodes vermelles
-        for (int a : new int[]{1, 3, 5, 8}) {
+        for (int a = 3; a <= 5; a++) {
             f.set(a, 3, -1, red);
             f.set(a, 3, 1, red);
         }
-        // xassís
-        for (int a = 0; a <= 9; a++) f.set(a, 3, 0, dark);
+        f.set(0, 3, -1, Blocks.POLISHED_BLACKSTONE_BUTTON.getDefaultState());
         // caldera
-        for (int a = 0; a <= 6; a++)
+        for (int a = 0; a <= 5; a++)
             for (int b = -1; b <= 1; b++) {
                 f.set(a, 4, b, black);
-                if (b == 0 || a % 2 == 0) f.set(a, 5, b, black);
+                if (b == 0 || a == 0) f.set(a, 5, b, black);
             }
-        f.set(-1, 4, 0, dark);
-        f.set(-1, 3, -1, Blocks.POLISHED_BLACKSTONE_BUTTON.getDefaultState());
         // xemeneia i cúpula
         f.set(1, 6, 0, black);
         f.set(1, 7, 0, black);
-        f.set(4, 6, 0, Blocks.POLISHED_BLACKSTONE_SLAB.getDefaultState());
+        f.set(3, 6, 0, Blocks.POLISHED_BLACKSTONE_SLAB.getDefaultState());
         // cabina
-        for (int a = 7; a <= 9; a++)
+        for (int a = 6; a <= 8; a++)
             for (int b = -1; b <= 1; b++)
                 for (int dy = 4; dy <= 6; dy++) {
-                    boolean window = dy == 5 && (b != 0 || a == 8) && !(a == 8 && b == 0);
+                    boolean window = dy == 5 && b != 0 && a == 7;
                     f.set(a, dy, b, window ? Blocks.BLACK_STAINED_GLASS_PANE.getDefaultState() : black);
                 }
-        for (int a = 6; a <= 10; a++)
+        for (int a = 6; a <= 8; a++)
             for (int b = -1; b <= 1; b++) f.set(a, 7, b, Pal.slab(Blocks.BLACKSTONE_SLAB, SlabType.BOTTOM));
+    }
+
+    // ---------------------------------------------------------------- rètol de façana
+    private static void wallSign(Sink sink, TownData.Decoration d) {
+        Direction out = facingOf(d.yaw);
+        Block blk = switch (d.wood) {
+            case "birch" -> Blocks.BIRCH_WALL_SIGN;
+            case "oak" -> Blocks.OAK_WALL_SIGN;
+            case "dark_oak" -> Blocks.DARK_OAK_WALL_SIGN;
+            default -> Blocks.SPRUCE_WALL_SIGN;
+        };
+        BlockState st = blk.getDefaultState().with(net.minecraft.block.WallSignBlock.FACING, out);
+        sink.sign(d.x, d.height, d.z, st, d.lines);
+    }
+
+    static Direction facingOf(int yaw) {
+        int r = Math.floorMod(Math.round(yaw / 90f), 4);
+        return new Direction[]{Direction.EAST, Direction.SOUTH, Direction.WEST, Direction.NORTH}[r];
     }
 
     // ---------------------------------------------------------------- bancs

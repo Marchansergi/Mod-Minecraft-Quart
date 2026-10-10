@@ -192,6 +192,16 @@ public final class TownGenerator {
                 sub = Pal.STONE;
             }
             case Surf.BARE -> top = Blocks.COARSE_DIRT.getDefaultState();
+            case Surf.SOIL -> {
+                // terra seca mediterrània: herba groguenca amb clapes de terra
+                int k = Pal.hash(x, z, 13) % 10;
+                top = k < 4 ? Blocks.COARSE_DIRT.getDefaultState() : k < 5 ? Blocks.DIRT.getDefaultState() : Pal.GRASS;
+            }
+            case Surf.PAVING -> {
+                // patis i entrades de les cases: rajola clara
+                top = ((x + z) & 1) == 0 ? Blocks.SMOOTH_STONE.getDefaultState() : Blocks.POLISHED_DIORITE.getDefaultState();
+                sub = Pal.STONE;
+            }
             case Surf.POOL_DECK -> {
                 // vorada de pedra clara al voltant de la piscina
                 top = Blocks.SMOOTH_SANDSTONE.getDefaultState();
@@ -244,6 +254,11 @@ public final class TownGenerator {
         }
         switch (s) {
             case Surf.GRASS, Surf.PARK -> plants(sink, x, g, z, h, 9, 1);
+            case Surf.SOIL -> {
+                int r = h % 100;
+                if (r < 2) sink.set(x, g + 1, z, Blocks.DEAD_BUSH.getDefaultState());
+                else if (r < 14 && sink.get(x, g, z).isOf(Blocks.GRASS_BLOCK)) sink.set(x, g + 1, z, Blocks.SHORT_GRASS.getDefaultState());
+            }
             case Surf.MEADOW -> plants(sink, x, g, z, h, 28, 3);
             case Surf.FOREST -> {
                 if (h % 100 < 10) sink.set(x, g + 1, z, Blocks.SHORT_GRASS.getDefaultState());

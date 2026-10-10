@@ -1,5 +1,5 @@
 {
-  "_comment": "Edificis i llocs destacats de Quart. 'point' = [lat, lon] (WGS84). 'source': 'osm' = usa la planta real del mapa (edifici que conté/és més a prop del punt); 'rect' = planta rectangular dibuixada davant del carrer més proper (per als edificis que falten a OpenStreetMap). Façana: cada cadena és una planta (de baix a dalt), llegida d'esquerra a dreta mirant des del carrer. Caràcters: W paret, X paret secundària (accent), w finestra, x finestra en paret accent, D porta, G porta de garatge, B finestra amb balcó, S aparador de botiga, # pilastra/cantonada (accent), P persiana tancada, - paret llisa. Per a 'rect', 'view' = [lat, lon, rumb] de la càmera de Street View que mira la façana. Altres caràcters: R finestra amb persiana, I finestra amb reixa, d porta blanca, P persiana metàl·lica, C pilar que sobresurt de la coberta. Opcions: repeat (la façana es repeteix per habitatge), plinth (sòcol), rail (barana dels balcons), garage, shutter, eave (ràfec), canopy_floor (teuladeta sobre una planta), fence (mur de parcel·la), chimney [u, fondària, alçada], porch {u, width, depth}, roof_type hipped/gable_front/gable_side/flat/vault. 'pools': piscines amb el contorn exacte [lat, lon] i 'deck' (metres de vorada de pedra al voltant).",
+  "_comment": "Edificis i llocs destacats de Quart. 'point' = [lat, lon] (WGS84). 'source': 'osm' = usa la planta real del mapa (edifici que conté/és més a prop del punt); 'rect' = planta rectangular dibuixada davant del carrer més proper (per als edificis que falten a OpenStreetMap). Façana: cada cadena és una planta (de baix a dalt), llegida d'esquerra a dreta mirant des del carrer. Caràcters: W paret, X paret secundària (accent), w finestra, x finestra en paret accent, D porta, G porta de garatge, B finestra amb balcó, S aparador de botiga, # pilastra/cantonada (accent), P persiana tancada, - paret llisa. Per a 'rect', 'view' = [lat, lon, rumb] de la càmera de Street View que mira la façana. Altres caràcters: R finestra amb persiana, I finestra amb reixa, d porta blanca, P persiana metàl·lica, C pilar que sobresurt de la coberta. Opcions: repeat (la façana es repeteix per habitatge), plinth (sòcol), rail (barana dels balcons), garage, shutter, eave (ràfec), canopy_floor (teuladeta sobre una planta), fence (mur de parcel·la), chimney [u, fondària, alçada], porch {u, width, depth}, roof_type hipped/gable_front/gable_side/flat/vault. 'pools': piscines amb el contorn exacte [lat, lon] i 'deck' (metres de vorada de pedra al voltant). 'interior': {type: house|info_point|museum|social|gym|school|supermarket|shop_flats, dwellings: N habitatges en filera, rooms: N aules}. 'sign': rètol a la façana (lines, wood, floor_row). 'frieze': fris de maó sota el ràfec. 'eave_block': material del ràfec.",
   "spawn": [
     41.9380805,
     2.8392814
@@ -20,7 +20,7 @@
       "roof": "bricks",
       "roof_type": "hipped",
       "facade": [
-        "#WXDXWXwXWXDXW#"
+        "#WDWWWWwWWWWDW#"
       ],
       "osm_id": 88955510,
       "view": [
@@ -29,7 +29,22 @@
         34.89
       ],
       "plinth": "minecraft:bricks",
-      "eave": true
+      "eave": true,
+      "interior": {
+        "type": "info_point"
+      },
+      "sign": {
+        "lines": [
+          "",
+          "QUART",
+          "",
+          ""
+        ],
+        "wood": "birch",
+        "floor_row": 4
+      },
+      "frieze": true,
+      "eave_block": "minecraft:spruce_slab"
     },
     {
       "id": "museu_terrissa",
@@ -55,7 +70,20 @@
         53.0
       ],
       "plinth": "minecraft:bricks",
-      "eave": true
+      "eave": true,
+      "interior": {
+        "type": "museum"
+      },
+      "sign": {
+        "lines": [
+          "Museu de la",
+          "Terrissa",
+          "de Quart",
+          ""
+        ],
+        "wood": "spruce",
+        "floor_row": 3
+      }
     },
     {
       "id": "local_social",
@@ -79,7 +107,20 @@
         41.9389,
         2.8377647,
         236.73
-      ]
+      ],
+      "interior": {
+        "type": "social"
+      },
+      "sign": {
+        "lines": [
+          "",
+          "Local",
+          "social",
+          ""
+        ],
+        "wood": "spruce",
+        "floor_row": 3
+      }
     },
     {
       "id": "pavello",
@@ -102,7 +143,10 @@
       ],
       "facade": [
         "WWWDWWWWWWDWWWWWWDWWW"
-      ]
+      ],
+      "interior": {
+        "type": "gym"
+      }
     },
     {
       "id": "escola_nou",
@@ -120,7 +164,11 @@
       "roof_type": "flat",
       "facade": [
         "wwWwwWDWwwWwwWwwW"
-      ]
+      ],
+      "interior": {
+        "type": "school",
+        "rooms": 4
+      }
     },
     {
       "id": "el_teu_super",
@@ -143,7 +191,20 @@
         279.24
       ],
       "rail": "minecraft:iron_bars",
-      "eave": true
+      "eave": true,
+      "interior": {
+        "type": "supermarket"
+      },
+      "sign": {
+        "lines": [
+          "",
+          "El teu",
+          "Súper",
+          ""
+        ],
+        "wood": "birch",
+        "floor_row": 3
+      }
     },
     {
       "id": "casa2",
@@ -171,7 +232,11 @@
       "garage": "minecraft:smooth_quartz",
       "shutter": "minecraft:white_concrete",
       "eave": true,
-      "repeat": true
+      "repeat": true,
+      "interior": {
+        "type": "house",
+        "dwellings": 3
+      }
     },
     {
       "id": "casa3",
@@ -202,7 +267,10 @@
       "garage": "minecraft:smooth_quartz",
       "shutter": "minecraft:white_concrete",
       "eave": true,
-      "canopy_floor": 1
+      "canopy_floor": 1,
+      "interior": {
+        "type": "house"
+      }
     },
     {
       "id": "casa4",
@@ -221,7 +289,10 @@
         "WRRWWDWWRRW",
         "WRRWWRWWRRW"
       ],
-      "eave": true
+      "eave": true,
+      "interior": {
+        "type": "house"
+      }
     },
     {
       "id": "casa5",
@@ -250,6 +321,10 @@
       "fence": {
         "base": "minecraft:smooth_sandstone",
         "top": "minecraft:crimson_fence"
+      },
+      "interior": {
+        "type": "house",
+        "dwellings": 7
       }
     },
     {
@@ -289,6 +364,9 @@
         "u": 6,
         "width": 4,
         "depth": 2
+      },
+      "interior": {
+        "type": "house"
       }
     },
     {
@@ -320,7 +398,10 @@
       "rail": "minecraft:white_stained_glass_pane",
       "garage": "minecraft:smooth_quartz",
       "shutter": "minecraft:white_concrete",
-      "eave": true
+      "eave": true,
+      "interior": {
+        "type": "house"
+      }
     },
     {
       "id": "casa8",
@@ -344,7 +425,22 @@
         2.8406879,
         166.81
       ],
-      "eave": true
+      "eave": true,
+      "interior": {
+        "type": "shop_flats",
+        "shop": "fabrics",
+        "dwellings": 1
+      },
+      "sign": {
+        "lines": [
+          "",
+          "El Cuc",
+          "de Seda",
+          ""
+        ],
+        "wood": "birch",
+        "floor_row": 3
+      }
     },
     {
       "id": "casa9",
@@ -367,7 +463,11 @@
         55.65
       ],
       "rail": "minecraft:white_stained_glass_pane",
-      "eave": true
+      "eave": true,
+      "interior": {
+        "type": "house",
+        "dwellings": 2
+      }
     },
     {
       "id": "casa1",
@@ -386,7 +486,10 @@
         "WRRWDWWRRW",
         "WRRWWWWRRW"
       ],
-      "eave": true
+      "eave": true,
+      "interior": {
+        "type": "house"
+      }
     }
   ],
   "decorations": [

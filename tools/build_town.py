@@ -78,7 +78,7 @@ S = dict(
     GRASS=0, FOREST=1, FARMLAND=2, ROAD=3, MARKING=4, SIDEWALK=5, PATH=6, TRACK=7,
     CYCLEWAY=8, PARKING=9, PLAZA=10, PARK=11, TURF=12, TURF_LINE=13, COURT=14,
     WATER=15, POOL=16, GARDEN=17, SAND=18, GRAVEL=19, SHRUB=20, BARE=21, CEMETERY=22,
-    PLAZA_TREES=23, STREAM=24, MEADOW=25, COURT_LINE=26, ROAD_MAIN=27, POOL_DECK=28,
+    PLAZA_TREES=23, STREAM=24, MEADOW=25, COURT_LINE=26, ROAD_MAIN=27, POOL_DECK=28, SOIL=29, PAVING=30,
 )
 DECO = dict(NONE=0, WALL=1, HEDGE=2, FENCE=3, GOAL=10, HOOP=11, RETAINING=4, FENCE_LOW=5)
 
@@ -262,6 +262,167 @@ def hash32(*vals):
     for v in vals:
         h = ((h ^ (int(v) & 0xFFFFFFFF)) * 16777619) & 0xFFFFFFFF
     return h
+
+
+# ---------------------------------------------------------------- ortofoto PNOA (tools/ortho_features.py)
+OC = dict(UNKNOWN=0, LAWN=1, TREE=2, SOIL=3, PAVING=4, ASPHALT=5, POOL=6, ROOF_RED=7, ROOF_ORANGE=8, SHADOW=12)
+SOFT = None  # superfícies "toves" que l'ortofoto pot corregir (s'omple a main)
+
+
+def load_ortho():
+    p = os.path.join(DATA, "ortho_features.npz")
+    pj = os.path.join(DATA, "ortho_1m.jpg")
+    if not (os.path.exists(p) and os.path.exists(pj)):
+        log("(sense ortofoto: executa tools/fetch_ortho.py i tools/ortho_features.py)")
+        return None
+    d = np.load(p)
+    oc = d["oc"].copy()
+    rgb = np.array(Image.open(pj).convert("RGB"))
+    if oc.shape != (H, W) or rgb.shape[:2] != (H, W):
+        log("!! l'ortofoto no té la mida del ràster; torna a executar fetch_ortho.py")
+        return None
+    return oc, d["trees"], rgb
+
+
+def mode_filter(cls, size=3, ncls=16):
+    """classe majoritària en una finestra (treu el soroll de píxels solts)"""
+    best = np.zeros(cls.shape, np.float32)
+    out = cls.copy()
+    for k in range(ncls):
+        m = (cls == k)
+        if not m.any():
+            continue
+        c = ndimage.uniform_filter(m.astype(np.float32), size)
+        upd = c > best
+        out[upd] = k
+        best[upd] = c[upd]
+    return out
+
+
+def apply_ortho_ground(ortho, surf, bid, road_px, urban, core_mask):
+    """Corregeix el terra (gespa, terra seca, paviment, piscines) amb el que es veu a la foto aèria."""
+    oc, _, _ = ortho
+    occ = oc.copy()
+    # sota els arbres i les ombres no es veu el terra: l'omplim amb la classe visible més propera
+    hidden = np.isin(occ, [OC["TREE"], OC["SHADOW"], OC["UNKNOWN"], OC["ROOF_RED"], OC["ROOF_ORANGE"]])
+    if hidden.any() and (~hidden).any():
+        idx = ndimage.distance_transform_edt(hidden, return_distances=False, return_indices=True)
+        occ = occ[tuple(idx)]
+    occ = mode_filter(occ, 3)
+    soft_urban = np.isin(surf, [S["GRASS"], S["GARDEN"], S["PARK"], S["MEADOW"], S["SHRUB"], S["BARE"]])
+    soft_rural = np.isin(surf, [S["GRASS"], S["MEADOW"], S["SHRUB"], S["BARE"], S["FOREST"]])
+    free = (bid == 0) & ~road_px & core_mask
+    U = free & urban & soft_urban
+    R = free & ~urban & soft_rural
+    n0 = surf.copy()
+    surf[U & (occ == OC["LAWN"])] = S["GARDEN"]
+    surf[U & (occ == OC["SOIL"])] = S["SOIL"]
+    surf[U & (occ == OC["PAVING"])] = S["PAVING"]
+    surf[U & (occ == OC["ASPHALT"])] = S["PARKING"]
+    surf[R & (occ == OC["LAWN"])] = S["MEADOW"]
+    surf[R & (occ == OC["SOIL"]) & (n0 != S["FOREST"])] = S["SOIL"]
+    surf[R & (occ == OC["SOIL"]) & (n0 == S["FOREST"])] = S["MEADOW"]  # clarianes
+    surf[R & np.isin(occ, [OC["PAVING"], OC["ASPHALT"]])] = S["GRAVEL"]
+    # el bosc és on hi ha copes d'arbre de veritat
+    canopy = ndimage.binary_closing(oc == OC["TREE"], iterations=2)
+    surf[free & ~urban & canopy & np.isin(surf, [S["MEADOW"], S["GRASS"], S["SHRUB"], S["SOIL"]])] = S["FOREST"]
+    # piscines vistes des de l'aire (a més de les d'OpenStreetMap)
+    pools = (oc == OC["POOL"]) & free & ~np.isin(surf, [S["TURF"], S["COURT"], S["CYCLEWAY"], S["STREAM"], S["WATER"]])
+    pools = ndimage.binary_opening(pools, iterations=1) | ((oc == OC["POOL"]) & (surf == S["POOL"]))
+    surf[pools] = S["POOL"]
+    allpools = surf == S["POOL"]
+    deck = ndimage.binary_dilation(allpools, iterations=1) & ~allpools & (bid == 0) & ~road_px & \
+        np.isin(surf, [S["GARDEN"], S["GRASS"], S["SOIL"], S["PAVING"], S["PARKING"], S["MEADOW"], S["BARE"]])
+    surf[deck] = S["POOL_DECK"]
+    log(f"ortofoto: {int((surf != n0).sum())} m2 de terra corregits, {int(pools.sum())} m2 de piscina")
+
+
+def ortho_sheds(ortho, surf, bid, road_px, urban, core_mask):
+    """Construccions petites (garatges, coberts, porxos) que es veuen a la foto però no surten a cap mapa."""
+    oc = ortho[0]
+    roof = np.isin(oc, [OC["ROOF_RED"], OC["ROOF_ORANGE"]])
+    cand = roof & (bid == 0) & ~road_px & urban & core_mask & \
+        ~np.isin(surf, [S["COURT"], S["COURT_LINE"], S["CYCLEWAY"], S["TURF"], S["POOL"], S["SIDEWALK"]])
+    cand = ndimage.binary_opening(cand, iterations=1)
+    lab, n = ndimage.label(cand)
+    out = []
+    for k, sl in enumerate(ndimage.find_objects(lab), start=1):
+        if sl is None:
+            continue
+        m = lab[sl] == k
+        a = int(m.sum())
+        if a < 9 or a > 180:
+            continue
+        hgt, wid = m.shape
+        if a / float(hgt * wid) < 0.45 or min(hgt, wid) < 3:
+            continue
+        # no enganxat a un edifici existent per més d'un costat sencer (seria una part mal retallada)
+        ring = ndimage.binary_dilation(m, iterations=1) & ~m
+        bsl = bid[sl]
+        if ring.any() and (bsl[ring] > 0).mean() > 0.45:
+            continue
+        zs, xs = np.nonzero(m)
+        pts = [(x + sl[1].start + dx, z + sl[0].start + dz) for x, z in zip(xs, zs) for dx in (0, 1) for dz in (0, 1)]
+        from shapely.geometry import MultiPoint
+        g = MultiPoint(pts).convex_hull
+        out.append(g)
+    log(f"ortofoto: {len(out)} construccions petites que no eren al mapa")
+    return out
+
+
+def roof_from_color(rgb):
+    r, g, b = (float(v) for v in rgb)
+    mx, mn = max(r, g, b), min(r, g, b)
+    sat = (mx - mn) / max(mx, 1)
+    v = mx / 255.0
+    if sat < 0.12:
+        if v > 0.74:
+            return "flat:minecraft:smooth_stone", "flat"      # terrats clars
+        if v > 0.45:
+            return "andesite", "hipped"                       # teula grisa
+        return "deepslate_tiles", "hipped"                    # pissarra / teula fosca
+    warmth = (r - g) / max(r, 1)
+    blue = (b - g) / max(g, 1)
+    if warmth < 0.10:
+        return "mud_bricks", "hipped"
+    if blue > -0.03:
+        return "granite", "hipped"
+    if blue > -0.12:
+        return "bricks", "hipped"
+    return "terracotta", "hipped"
+
+
+def ortho_trees(ortho, surf, bid, road_px, urban, core_mask):
+    """Arbres a la seva posició real, amb la mida de copa vista des de l'aire."""
+    trees = ortho[1]
+    out = []
+    for x, z, r, light, hue in trees:
+        ix, iz = int(np.floor(x)) - X0, int(np.floor(z)) - Z0
+        if not (0 <= ix < W and 0 <= iz < H) or not core_mask[iz, ix]:
+            continue
+        if bid[iz, ix] or road_px[iz, ix]:
+            continue
+        s = surf[iz, ix]
+        if s in (S["POOL"], S["POOL_DECK"], S["TURF"], S["TURF_LINE"], S["COURT"], S["COURT_LINE"], S["STREAM"], S["WATER"]):
+            continue
+        r = float(min(max(r, 1.0), 7.0))
+        h = hash32(ix, iz) % 100
+        if urban[iz, ix] and s not in (S["FOREST"],):
+            if r < 1.6:
+                kind = 3 if h < 70 else 4          # xiprer / olivera
+            elif s in (S["PARK"], S["PLAZA_TREES"], S["PLAZA"], S["PARKING"]):
+                kind = 2                            # plàtan de plaça
+            elif hue > 0.30 and r < 3.0:
+                kind = 4                            # olivera (gris-verda)
+            elif h < 4:
+                kind = 5                            # palmera
+            else:
+                kind = 1 if h < 70 else 0           # alzina / pi
+        else:
+            kind = 0 if (hue > 0.22 or r > 4.5) else 1   # pi pinyer / alzina
+        out.append([int(np.floor(x)), int(np.floor(z)), round(r, 1), kind])
+    log(f"ortofoto: {len(out)} arbres al nucli")
+    return out
 
 
 def main():
@@ -454,6 +615,32 @@ def main():
         meta_buildings.append(dict(src="rect", osm_id=0, tags={}, area=float(g.area), landmark=lm, geom=g))
         log(f"landmark {lm['id']} rect {int(g.area)} m2")
 
+    # ------------------------------------------------ ortofoto: terra, piscines, coberts i arbres
+    ortho = load_ortho()
+    core_mask = np.zeros((H, W), bool)
+    core_mask[CORE[1] - Z0:CORE[3] - Z0, CORE[0] - X0:CORE[2] - X0] = True
+    trees_out = []
+    if ortho is not None:
+        for g in ortho_sheds(ortho, surf, bid, road_px, urban, core_mask):
+            m = poly_mask(g) & (bid == 0) & ~road_px
+            if m.sum() < 6:
+                continue
+            n = len(meta_buildings)
+            bid[m] = n
+            meta_buildings.append(dict(src="ortho", osm_id=0, tags={"building": "shed"}, area=float(g.area), landmark=None, geom=g))
+        apply_ortho_ground(ortho, surf, bid, road_px, urban, core_mask)
+        trees_out = ortho_trees(ortho, surf, bid, road_px, urban, core_mask)
+        # color de teulada de cada edifici (mitjana dels píxels visibles del sostre)
+        oc, _, rgb = ortho
+        vis = (bid > 0) & ~np.isin(oc, [OC["TREE"], OC["SHADOW"], OC["UNKNOWN"], OC["POOL"]])
+        lbl = np.where(vis, bid, 0).astype(np.int32)
+        idxs = np.arange(1, len(meta_buildings))
+        cnt = ndimage.sum(np.ones((H, W)), lbl, idxs)
+        means = [ndimage.mean(rgb[..., c].astype(np.float32), lbl, idxs) for c in range(3)]
+        for k, n in enumerate(idxs):
+            if cnt[k] >= 4:
+                meta_buildings[n]["roof_rgb"] = (means[0][k], means[1][k], means[2][k])
+
     # neteja fragments minúsculs que han quedat tapats
     counts = np.bincount(bid.ravel(), minlength=len(meta_buildings))
 
@@ -500,6 +687,9 @@ def main():
         spec["base"] = base
         wall_geometry(fu, fl, sl, m, mb["geom"])
         if lm:
+            zz_, xx_ = np.nonzero(m)
+            spec["bbox"] = [int(xx_.min() + sl[1].start + X0), int(zz_.min() + sl[0].start + Z0),
+                            int(xx_.max() + sl[1].start + X0), int(zz_.max() + sl[0].start + Z0)]
             bid_geoms[n] = mb["geom"]
             front, fw = mark_facade(fu, fl, sl, m, road_geoms, lm, base, spec["fh"], spec["floors"], bid, surf, n)
             spec["facing"] = front
@@ -536,7 +726,7 @@ def main():
                           yaw=int(goal_yaw.get((int(x), int(z)), 0))))
         deco[z, x] = 0
 
-    write_output(hy, surf, bid, rd, fu, fl, deco, out_b, decos, spawn)
+    write_output(hy, surf, bid, rd, fu, fl, deco, out_b, decos, spawn, trees_out)
     preview(hy, surf, bid, out_b)
 
 
@@ -865,6 +1055,16 @@ def mark_facade(fu, fl, sl, m, road_geoms, lm, base, fh, floors, bid_full, surf_
         a, depth, hgt = lm["chimney"]
         x_, z_ = to_world(a * fw if a < 1 else a, -depth)
         EXTRA_DECOS.append(dict(type="roof_chimney", x=x_, z=z_, height=hgt))
+    # ---- rètol a la façana (al mig, enganxat a la paret per fora)
+    if "sign" in lm:
+        sg = lm["sign"]
+        a_c = fw / 2.0
+        for nn in (0.5, 0.0, 1.0):
+            x_, z_ = to_world(a_c, nn)
+            if bid_full[z_ - Z0, x_ - X0] != n_id:
+                break
+        EXTRA_DECOS.append(dict(type="wall_sign", x=x_, z=z_, yaw=yaw, lines=sg["lines"], wood=sg.get("wood", "spruce"),
+                                height=base + sg.get("floor_row", 2)))
     # ---- porxo davant la porta
     if "porch" in lm:
         pc = lm["porch"]
@@ -907,7 +1107,7 @@ def style_for(n, mb, road_px, sl, m):
             spec.update(wall="minecraft:mossy_cobblestone", roof_type="ruin", floors=1, fh=3)
         elif kind in ("school", "kindergarten"):
             spec.update(wall="minecraft:white_concrete", roof="flat:minecraft:light_gray_concrete", roof_type="flat", floors=1, fh=4)
-        elif area < 22:
+        elif kind == "shed" or area < 22:
             spec.update(floors=1, fh=3, roof_type="flat", roof="flat:minecraft:smooth_stone_slab")  # coberts, garatges
         elif kind == "yes" and area > 700:
             spec.update(wall="minecraft:light_gray_concrete", roof="flat:minecraft:gray_concrete", roof_type="flat", floors=1, fh=7)
@@ -924,17 +1124,29 @@ def style_for(n, mb, road_px, sl, m):
                 spec["roof_type"] = "flat" if h % 3 == 0 else "hipped"
                 if spec["roof_type"] == "flat":
                     spec["roof"] = "flat:minecraft:terracotta"
+        # el material i la forma de la teulada surten del color que es veu a l'ortofoto
+        if "roof_rgb" in mb and spec["roof_type"] not in ("ruin", "canopy"):
+            roof, rtype = roof_from_color(mb["roof_rgb"])
+            spec["roof"] = roof
+            if rtype == "flat" or kind == "shed":
+                spec["roof_type"] = "flat"
+                if kind == "shed" and not roof.startswith("flat:"):
+                    spec["roof"] = "flat:minecraft:" + {"granite": "polished_granite", "bricks": "bricks", "andesite": "polished_andesite",
+                                                        "deepslate_tiles": "deepslate_tiles", "terracotta": "terracotta",
+                                                        "mud_bricks": "mud_bricks"}[roof]
+            elif spec["roof_type"] == "flat" and kind not in ("industrial", "warehouse", "school", "kindergarten"):
+                spec["roof_type"] = "hipped"
         return spec
     spec.update(wall=lm["wall"], accent=lm.get("accent"), roof=lm["roof"], roof_type=lm["roof_type"],
                 floors=lm["floors"], fh=lm.get("floor_height", 3), landmark=lm["id"], facade=lm.get("facade", []))
-    for k in ("band", "plinth", "rail", "garage", "shutter", "eave", "repeat", "canopy_floor"):
+    for k in ("band", "plinth", "rail", "garage", "shutter", "eave", "repeat", "canopy_floor", "interior", "frieze", "eave_block"):
         if k in lm:
             spec[k] = lm[k]
     return spec
 
 
 # ---------------------------------------------------------------- sortida
-def write_output(hy, surf, bid, rd, fu, fl, deco, blds, decos, spawn):
+def write_output(hy, surf, bid, rd, fu, fl, deco, blds, decos, spawn, trees=()):
     os.makedirs(OUT, exist_ok=True)
     buf = bytearray()
     buf += b"QRT1"
@@ -952,10 +1164,11 @@ def write_output(hy, surf, bid, rd, fu, fl, deco, blds, decos, spawn):
     sx, sz = px(*spawn)
     sy = int(hy[int(sz), int(sx)]) + 1
     meta = dict(origin=[LAT0, LON0], core=list(CORE), spawn=[spawn[0], sy, spawn[1]],
-                buildings=blds, fences=FENCES, decorations=[dict(d, y=int(hy[int(d["z"] - Z0), int(d["x"] - X0)])) for d in decos],
+                buildings=blds, fences=FENCES, trees=list(trees), decorations=[dict(d, y=int(hy[int(d["z"] - Z0), int(d["x"] - X0)])) for d in decos],
                 surface_codes=S,
                 attribution="Dades: (c) OpenStreetMap contributors (ODbL); Microsoft Global ML Building Footprints (ODbL); "
-                            "ESA WorldCover 2021 (CC BY 4.0); AWS Terrain Tiles (EU-DEM, SRTM).")
+                            "ESA WorldCover 2021 (CC BY 4.0); AWS Terrain Tiles (EU-DEM, SRTM); "
+                            "ortofoto PNOA (c) Instituto Geográfico Nacional de España (CC BY 4.0).")
     with open(os.path.join(OUT, "meta.json"), "w") as f:
         json.dump(meta, f, separators=(",", ":"), ensure_ascii=False)
     log(f"escrit {OUT}: raster {os.path.getsize(os.path.join(OUT, 'raster.bin.gz')) / 1e6:.1f} MB, {len(blds) - 1} edificis, spawn {meta['spawn']}")
@@ -966,7 +1179,7 @@ COLORS = {
     "ROAD_MAIN": (75, 75, 78), "MARKING": (240, 240, 240), "SIDEWALK": (215, 170, 170), "PATH": (170, 140, 90),
     "TRACK": (150, 130, 100), "CYCLEWAY": (170, 70, 60), "PARKING": (130, 130, 130), "PLAZA": (190, 185, 175),
     "PARK": (100, 180, 90), "TURF": (40, 140, 60), "TURF_LINE": (250, 250, 250), "COURT": (180, 70, 60),
-    "COURT_LINE": (250, 250, 250), "POOL_DECK": (225, 215, 180), "WATER": (60, 110, 200), "STREAM": (60, 110, 200), "POOL": (80, 200, 230),
+    "COURT_LINE": (250, 250, 250), "POOL_DECK": (225, 215, 180), "SOIL": (185, 160, 110), "PAVING": (205, 205, 200), "WATER": (60, 110, 200), "STREAM": (60, 110, 200), "POOL": (80, 200, 230),
     "GARDEN": (140, 185, 95), "SAND": (225, 205, 150), "GRAVEL": (160, 155, 150), "SHRUB": (95, 140, 70),
     "BARE": (175, 150, 120), "CEMETERY": (150, 150, 140), "PLAZA_TREES": (200, 180, 140), "MEADOW": (150, 180, 90),
 }
