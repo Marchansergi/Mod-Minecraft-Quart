@@ -391,6 +391,8 @@ public final class TownData {
                 case "street_bus_stop" -> 4;
                 case "long_bench" -> length + 2;
                 case "shelter" -> 5;
+                case "round_pond" -> length + 2;
+                case "roof_solar" -> Math.max(width, depth) + 1;
                 case "street_tree" -> 5;
                 case "playground" -> 8;
                 case "goal", "hoop" -> 5;

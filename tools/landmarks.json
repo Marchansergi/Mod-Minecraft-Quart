@@ -1,5 +1,5 @@
 {
-  "_comment": "Edificis i llocs destacats de Quart. 'point' = [lat, lon] (WGS84). 'source': 'osm' = usa la planta real del mapa (edifici que conté/és més a prop del punt); 'rect' = planta rectangular dibuixada davant del carrer més proper (per als edificis que falten a OpenStreetMap). Façana: cada cadena és una planta (de baix a dalt), llegida d'esquerra a dreta mirant des del carrer. Caràcters: W paret, X paret secundària (accent), w finestra, x finestra en paret accent, D porta, G porta de garatge, B finestra amb balcó, S aparador de botiga, # pilastra/cantonada (accent), P persiana tancada, - paret llisa. Per a 'rect', 'view' = [lat, lon, rumb] de la càmera de Street View que mira la façana. Altres caràcters: R finestra amb persiana, I finestra amb reixa, d porta blanca, P persiana metàl·lica, C pilar que sobresurt de la coberta. Opcions: repeat (la façana es repeteix per habitatge), plinth (sòcol), rail (barana dels balcons), garage, shutter, eave (ràfec), canopy_floor (teuladeta sobre una planta), fence (mur de parcel·la), chimney [u, fondària, alçada], porch {u, width, depth}, roof_type hipped/gable_front/gable_side/flat/vault. 'pools': piscines amb el contorn exacte [lat, lon] i 'deck' (metres de vorada de pedra al voltant). 'interior': {type: house|info_point|museum|social|gym|school|supermarket|shop_flats, dwellings: N habitatges en filera, rooms: N aules}. 'sign': rètol a la façana (lines, wood, floor_row). 'frieze': fris de maó sota el ràfec. 'eave_block': material del ràfec. 'plazas': places de formigó amb el dibuix de línies blanques tret de l'ortofoto (ribbon_delta: quant més clares que el formigó han de ser les cintes; stripe: separació de les línies) i una muntanyeta (mound) opcional. 'rows': material de cada filera de la paret (de baix a dalt). 'mullions': muntants verticals {every, from_row, block}. 'canopy': porxo pla {row, depth, every, block, pillar}. Cases amb 'frame' {center, angle}: coordenades locals (u, v) en metres (u cap a l'angle, v girat 90° horari); 'body' [u0,v0,u1,v1] parets; 'front' costat de la façana (-u/+u/-v/+v); 'parts' volums afegits (porxo...); 'parcel' terra (surface + box); 'fences' tanques (line, base, top, pillar, pillar_every, cap, gate, gates=[caixes]); 'hedges' bardisses. 'area_fences': tanca a la vora d'un polígon de l'OSM. 'lots': solars (poly_xz en coordenades del món). 'road_overrides': amplada de carrers. 'crossings': passos de zebra afegits a mà [lat, lon]. 'street_trees': arbres d'alineació al llarg d'un carrer.",
+  "_comment": "Edificis i llocs destacats de Quart. 'point' = [lat, lon] (WGS84). 'source': 'osm' = usa la planta real del mapa (edifici que conté/és més a prop del punt); 'rect' = planta rectangular dibuixada davant del carrer més proper (per als edificis que falten a OpenStreetMap). Façana: cada cadena és una planta (de baix a dalt), llegida d'esquerra a dreta mirant des del carrer. Caràcters: W paret, X paret secundària (accent), w finestra, x finestra en paret accent, D porta, G porta de garatge, B finestra amb balcó, S aparador de botiga, # pilastra/cantonada (accent), P persiana tancada, - paret llisa. Per a 'rect', 'view' = [lat, lon, rumb] de la càmera de Street View que mira la façana. Altres caràcters: R finestra amb persiana, I finestra amb reixa, d porta blanca, P persiana metàl·lica, C pilar que sobresurt de la coberta. Opcions: repeat (la façana es repeteix per habitatge), plinth (sòcol), rail (barana dels balcons), garage, shutter, eave (ràfec), canopy_floor (teuladeta sobre una planta), fence (mur de parcel·la), chimney [u, fondària, alçada], porch {u, width, depth}, roof_type hipped/gable_front/gable_side/flat/vault. 'pools': piscines amb el contorn exacte [lat, lon] i 'deck' (metres de vorada de pedra al voltant). 'interior': {type: house|info_point|museum|social|gym|school|supermarket|shop_flats, dwellings: N habitatges en filera, rooms: N aules}. 'sign': rètol a la façana (lines, wood, floor_row). 'frieze': fris de maó sota el ràfec. 'eave_block': material del ràfec. 'plazas': places de formigó amb el dibuix de línies blanques tret de l'ortofoto (ribbon_delta: quant més clares que el formigó han de ser les cintes; stripe: separació de les línies) i una muntanyeta (mound) opcional. 'rows': material de cada filera de la paret (de baix a dalt). 'mullions': muntants verticals {every, from_row, block}. 'canopy': porxo pla {row, depth, every, block, pillar}. Cases amb 'frame' {center, angle}: coordenades locals (u, v) en metres (u cap a l'angle, v girat 90° horari); 'body' [u0,v0,u1,v1] parets; 'front' costat de la façana (-u/+u/-v/+v); 'parts' volums afegits (porxo...); 'parcel' terra (surface + box); 'fences' tanques (line, base, top, pillar, pillar_every, cap, gate, gates=[caixes]); 'hedges' bardisses. 'area_fences': tanca a la vora d'un polígon de l'OSM. 'lots': solars (poly_xz en coordenades del món). 'road_overrides': amplada de carrers. 'crossings': passos de zebra afegits a mà [lat, lon]. 'street_trees': arbres d'alineació al llarg d'un carrer. Decoracions 'round_pond' (bassa o piscina rodona elevada, length = radi) i 'roof_solar' (placa solar sobre la teulada, width x depth).",
   "spawn": [
     41.9380805,
     2.8392814
@@ -938,6 +938,153 @@
       "interior": {
         "type": "house"
       }
+    },
+    {
+      "id": "casa_creueta",
+      "name": "Casa de la Creueta (Carrer de la Creu, Girona) - casa d'un amic",
+      "source": "osm_named",
+      "osm_id": 250616874,
+      "frame": {
+        "center": [
+          41.96617758,
+          2.83935312
+        ],
+        "angle": -11.3
+      },
+      "body": [
+        -3.5,
+        -6.0,
+        8.8,
+        3.6
+      ],
+      "front": "-v",
+      "floors": 2,
+      "floor_height": 3,
+      "wall": "minecraft:white_terracotta",
+      "accent": "minecraft:white_terracotta",
+      "roof": "andesite",
+      "roof_type": "hipped",
+      "eave": true,
+      "facade": [
+        "WwwWDWWwwWW",
+        "WwwWWWWwwWW"
+      ],
+      "parts": [
+        {
+          "name": "terrassa",
+          "box": [
+            -9.8,
+            -5.6,
+            -3.5,
+            3.4
+          ],
+          "floors": 1,
+          "floor_height": 3,
+          "roof_type": "flat",
+          "roof": "flat:minecraft:white_terracotta",
+          "facade": [
+            "WwwWW"
+          ]
+        }
+      ],
+      "interior": {
+        "type": "house"
+      },
+      "parcel": [
+        {
+          "surface": "SOIL",
+          "poly": [
+            [
+              -15.3,
+              -6.3
+            ],
+            [
+              -9.8,
+              -6.3
+            ],
+            [
+              -9.8,
+              3.6
+            ],
+            [
+              8.8,
+              3.6
+            ],
+            [
+              6.6,
+              7.3
+            ],
+            [
+              -11.3,
+              13.0
+            ],
+            [
+              -15.3,
+              11.6
+            ]
+          ]
+        }
+      ],
+      "fences": [
+        {
+          "line": [
+            [
+              -15.6,
+              -6.6
+            ],
+            [
+              -9.9,
+              -6.6
+            ]
+          ],
+          "base": "minecraft:white_concrete",
+          "top": "minecraft:white_concrete",
+          "pillar_every": 0,
+          "gate": "minecraft:spruce_fence_gate",
+          "gates": [
+            [
+              -14.2,
+              -7.2,
+              -12.0,
+              -6.0
+            ]
+          ]
+        },
+        {
+          "line": [
+            [
+              -15.6,
+              -6.6
+            ],
+            [
+              -15.6,
+              11.8
+            ],
+            [
+              -11.3,
+              13.2
+            ]
+          ],
+          "base": "minecraft:white_concrete",
+          "top": "minecraft:white_concrete",
+          "pillar_every": 0
+        },
+        {
+          "line": [
+            [
+              8.9,
+              3.8
+            ],
+            [
+              6.6,
+              7.3
+            ]
+          ],
+          "base": "minecraft:white_concrete",
+          "top": "minecraft:white_concrete",
+          "pillar_every": 0
+        }
+      ]
     }
   ],
   "decorations": [
@@ -1015,6 +1162,25 @@
         -148
       ],
       "yaw": 0
+    },
+    {
+      "type": "round_pond",
+      "name": "bassa rodona (creueta)",
+      "point": [
+        41.96609108,
+        2.83923486
+      ],
+      "length": 2
+    },
+    {
+      "type": "roof_solar",
+      "name": "placa solar (creueta)",
+      "point": [
+        41.96618394,
+        2.83937109
+      ],
+      "width": 2,
+      "depth": 1
     }
   ],
   "pools": [

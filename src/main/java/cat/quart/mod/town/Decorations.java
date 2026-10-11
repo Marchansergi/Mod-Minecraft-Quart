@@ -37,6 +37,8 @@ public final class Decorations {
                 case "long_bench" -> longBench(sink, td, d);
                 case "street_bench" -> streetBench(f);
                 case "shelter" -> shelter(f);
+                case "round_pond" -> roundPond(sink, td, d);
+                case "roof_solar" -> roofSolar(sink, td, d);
                 case "street_tree" -> streetTree(sink, td, d);
                 case "street_drinking_water" -> fountain(f);
                 case "street_bus_stop" -> busStop(f);
@@ -200,6 +202,42 @@ public final class Decorations {
             int g = td.height(x, z);
             sink.set(x, g + 1, z, i % 4 == 0 ? Blocks.SMOOTH_STONE.getDefaultState() : Pal.slab(Blocks.SMOOTH_STONE_SLAB, SlabType.BOTTOM));
         }
+    }
+
+    // ---------------------------------------------------------------- bassa rodona elevada (vora de pedra d'un bloc)
+    private static void roundPond(Sink sink, TownData td, TownData.Decoration d) {
+        int r = Math.max(1, d.length);
+        int g = td.inRaster(d.x, d.z) ? td.height(d.x, d.z) : d.y;
+        for (int dz = -r - 1; dz <= r + 1; dz++)
+            for (int dx = -r - 1; dx <= r + 1; dx++) {
+                double dist = Math.hypot(dx, dz);
+                int x = d.x + dx, z = d.z + dz;
+                if (dist <= r + 0.5) {
+                    sink.set(x, g - 1, z, Blocks.CLAY.getDefaultState());
+                    sink.set(x, g, z, Pal.WATER);
+                    sink.set(x, g + 1, z, Pal.WATER);
+                    if (Pal.hash(x, z, 31) % 7 == 0) sink.set(x, g + 2, z, Blocks.LILY_PAD.getDefaultState());
+                    else sink.set(x, g + 2, z, Pal.AIR);
+                } else if (dist <= r + 1.5) {
+                    sink.set(x, g + 1, z, Blocks.POLISHED_ANDESITE.getDefaultState());
+                    sink.set(x, g + 2, z, Pal.AIR);
+                }
+            }
+    }
+
+    // ---------------------------------------------------------------- placa solar sobre la teulada
+    private static void roofSolar(Sink sink, TownData td, TownData.Decoration d) {
+        for (int dz = 0; dz < Math.max(1, d.depth); dz++)
+            for (int dx = 0; dx < Math.max(1, d.width); dx++) {
+                int x = d.x + dx, z = d.z + dz;
+                TownData.Building b = td.building(x, z);
+                if (b == null) continue;
+                int halves = Math.min(Math.max(1, td.roofDist(x, z)), 9);
+                int full = halves / 2;
+                int y = b.wallTop() + full;
+                // si la teulada acaba amb mitja llosa, la placa la substitueix; si no, va a sobre
+                sink.set(x, y + 1, z, Blocks.DAYLIGHT_DETECTOR.getDefaultState());
+            }
     }
 
     // ---------------------------------------------------------------- caseta de fusta del pati de l'escola (Street View)

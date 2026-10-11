@@ -40,7 +40,8 @@ M_LAT = 111132.92 - 559.82 * math.cos(2 * _phi) + 1.175 * math.cos(4 * _phi)
 M_LON = 111412.84 * math.cos(_phi) - 93.5 * math.cos(3 * _phi) + 0.118 * math.cos(5 * _phi)
 
 # Zona del poble (nucli) i marge de transició amb el món normal
-CORE_S, CORE_N, CORE_W, CORE_E = 41.9290, 41.9505, 2.8285, 2.8520
+# El nucli va de Quart (sud) fins a la Creueta, al costat del Parc Científic i Tecnològic de la UdG (nord)
+CORE_S, CORE_N, CORE_W, CORE_E = 41.9290, 41.9705, 2.8285, 2.8520
 MARGIN = 96
 
 # Alçada: 1 m real = 1 bloc. L'estació (98 m s.n.m.) queda a Y=72
@@ -1018,6 +1019,8 @@ def main():
     for p in street_points:
         x_, z_ = to_xz(p["lat"], p["lon"])
         ix, iz = int(round(x_)), int(round(z_))
+        if not (CORE[0] <= ix < CORE[2] and CORE[1] <= iz < CORE[3]):
+            continue
         # orientació cap al carrer més proper
         c = Point(*px(ix, iz))
         line, width = min(road_geoms, key=lambda r: r[0].distance(c))

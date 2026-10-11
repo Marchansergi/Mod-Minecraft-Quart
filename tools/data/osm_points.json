@@ -185,5 +185,8435 @@
   "tags": {
    "highway": "crossing"
   }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9566763,
+  "lon": 2.8201668,
+  "id": 772011281,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.957006,
+  "lon": 2.8201803,
+  "id": 772027896,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9572651,
+  "lon": 2.8242186,
+  "id": 772027972,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9578194,
+  "lon": 2.8236558,
+  "id": 772124763,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9564594,
+  "lon": 2.8206163,
+  "id": 772165860,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9566829,
+  "lon": 2.822112,
+  "id": 772172034,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9566185,
+  "lon": 2.8207383,
+  "id": 772277020,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9568492,
+  "lon": 2.8199329,
+  "id": 796052423,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9586959,
+  "lon": 2.8223026,
+  "id": 6479335557,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.958775,
+  "lon": 2.8211928,
+  "id": 6517803092,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9572142,
+  "lon": 2.8243128,
+  "id": 9234678848,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9573777,
+  "lon": 2.8254755,
+  "id": 772112795,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9578795,
+  "lon": 2.8271795,
+  "id": 6517803103,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9526251,
+  "lon": 2.8395901,
+  "id": 6521539917,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9524315,
+  "lon": 2.8406777,
+  "id": 6521539918,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9618793,
+  "lon": 2.8269987,
+  "id": 772138587,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9621309,
+  "lon": 2.8285828,
+  "id": 772193755,
+  "tags": {
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.961803,
+  "lon": 2.8291414,
+  "id": 772202423,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9609932,
+  "lon": 2.8299284,
+  "id": 772220783,
+  "tags": {
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9623059,
+  "lon": 2.8274081,
+  "id": 5635656630,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9623168,
+  "lon": 2.8278852,
+  "id": 5635656633,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9608021,
+  "lon": 2.8306265,
+  "id": 6517803100,
+  "tags": {
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.960777,
+  "lon": 2.8271649,
+  "id": 6517803102,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9603483,
+  "lon": 2.8327956,
+  "id": 4075494563,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.960663,
+  "lon": 2.833101,
+  "id": 4075494566,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9627897,
+  "lon": 2.820109,
+  "id": 31022708,
+  "tags": {
+   "crossing": "traffic_signals",
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9569352,
+  "lon": 2.8200357,
+  "id": 354880351,
+  "tags": {
+   "bench": "yes",
+   "bin": "yes",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "ref": "15058",
+   "shelter": "yes",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9644005,
+  "lon": 2.8289889,
+  "id": 771962121,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9627691,
+  "lon": 2.8200041,
+  "id": 771975727,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9627596,
+  "lon": 2.8268088,
+  "id": 771975941,
+  "tags": {
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9596181,
+  "lon": 2.8219947,
+  "id": 771980554,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9623988,
+  "lon": 2.824558,
+  "id": 771985746,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9629003,
+  "lon": 2.8201556,
+  "id": 771990420,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.963073,
+  "lon": 2.8235156,
+  "id": 771999822,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.962135,
+  "lon": 2.820053,
+  "id": 772000305,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9632233,
+  "lon": 2.8176135,
+  "id": 772029549,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9647972,
+  "lon": 2.822056,
+  "id": 772093070,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.962659,
+  "lon": 2.8245413,
+  "id": 772117633,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9628802,
+  "lon": 2.822305,
+  "id": 772128144,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.962574,
+  "lon": 2.8242238,
+  "id": 772140565,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9599636,
+  "lon": 2.8197736,
+  "id": 772150151,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9596481,
+  "lon": 2.8205711,
+  "id": 772156292,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9627459,
+  "lon": 2.820207,
+  "id": 772160003,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9626767,
+  "lon": 2.821302,
+  "id": 772160481,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.960251,
+  "lon": 2.8224776,
+  "id": 772168390,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "yes",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9626327,
+  "lon": 2.820082,
+  "id": 772183100,
+  "tags": {
+   "crossing:island": "no",
+   "crossing:signals": "yes",
+   "highway": "crossing",
+   "kerb": "raised",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.963604,
+  "lon": 2.8205856,
+  "id": 772190442,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9634016,
+  "lon": 2.8151394,
+  "id": 772192194,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9596643,
+  "lon": 2.8198978,
+  "id": 772201782,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9630987,
+  "lon": 2.8287646,
+  "id": 772208201,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9625797,
+  "lon": 2.828377,
+  "id": 772267887,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9623308,
+  "lon": 2.821921,
+  "id": 772278916,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9638358,
+  "lon": 2.8291046,
+  "id": 774994109,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9607636,
+  "lon": 2.8229596,
+  "id": 4207681001,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9612751,
+  "lon": 2.8235133,
+  "id": 4207681002,
+  "tags": {
+   "crossing:markings": "yes",
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9618451,
+  "lon": 2.8243175,
+  "id": 4207681003,
+  "tags": {
+   "crossing:island": "no",
+   "crossing:markings": "yes",
+   "crossing:signals": "no",
+   "highway": "crossing",
+   "kerb": "lowered",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9619015,
+  "lon": 2.8239486,
+  "id": 4207681004,
+  "tags": {
+   "crossing:markings": "yes",
+   "crossing:signals": "no",
+   "highway": "crossing",
+   "kerb": "lowered",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9619961,
+  "lon": 2.8242207,
+  "id": 4207681005,
+  "tags": {
+   "crossing:markings": "yes",
+   "crossing:signals": "no",
+   "highway": "crossing",
+   "kerb": "lowered",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9623022,
+  "lon": 2.8243722,
+  "id": 4207681006,
+  "tags": {
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9622649,
+  "lon": 2.8276291,
+  "id": 5563106489,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Girona, Interna Udg (direcció Palamós)",
+   "operator": "Sarbus - Sarfa",
+   "public_transport": "platform",
+   "ref": "16680"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9623586,
+  "lon": 2.8274074,
+  "id": 5635656632,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9623664,
+  "lon": 2.8278834,
+  "id": 5635656634,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9624069,
+  "lon": 2.8275383,
+  "id": 5635656635,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Girona, Interna Udg (direcció Girona)",
+   "operator": "Sarbus - Sarfa",
+   "public_transport": "platform",
+   "ref": "16680"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9658413,
+  "lon": 2.8208792,
+  "id": 5740985867,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "yes",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "drinking_water",
+  "lat": 41.9555896,
+  "lon": 2.8279774,
+  "id": 5741981474,
+  "tags": {
+   "amenity": "drinking_water"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9621501,
+  "lon": 2.8262121,
+  "id": 6479335526,
+  "tags": {
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9621963,
+  "lon": 2.8262065,
+  "id": 6479335527,
+  "tags": {
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9597042,
+  "lon": 2.8198909,
+  "id": 6517803104,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9636449,
+  "lon": 2.820394,
+  "id": 6517803106,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9629306,
+  "lon": 2.8190376,
+  "id": 6517803107,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.962989,
+  "lon": 2.826633,
+  "id": 6758076318,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.963072,
+  "lon": 2.8288319,
+  "id": 6758076419,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9635171,
+  "lon": 2.8146304,
+  "id": 6818408648,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9633506,
+  "lon": 2.8203009,
+  "id": 7415332616,
+  "tags": {
+   "bench": "yes",
+   "bin": "yes",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Pda. Creu de Palau, 44",
+   "public_transport": "platform",
+   "ref": "15307",
+   "shelter": "yes",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9634438,
+  "lon": 2.8204951,
+  "id": 7415332645,
+  "tags": {
+   "bench": "yes",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Pda. Creu de Palau, 45",
+   "network": "ATM Girona",
+   "operator": "TMG",
+   "public_transport": "platform",
+   "ref": "15064",
+   "shelter": "yes"
+  }
+ },
+ {
+  "kind": "drinking_water",
+  "lat": 41.9635002,
+  "lon": 2.8285868,
+  "id": 9236547275,
+  "tags": {
+   "amenity": "drinking_water"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.964371,
+  "lon": 2.8289961,
+  "id": 9380217045,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9624997,
+  "lon": 2.8322205,
+  "id": 354880430,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "ref": "15082",
+   "route_ref": "L11, L8",
+   "source": "UMAT - Ajuntament de Girona (2017)",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9673923,
+  "lon": 2.8266052,
+  "id": 354891566,
+  "tags": {
+   "crossing": "traffic_signals",
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.967091,
+  "lon": 2.8281014,
+  "id": 771964560,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9635053,
+  "lon": 2.8321966,
+  "id": 771991741,
+  "tags": {
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9666425,
+  "lon": 2.8298263,
+  "id": 771993323,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9626318,
+  "lon": 2.832269,
+  "id": 772102444,
+  "tags": {
+   "crossing:island": "no",
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9636863,
+  "lon": 2.831952,
+  "id": 772106481,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9638118,
+  "lon": 2.8328332,
+  "id": 772136962,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.967197,
+  "lon": 2.8275792,
+  "id": 772139847,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9636007,
+  "lon": 2.8327287,
+  "id": 772203325,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9672575,
+  "lon": 2.8272779,
+  "id": 772232301,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.967364,
+  "lon": 2.8267311,
+  "id": 774244461,
+  "tags": {
+   "crossing": "traffic_signals",
+   "crossing:markings": "dots",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9670175,
+  "lon": 2.828438,
+  "id": 2530999242,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9608579,
+  "lon": 2.8308561,
+  "id": 5132898200,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Facultat Econòmiques",
+   "name:ca": "Facultat Econòmiques",
+   "public_transport": "platform",
+   "ref": "15083",
+   "route_ref": "L11, L8",
+   "source": "UMAT - Ajuntament de Girona (2017)"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9592094,
+  "lon": 2.8375757,
+  "id": 6485126141,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9615406,
+  "lon": 2.8307295,
+  "id": 10893517598,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9621033,
+  "lon": 2.8302331,
+  "id": 10893567444,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9638644,
+  "lon": 2.8307831,
+  "id": 10893567445,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9628287,
+  "lon": 2.8312414,
+  "id": 10893567446,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9629017,
+  "lon": 2.8312877,
+  "id": 10893567449,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9638447,
+  "lon": 2.8308327,
+  "id": 10893567450,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "drinking_water",
+  "lat": 41.9557733,
+  "lon": 2.8291629,
+  "id": 13960146931,
+  "tags": {
+   "amenity": "drinking_water"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9631211,
+  "lon": 2.8428531,
+  "id": 5563106452,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Girona, la Creueta",
+   "operator": "Sarbus - Sarfa",
+   "public_transport": "platform",
+   "ref": "16108"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9632756,
+  "lon": 2.8427646,
+  "id": 5563106487,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Girona, la Creueta",
+   "operator": "Sarbus - Sarfa",
+   "public_transport": "platform",
+   "ref": "16108"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9581419,
+  "lon": 2.8397519,
+  "id": 6485126132,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9728541,
+  "lon": 2.8242724,
+  "id": 31022671,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "highway": "traffic_signals",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9679592,
+  "lon": 2.8235257,
+  "id": 354881501,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.967919,
+  "lon": 2.8237229,
+  "id": 354902114,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.971691,
+  "lon": 2.8241342,
+  "id": 379752551,
+  "tags": {
+   "crossing": "traffic_signals",
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.972593,
+  "lon": 2.8216774,
+  "id": 442690980,
+  "tags": {
+   "bench": "yes",
+   "bin": "yes",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "C. Rutlla 158",
+   "public_transport": "platform",
+   "ref": "15215",
+   "shelter": "no",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9706099,
+  "lon": 2.8264384,
+  "id": 614086821,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Ciutat de Figueres",
+   "name:ca": "Ciutat de Figueres",
+   "public_transport": "platform",
+   "ref": "15177",
+   "route_ref": "L11",
+   "shelter": "no",
+   "source": "UMAT - Ajuntament de Girona (2017)"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9696858,
+  "lon": 2.8268435,
+  "id": 771962649,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9723586,
+  "lon": 2.8263517,
+  "id": 771962705,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9677974,
+  "lon": 2.8232998,
+  "id": 771965005,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.973578,
+  "lon": 2.8232787,
+  "id": 771968589,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9732405,
+  "lon": 2.8203355,
+  "id": 771973965,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9729741,
+  "lon": 2.8232007,
+  "id": 771975770,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.964657,
+  "lon": 2.8287574,
+  "id": 771977778,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9708731,
+  "lon": 2.8228393,
+  "id": 771978515,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.972988,
+  "lon": 2.8230499,
+  "id": 771979720,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9656968,
+  "lon": 2.8169642,
+  "id": 771982463,
+  "tags": {
+   "button_operated": "yes",
+   "crossing": "traffic_signals",
+   "highway": "crossing",
+   "tactile_paving": "no",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9685243,
+  "lon": 2.8259627,
+  "id": 771984115,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9714865,
+  "lon": 2.8216985,
+  "id": 771984574,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9695838,
+  "lon": 2.8281943,
+  "id": 771985722,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9698934,
+  "lon": 2.8189929,
+  "id": 771989379,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.970741,
+  "lon": 2.827868,
+  "id": 771989444,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9655725,
+  "lon": 2.8171191,
+  "id": 771989996,
+  "tags": {
+   "button_operated": "yes",
+   "crossing": "traffic_signals",
+   "highway": "crossing",
+   "tactile_paving": "no",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9698153,
+  "lon": 2.8214711,
+  "id": 771995196,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9661918,
+  "lon": 2.8212291,
+  "id": 771997797,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9694768,
+  "lon": 2.8259162,
+  "id": 771999914,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9708597,
+  "lon": 2.8230704,
+  "id": 772003029,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9700679,
+  "lon": 2.8207809,
+  "id": 772005386,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9736617,
+  "lon": 2.8232953,
+  "id": 772006375,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9729637,
+  "lon": 2.8254939,
+  "id": 772010106,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9702793,
+  "lon": 2.8228838,
+  "id": 772010673,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9702132,
+  "lon": 2.8227439,
+  "id": 772011937,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9683945,
+  "lon": 2.8244393,
+  "id": 772012978,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9694172,
+  "lon": 2.824115,
+  "id": 772014930,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9697001,
+  "lon": 2.8215587,
+  "id": 772015942,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9701742,
+  "lon": 2.8255178,
+  "id": 772020739,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.973705,
+  "lon": 2.8257691,
+  "id": 772023844,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9682214,
+  "lon": 2.8180634,
+  "id": 772027741,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "yes",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9722762,
+  "lon": 2.8264762,
+  "id": 772038704,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9725205,
+  "lon": 2.8274118,
+  "id": 772041032,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9719951,
+  "lon": 2.8241982,
+  "id": 772045307,
+  "tags": {
+   "crossing": "traffic_signals",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9667099,
+  "lon": 2.8223872,
+  "id": 772048776,
+  "tags": {
+   "button_operated": "yes",
+   "crossing": "traffic_signals",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9636817,
+  "lon": 2.8143663,
+  "id": 772060306,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9700279,
+  "lon": 2.8250216,
+  "id": 772060632,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.967732,
+  "lon": 2.8232648,
+  "id": 772061422,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9666244,
+  "lon": 2.8224587,
+  "id": 772061450,
+  "tags": {
+   "button_operated": "yes",
+   "crossing": "traffic_signals",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9726976,
+  "lon": 2.8202884,
+  "id": 772061467,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.967375,
+  "lon": 2.82738,
+  "id": 772067827,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9699171,
+  "lon": 2.8207621,
+  "id": 772071105,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9724119,
+  "lon": 2.8229562,
+  "id": 772073735,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9686411,
+  "lon": 2.827728,
+  "id": 772077519,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9701781,
+  "lon": 2.8265932,
+  "id": 772077627,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9737303,
+  "lon": 2.8220473,
+  "id": 772078071,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9725661,
+  "lon": 2.8217179,
+  "id": 772081303,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9674214,
+  "lon": 2.8208689,
+  "id": 772090932,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "incorrect"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9708041,
+  "lon": 2.8239351,
+  "id": 772090999,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9659574,
+  "lon": 2.8276318,
+  "id": 772094546,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.965016,
+  "lon": 2.8160761,
+  "id": 772103071,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9669148,
+  "lon": 2.8283191,
+  "id": 772110075,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9732944,
+  "lon": 2.8285776,
+  "id": 772110668,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9686029,
+  "lon": 2.8270349,
+  "id": 772111083,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9649222,
+  "lon": 2.8224405,
+  "id": 772114101,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9688501,
+  "lon": 2.827654,
+  "id": 772122101,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9687649,
+  "lon": 2.8278156,
+  "id": 772122185,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9737564,
+  "lon": 2.8244792,
+  "id": 772125240,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9717648,
+  "lon": 2.8229354,
+  "id": 772125585,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9696531,
+  "lon": 2.8229044,
+  "id": 772132865,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9656271,
+  "lon": 2.8287369,
+  "id": 772135526,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9707907,
+  "lon": 2.8241762,
+  "id": 772135943,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.971729,
+  "lon": 2.8231971,
+  "id": 772138925,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9723058,
+  "lon": 2.8256134,
+  "id": 772138981,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9701656,
+  "lon": 2.824214,
+  "id": 772139846,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9684258,
+  "lon": 2.8240577,
+  "id": 772140104,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9730276,
+  "lon": 2.8231389,
+  "id": 772141055,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9713459,
+  "lon": 2.821539,
+  "id": 772142506,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9697757,
+  "lon": 2.8272228,
+  "id": 772144492,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9698639,
+  "lon": 2.8215899,
+  "id": 772144524,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9697571,
+  "lon": 2.8228108,
+  "id": 772144625,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9650875,
+  "lon": 2.8164924,
+  "id": 772146505,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9722444,
+  "lon": 2.8247514,
+  "id": 772151206,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9659949,
+  "lon": 2.8228255,
+  "id": 772152079,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9722751,
+  "lon": 2.8289946,
+  "id": 772152985,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9689928,
+  "lon": 2.8276732,
+  "id": 772153082,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9720093,
+  "lon": 2.8215364,
+  "id": 772154366,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9700772,
+  "lon": 2.8240915,
+  "id": 772155457,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "kerb": "raised",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9685017,
+  "lon": 2.8262673,
+  "id": 772156094,
+  "tags": {
+   "crossing": "traffic_signals",
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9699576,
+  "lon": 2.8208433,
+  "id": 772156739,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.967677,
+  "lon": 2.8238762,
+  "id": 772156833,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9707243,
+  "lon": 2.82808,
+  "id": 772157919,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9723737,
+  "lon": 2.8288349,
+  "id": 772158651,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9712872,
+  "lon": 2.8230275,
+  "id": 772158826,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9718823,
+  "lon": 2.8216494,
+  "id": 772158987,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9676128,
+  "lon": 2.8245084,
+  "id": 772160554,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.971508,
+  "lon": 2.8213774,
+  "id": 772162360,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9684248,
+  "lon": 2.8212983,
+  "id": 772162569,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9724491,
+  "lon": 2.8287341,
+  "id": 772162724,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9723006,
+  "lon": 2.8240743,
+  "id": 772164367,
+  "tags": {
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9728872,
+  "lon": 2.8241454,
+  "id": 772166747,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9709568,
+  "lon": 2.8229805,
+  "id": 772166828,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9711691,
+  "lon": 2.8271486,
+  "id": 772168592,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9729579,
+  "lon": 2.8242675,
+  "id": 772168603,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9701913,
+  "lon": 2.8239914,
+  "id": 772169492,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9703168,
+  "lon": 2.8193264,
+  "id": 772169659,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9723757,
+  "lon": 2.8255307,
+  "id": 772171623,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9687241,
+  "lon": 2.8270954,
+  "id": 772171679,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.968774,
+  "lon": 2.826986,
+  "id": 772172173,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9736278,
+  "lon": 2.8266476,
+  "id": 772172402,
+  "tags": {
+   "crossing": "traffic_signals",
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9683747,
+  "lon": 2.8246373,
+  "id": 772172404,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9719555,
+  "lon": 2.8215938,
+  "id": 772173956,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9657332,
+  "lon": 2.8173692,
+  "id": 772174539,
+  "tags": {
+   "button_operated": "yes",
+   "crossing": "traffic_signals",
+   "highway": "crossing",
+   "tactile_paving": "no",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9722905,
+  "lon": 2.8274815,
+  "id": 772176431,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9710543,
+  "lon": 2.8209787,
+  "id": 772179857,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9696045,
+  "lon": 2.820139,
+  "id": 772182996,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9714132,
+  "lon": 2.8229103,
+  "id": 772183983,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9709269,
+  "lon": 2.8240806,
+  "id": 772184353,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9696392,
+  "lon": 2.8239299,
+  "id": 772184377,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "kerb": "raised",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9701078,
+  "lon": 2.8238593,
+  "id": 772184543,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "kerb": "lowered",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9737786,
+  "lon": 2.8243654,
+  "id": 772186429,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.970905,
+  "lon": 2.8242994,
+  "id": 772188064,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9697731,
+  "lon": 2.8216651,
+  "id": 772191112,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9686077,
+  "lon": 2.8205197,
+  "id": 772191491,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9729587,
+  "lon": 2.8244239,
+  "id": 772191932,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "crossing:island": "yes",
+   "highway": "crossing",
+   "tactile_paving": "no",
+   "traffic_calming": "no",
+   "traffic_signals:sound": "yes",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9714467,
+  "lon": 2.8279001,
+  "id": 772191958,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.972948,
+  "lon": 2.8231157,
+  "id": 772192384,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9700436,
+  "lon": 2.8254445,
+  "id": 772192456,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9648872,
+  "lon": 2.8288851,
+  "id": 772193520,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9713266,
+  "lon": 2.8278375,
+  "id": 772194629,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9709456,
+  "lon": 2.8216844,
+  "id": 772194902,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9691024,
+  "lon": 2.8275691,
+  "id": 772195008,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9646157,
+  "lon": 2.8155571,
+  "id": 772195300,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9687582,
+  "lon": 2.8198035,
+  "id": 772195759,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9720367,
+  "lon": 2.8247127,
+  "id": 772196705,
+  "tags": {
+   "crossing": "traffic_signals",
+   "crossing:island": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9683049,
+  "lon": 2.8210349,
+  "id": 772198462,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "crossing:markings": "dots",
+   "highway": "crossing",
+   "kerb": "lowered",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9701154,
+  "lon": 2.8228605,
+  "id": 772200880,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9681051,
+  "lon": 2.8212359,
+  "id": 772204635,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "crossing:island": "no",
+   "crossing:markings": "dots",
+   "highway": "crossing",
+   "tactile_paving": "incorrect",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9710201,
+  "lon": 2.821573,
+  "id": 772204729,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "kerb": "flush",
+   "source": "survey",
+   "tactile_paving": "yes",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.969575,
+  "lon": 2.8227851,
+  "id": 772204876,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9708359,
+  "lon": 2.8254488,
+  "id": 772206294,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9723266,
+  "lon": 2.8230119,
+  "id": 772207995,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9652146,
+  "lon": 2.8163279,
+  "id": 772208514,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.969014,
+  "lon": 2.8237379,
+  "id": 772208844,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9716799,
+  "lon": 2.8199602,
+  "id": 772208896,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9701943,
+  "lon": 2.8229621,
+  "id": 772209649,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9707885,
+  "lon": 2.8279653,
+  "id": 772210165,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9644858,
+  "lon": 2.8157182,
+  "id": 772210773,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9687244,
+  "lon": 2.8269089,
+  "id": 772213911,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9697477,
+  "lon": 2.8267063,
+  "id": 772215156,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9685106,
+  "lon": 2.823589,
+  "id": 772215306,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9646143,
+  "lon": 2.8206785,
+  "id": 772215394,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9699008,
+  "lon": 2.8273515,
+  "id": 772215946,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9700099,
+  "lon": 2.8206321,
+  "id": 772216738,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9724121,
+  "lon": 2.8272401,
+  "id": 772216830,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9724441,
+  "lon": 2.826439,
+  "id": 772217729,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9715468,
+  "lon": 2.8241467,
+  "id": 772217805,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9660678,
+  "lon": 2.8277503,
+  "id": 772220208,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9725273,
+  "lon": 2.8216535,
+  "id": 772221086,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9658826,
+  "lon": 2.8271376,
+  "id": 772223103,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9696719,
+  "lon": 2.822686,
+  "id": 772224902,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9723894,
+  "lon": 2.8231206,
+  "id": 772226158,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9731341,
+  "lon": 2.8218647,
+  "id": 772227857,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9721808,
+  "lon": 2.8201118,
+  "id": 772227984,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9686851,
+  "lon": 2.8261065,
+  "id": 772230678,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.972486,
+  "lon": 2.8217046,
+  "id": 772230794,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9716648,
+  "lon": 2.8230555,
+  "id": 772230902,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9718301,
+  "lon": 2.8230349,
+  "id": 772231990,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9727383,
+  "lon": 2.8263767,
+  "id": 772232253,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9699733,
+  "lon": 2.8239694,
+  "id": 772232501,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "kerb": "lowered",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9682464,
+  "lon": 2.8215319,
+  "id": 772238755,
+  "tags": {
+   "crossing": "traffic_signals",
+   "crossing:markings": "dots",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9719927,
+  "lon": 2.8244232,
+  "id": 772239754,
+  "tags": {
+   "crossing": "traffic_signals",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9716518,
+  "lon": 2.8240288,
+  "id": 772240490,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9687791,
+  "lon": 2.8214415,
+  "id": 772242622,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9706633,
+  "lon": 2.8279967,
+  "id": 772244155,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9715919,
+  "lon": 2.8215074,
+  "id": 772246783,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9696388,
+  "lon": 2.8266282,
+  "id": 772247342,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9706805,
+  "lon": 2.8252952,
+  "id": 772249577,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9725127,
+  "lon": 2.8217807,
+  "id": 772251852,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9707782,
+  "lon": 2.8244024,
+  "id": 772265576,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9683685,
+  "lon": 2.8210576,
+  "id": 772265661,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "crossing:markings": "dots",
+   "highway": "crossing",
+   "kerb": "lowered",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9700515,
+  "lon": 2.8243174,
+  "id": 772268810,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9681824,
+  "lon": 2.8215007,
+  "id": 772269759,
+  "tags": {
+   "crossing": "traffic_signals",
+   "crossing:markings": "dots",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9687341,
+  "lon": 2.8275553,
+  "id": 772274209,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9695713,
+  "lon": 2.8237722,
+  "id": 772274505,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9699575,
+  "lon": 2.8241909,
+  "id": 772275966,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9658751,
+  "lon": 2.8172345,
+  "id": 772276755,
+  "tags": {
+   "button_operated": "yes",
+   "crossing": "traffic_signals",
+   "highway": "crossing",
+   "tactile_paving": "no",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9707885,
+  "lon": 2.8229556,
+  "id": 772276803,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9714969,
+  "lon": 2.8277796,
+  "id": 772281107,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9730607,
+  "lon": 2.8218477,
+  "id": 772283425,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9707917,
+  "lon": 2.8272177,
+  "id": 772284003,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9708057,
+  "lon": 2.825075,
+  "id": 772284242,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9697151,
+  "lon": 2.8274008,
+  "id": 772284713,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9672086,
+  "lon": 2.8282184,
+  "id": 772286395,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9658677,
+  "lon": 2.8285114,
+  "id": 774244484,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9662191,
+  "lon": 2.8225628,
+  "id": 800742320,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "check_date": "2021-10-08",
+   "colour": "brown",
+   "material": "wood"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9675709,
+  "lon": 2.8265404,
+  "id": 800742433,
+  "tags": {
+   "bicycle": "yes",
+   "crossing": "traffic_signals",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9725897,
+  "lon": 2.8264484,
+  "id": 884641081,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "J Ruyra i Oms",
+   "public_transport": "platform",
+   "ref": "15122",
+   "route_ref": "L11",
+   "shelter": "yes",
+   "source": "UMAT - Ajuntament de Girona (2017)",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9679156,
+  "lon": 2.823573,
+  "id": 2521020684,
+  "tags": {
+   "button_operated": "yes",
+   "crossing": "traffic_signals",
+   "crossing:markings": "dots",
+   "highway": "crossing",
+   "tactile_paving": "no",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9682403,
+  "lon": 2.8215619,
+  "id": 2521020687,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9694361,
+  "lon": 2.8239163,
+  "id": 2521020690,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9696219,
+  "lon": 2.8241562,
+  "id": 2521020693,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9679858,
+  "lon": 2.8211423,
+  "id": 2530970702,
+  "tags": {
+   "bench": "yes",
+   "bin": "no",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "lit": "yes",
+   "name": "Els Quimics",
+   "public_transport": "platform",
+   "ref": "15217",
+   "shelter": "yes",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9684188,
+  "lon": 2.8210117,
+  "id": 2530970703,
+  "tags": {
+   "bench": "yes",
+   "bin": "no",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "lit": "yes",
+   "name": "Els Quimics",
+   "network": "ATM Girona",
+   "operator": "TMG",
+   "public_transport": "platform",
+   "ref": "15055",
+   "shelter": "yes",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.967603,
+  "lon": 2.821608,
+  "id": 2530970705,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "colour": "brown",
+   "material": "wood",
+   "seats": "3"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9676214,
+  "lon": 2.8215163,
+  "id": 2530970707,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "colour": "brown",
+   "material": "wood",
+   "seats": "3"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9676927,
+  "lon": 2.8215748,
+  "id": 2530970708,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "colour": "brown",
+   "material": "wood",
+   "seats": "3"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9676997,
+  "lon": 2.8217875,
+  "id": 2530970710,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "colour": "brown",
+   "material": "wood",
+   "seats": "3"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9677219,
+  "lon": 2.8216773,
+  "id": 2530970712,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "colour": "brown",
+   "material": "wood",
+   "seats": "3"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9680595,
+  "lon": 2.8211216,
+  "id": 2530970724,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "check_date": "2025-04-09",
+   "colour": "brown",
+   "material": "wood",
+   "seats": "4"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9684974,
+  "lon": 2.8259864,
+  "id": 2530973034,
+  "tags": {
+   "crossing": "traffic_signals",
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9686179,
+  "lon": 2.8263378,
+  "id": 2530973035,
+  "tags": {
+   "crossing": "traffic_signals",
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9686568,
+  "lon": 2.826035,
+  "id": 2530973036,
+  "tags": {
+   "crossing": "traffic_signals",
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.968208,
+  "lon": 2.8279348,
+  "id": 2530998027,
+  "tags": {
+   "bench": "no",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "ref": "15315",
+   "route_ref": "L11",
+   "shelter": "no",
+   "source": "UMAT - Ajuntament de Girona (2017)",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9687899,
+  "lon": 2.8269348,
+  "id": 2530998029,
+  "tags": {
+   "bench": "no",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Bosch i Puy",
+   "public_transport": "platform",
+   "ref": "15314",
+   "route_ref": "L11",
+   "shelter": "no",
+   "source": "UMAT - Ajuntament de Girona (2017)",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9660543,
+  "lon": 2.8286968,
+  "id": 2530999230,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "no",
+   "check_date": "2021-11-23",
+   "material": "stone",
+   "seats": "3"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9665635,
+  "lon": 2.8283674,
+  "id": 2530999233,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "no",
+   "check_date": "2022-03-30",
+   "material": "stone",
+   "seats": "3"
+  }
+ },
+ {
+  "kind": "drinking_water",
+  "lat": 41.9666027,
+  "lon": 2.8283507,
+  "id": 2530999239,
+  "tags": {
+   "amenity": "drinking_water",
+   "check_date": "2022-03-30",
+   "indoor": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9670952,
+  "lon": 2.8274617,
+  "id": 2530999246,
+  "tags": {
+   "bicycle": "yes",
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9685929,
+  "lon": 2.8270302,
+  "id": 2530999260,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9685993,
+  "lon": 2.8263021,
+  "id": 2530999264,
+  "tags": {
+   "bicycle": "yes",
+   "crossing": "traffic_signals",
+   "crossing:markings": "zebra",
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9687009,
+  "lon": 2.8262048,
+  "id": 2530999271,
+  "tags": {
+   "bicycle": "yes",
+   "crossing": "traffic_signals",
+   "crossing:markings": "zebra",
+   "highway": "traffic_signals",
+   "supervised": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9687053,
+  "lon": 2.8270798,
+  "id": 2530999272,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9687285,
+  "lon": 2.8270509,
+  "id": 2530999275,
+  "tags": {
+   "bicycle": "no",
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9695802,
+  "lon": 2.826755,
+  "id": 2530999281,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9685096,
+  "lon": 2.8263167,
+  "id": 2531002807,
+  "tags": {
+   "crossing": "traffic_signals",
+   "crossing:markings": "zebra",
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9686001,
+  "lon": 2.8262802,
+  "id": 2531002808,
+  "tags": {
+   "crossing": "traffic_signals",
+   "crossing:markings": "zebra",
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "drinking_water",
+  "lat": 41.9728,
+  "lon": 2.827157,
+  "id": 3649583824,
+  "tags": {
+   "amenity": "drinking_water"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9658327,
+  "lon": 2.8279743,
+  "id": 3924358923,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9648959,
+  "lon": 2.8162481,
+  "id": 5083652549,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9698362,
+  "lon": 2.8274143,
+  "id": 5132898197,
+  "tags": {
+   "bench": "yes",
+   "bin": "no",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "ref": "15176",
+   "route_ref": "L11",
+   "shelter": "no",
+   "source": "UMAT - Ajuntament de Girona (2017)"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9668446,
+  "lon": 2.8283856,
+  "id": 5132898198,
+  "tags": {
+   "bench": "no",
+   "bin": "no",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "ref": "15137",
+   "route_ref": "L11",
+   "shelter": "no",
+   "source": "UMAT - Ajuntament de Girona (2017)",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9649495,
+  "lon": 2.8289602,
+  "id": 5132898201,
+  "tags": {
+   "bench": "yes",
+   "bin": "yes",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "lit": "yes",
+   "public_transport": "platform",
+   "ref": "15400",
+   "route_ref": "L11, L8",
+   "shelter": "yes",
+   "source": "UMAT - Ajuntament de Girona (2017)",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9672792,
+  "lon": 2.8273714,
+  "id": 5132898202,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "route_ref": "L11",
+   "source": "UMAT - Ajuntament de Girona (2017)"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9722692,
+  "lon": 2.8274108,
+  "id": 5132898203,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "CAP Montilivi",
+   "public_transport": "platform",
+   "ref": "15060",
+   "route_ref": "L11",
+   "shelter": "no",
+   "source": "UMAT - Ajuntament de Girona (2017)"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9721481,
+  "lon": 2.8289814,
+  "id": 5132898204,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Carrer Girona per Girona",
+   "name:ca": "Carrer Girona per Girona",
+   "public_transport": "platform",
+   "ref": "15368",
+   "route_ref": "L11",
+   "shelter": "no",
+   "source": "UMAT - Ajuntament de Girona (2017)",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9708494,
+  "lon": 2.8264105,
+  "id": 5133078770,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9706718,
+  "lon": 2.8242751,
+  "id": 5135350061,
+  "tags": {
+   "crossing": "uncontrolled",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9706819,
+  "lon": 2.824052,
+  "id": 5135350062,
+  "tags": {
+   "crossing": "uncontrolled",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9683591,
+  "lon": 2.8212851,
+  "id": 5740985863,
+  "tags": {
+   "crossing": "traffic_signals",
+   "crossing:markings": "dots",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9664947,
+  "lon": 2.8208928,
+  "id": 5740985864,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9661911,
+  "lon": 2.8205372,
+  "id": 5740985865,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9660383,
+  "lon": 2.8205683,
+  "id": 5740985866,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9662842,
+  "lon": 2.8211971,
+  "id": 5740985868,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9662563,
+  "lon": 2.8218004,
+  "id": 5740995866,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9661232,
+  "lon": 2.8220337,
+  "id": 5740995867,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9651811,
+  "lon": 2.8214418,
+  "id": 5740995868,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9650284,
+  "lon": 2.8219167,
+  "id": 5740995869,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9652275,
+  "lon": 2.8209728,
+  "id": 5740995870,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9651104,
+  "lon": 2.8223491,
+  "id": 5740995871,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.965997,
+  "lon": 2.8226401,
+  "id": 5740995873,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9664151,
+  "lon": 2.8229873,
+  "id": 5740995874,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9663827,
+  "lon": 2.8230866,
+  "id": 5740995875,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9677437,
+  "lon": 2.8232188,
+  "id": 5740995876,
+  "tags": {
+   "button_operated": "yes",
+   "crossing": "traffic_signals",
+   "crossing:markings": "dots",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9678085,
+  "lon": 2.8232564,
+  "id": 5740995877,
+  "tags": {
+   "button_operated": "yes",
+   "crossing": "traffic_signals",
+   "crossing:markings": "dots",
+   "highway": "crossing",
+   "tactile_paving": "no",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9678997,
+  "lon": 2.8236783,
+  "id": 5740995878,
+  "tags": {
+   "button_operated": "yes",
+   "crossing": "traffic_signals",
+   "crossing:markings": "dots",
+   "highway": "crossing",
+   "tactile_paving": "no",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9683149,
+  "lon": 2.8237054,
+  "id": 5740995879,
+  "tags": {
+   "button_operated": "yes",
+   "crossing": "traffic_signals",
+   "crossing:markings": "dots",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9682899,
+  "lon": 2.8238074,
+  "id": 5740995880,
+  "tags": {
+   "button_operated": "yes",
+   "crossing": "traffic_signals",
+   "crossing:markings": "dots",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9683049,
+  "lon": 2.8245273,
+  "id": 5740995881,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9684582,
+  "lon": 2.8245485,
+  "id": 5740995882,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9676772,
+  "lon": 2.8244408,
+  "id": 5740995883,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9674997,
+  "lon": 2.8235197,
+  "id": 5740995884,
+  "tags": {
+   "button_operated": "yes",
+   "crossing": "traffic_signals",
+   "crossing:markings": "dots",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9675301,
+  "lon": 2.8233965,
+  "id": 5740995885,
+  "tags": {
+   "button_operated": "yes",
+   "crossing": "traffic_signals",
+   "crossing:markings": "dots",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9698965,
+  "lon": 2.8256258,
+  "id": 5741008587,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9699811,
+  "lon": 2.8249621,
+  "id": 5741008588,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9700824,
+  "lon": 2.8249527,
+  "id": 5741008589,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9692308,
+  "lon": 2.8227369,
+  "id": 5741008590,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.971035,
+  "lon": 2.8251266,
+  "id": 5741008594,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9709276,
+  "lon": 2.825834,
+  "id": 5741008595,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9723685,
+  "lon": 2.826534,
+  "id": 5741008596,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9724216,
+  "lon": 2.8275373,
+  "id": 5741008597,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9713697,
+  "lon": 2.8276957,
+  "id": 5741008598,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9713809,
+  "lon": 2.826662,
+  "id": 5741008599,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9709212,
+  "lon": 2.8262424,
+  "id": 5741008600,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "incorrect"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.96623,
+  "lon": 2.823278,
+  "id": 6009785751,
+  "tags": {
+   "amenity": "bench",
+   "source": "survey"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9715429,
+  "lon": 2.8243742,
+  "id": 6517792361,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9658786,
+  "lon": 2.8198688,
+  "id": 6517792362,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9717492,
+  "lon": 2.82849,
+  "id": 6517803093,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9719071,
+  "lon": 2.8286977,
+  "id": 6517803094,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9685637,
+  "lon": 2.8262353,
+  "id": 6517803095,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9646187,
+  "lon": 2.8269387,
+  "id": 6517803096,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.964668,
+  "lon": 2.8287187,
+  "id": 6517803097,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9654483,
+  "lon": 2.827243,
+  "id": 6517803098,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9652319,
+  "lon": 2.8270979,
+  "id": 6517803099,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9689682,
+  "lon": 2.8187562,
+  "id": 6532088064,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.968905,
+  "lon": 2.8187202,
+  "id": 6532088065,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9687693,
+  "lon": 2.8195181,
+  "id": 6757916558,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9687055,
+  "lon": 2.8194845,
+  "id": 6757916559,
+  "tags": {
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9660405,
+  "lon": 2.8205886,
+  "id": 6757927292,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9675191,
+  "lon": 2.8237453,
+  "id": 6758076029,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9674944,
+  "lon": 2.823734,
+  "id": 6758076030,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9674692,
+  "lon": 2.8237246,
+  "id": 6758076031,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9673617,
+  "lon": 2.8241347,
+  "id": 6758076210,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9644921,
+  "lon": 2.8157264,
+  "id": 6818352864,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9650217,
+  "lon": 2.8160832,
+  "id": 6818408622,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9639258,
+  "lon": 2.8150015,
+  "id": 6818408678,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9640535,
+  "lon": 2.8148478,
+  "id": 6818408681,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9636091,
+  "lon": 2.8145677,
+  "id": 6818408705,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.967505,
+  "lon": 2.8235859,
+  "id": 7415332619,
+  "tags": {
+   "bench": "yes",
+   "bin": "yes",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Av. Lluís Percicot",
+   "network": "ATM Girona",
+   "operator": "TMG",
+   "public_transport": "platform",
+   "ref": "15136",
+   "shelter": "yes"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9656364,
+  "lon": 2.8207964,
+  "id": 7415332628,
+  "tags": {
+   "bench": "yes",
+   "bin": "yes",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Pavello de Palau",
+   "public_transport": "platform",
+   "ref": "15062",
+   "shelter": "no",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9654067,
+  "lon": 2.8209474,
+  "id": 7415332642,
+  "tags": {
+   "bench": "yes",
+   "bin": "yes",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Pavelló de Palau",
+   "name:ca": "Pavelló de Palau",
+   "network": "ATM Girona",
+   "operator": "TMG",
+   "public_transport": "platform",
+   "ref": "15063",
+   "shelter": "yes",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.971131,
+  "lon": 2.8215146,
+  "id": 7415332660,
+  "tags": {
+   "bench": "yes",
+   "bin": "yes",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "lit": "no",
+   "name": "Pl. Lluís Companys",
+   "public_transport": "platform",
+   "ref": "15216",
+   "shelter": "yes",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.969331,
+  "lon": 2.8215307,
+  "id": 9066999018,
+  "tags": {
+   "crossing:markings": "no",
+   "crossing:signals": "no",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9741895,
+  "lon": 2.8234257,
+  "id": 9246233765,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9722497,
+  "lon": 2.8255567,
+  "id": 9272858170,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9677707,
+  "lon": 2.8177386,
+  "id": 9296261366,
+  "tags": {
+   "crossing:island": "no",
+   "crossing:markings": "no",
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9662732,
+  "lon": 2.8189036,
+  "id": 9296261382,
+  "tags": {
+   "crossing:island": "no",
+   "crossing:markings": "no",
+   "crossing:signals": "no",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "drinking_water",
+  "lat": 41.971819,
+  "lon": 2.8272358,
+  "id": 9307924747,
+  "tags": {
+   "amenity": "drinking_water"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9719943,
+  "lon": 2.8199058,
+  "id": 9350016618,
+  "tags": {
+   "crossing": "traffic_signals",
+   "crossing:island": "no",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9727144,
+  "lon": 2.8251955,
+  "id": 9363219496,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9685755,
+  "lon": 2.8263176,
+  "id": 9369476815,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9723482,
+  "lon": 2.8287745,
+  "id": 10772527661,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9723395,
+  "lon": 2.8288202,
+  "id": 10772527662,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9729442,
+  "lon": 2.8252071,
+  "id": 10943490703,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9729467,
+  "lon": 2.825173,
+  "id": 10943490704,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9729106,
+  "lon": 2.8252479,
+  "id": 10943508606,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9727009,
+  "lon": 2.8250514,
+  "id": 10960971459,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.972951,
+  "lon": 2.8267439,
+  "id": 11276562657,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9729715,
+  "lon": 2.8266943,
+  "id": 11276562659,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.972933,
+  "lon": 2.8268034,
+  "id": 11276562660,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9729879,
+  "lon": 2.8266557,
+  "id": 11276562662,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9737301,
+  "lon": 2.8257774,
+  "id": 11277147129,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "drinking_water",
+  "lat": 41.9710577,
+  "lon": 2.8222616,
+  "id": 11383674872,
+  "tags": {
+   "access": "yes",
+   "amenity": "drinking_water",
+   "covered": "no",
+   "fee": "no",
+   "indoor": "no",
+   "lit": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9707283,
+  "lon": 2.8269527,
+  "id": 12333988965,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9707321,
+  "lon": 2.8268568,
+  "id": 12333988966,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.970744,
+  "lon": 2.8269023,
+  "id": 12333988967,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9706776,
+  "lon": 2.8269699,
+  "id": 12333988968,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "drinking_water",
+  "lat": 41.9706896,
+  "lon": 2.8245247,
+  "id": 13037716895,
+  "tags": {
+   "amenity": "drinking_water"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9705974,
+  "lon": 2.824478,
+  "id": 13037770569,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.970604,
+  "lon": 2.8245395,
+  "id": 13037770571,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9706389,
+  "lon": 2.8245612,
+  "id": 13037770572,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.970658,
+  "lon": 2.8245606,
+  "id": 13037770573,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9705922,
+  "lon": 2.8245063,
+  "id": 13037770575,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9651605,
+  "lon": 2.822226,
+  "id": 13087063920,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9712233,
+  "lon": 2.8213237,
+  "id": 13875626461,
+  "tags": {
+   "amenity": "bench",
+   "armrest": "no",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "drinking_water",
+  "lat": 41.9711292,
+  "lon": 2.8214131,
+  "id": 13875626464,
+  "tags": {
+   "amenity": "drinking_water"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9712357,
+  "lon": 2.8211718,
+  "id": 13875626465,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9712777,
+  "lon": 2.821125,
+  "id": 13875626466,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9713991,
+  "lon": 2.8211589,
+  "id": 13875626467,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9714249,
+  "lon": 2.821151,
+  "id": 13875626468,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9712708,
+  "lon": 2.8213994,
+  "id": 13875649127,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9642527,
+  "lon": 2.8316389,
+  "id": 31022931,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "public_transport:version": "2",
+   "ref": "15399",
+   "route_ref": "L11, L8",
+   "source": "UMAT - Ajuntament de Girona (2017)",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9648164,
+  "lon": 2.8293388,
+  "id": 771984984,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9716187,
+  "lon": 2.8297878,
+  "id": 771999166,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9648748,
+  "lon": 2.8299421,
+  "id": 772015988,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9663726,
+  "lon": 2.8378784,
+  "id": 772037941,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9706674,
+  "lon": 2.8387528,
+  "id": 772041769,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9722031,
+  "lon": 2.8361435,
+  "id": 772045374,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9723246,
+  "lon": 2.8291492,
+  "id": 772104835,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9724031,
+  "lon": 2.8301697,
+  "id": 772106761,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9732309,
+  "lon": 2.8305921,
+  "id": 772108280,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9645638,
+  "lon": 2.8312227,
+  "id": 772110390,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9658338,
+  "lon": 2.837477,
+  "id": 772158581,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9723964,
+  "lon": 2.830205,
+  "id": 772162594,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9742958,
+  "lon": 2.8280279,
+  "id": 772214954,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9724478,
+  "lon": 2.8303021,
+  "id": 772227453,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9715636,
+  "lon": 2.8299445,
+  "id": 772237811,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9663072,
+  "lon": 2.8380138,
+  "id": 772267046,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "crossing:island": "no",
+   "highway": "crossing",
+   "tactile_paving": "no",
+   "traffic_signals:sound": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9664678,
+  "lon": 2.8379524,
+  "id": 772279740,
+  "tags": {
+   "button_operated": "yes",
+   "crossing": "traffic_signals",
+   "crossing:island": "no",
+   "highway": "crossing",
+   "tactile_paving": "no",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9701503,
+  "lon": 2.8388086,
+  "id": 800712314,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9671565,
+  "lon": 2.8367574,
+  "id": 800724774,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9671196,
+  "lon": 2.8368939,
+  "id": 800724777,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "check_date": "2023-08-30",
+   "colour": "black",
+   "material": "plastic",
+   "seats": "2"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9658967,
+  "lon": 2.8373118,
+  "id": 2530977580,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9658967,
+  "lon": 2.8373122,
+  "id": 2530977582,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9676044,
+  "lon": 2.8373545,
+  "id": 2530977635,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.967538,
+  "lon": 2.8377382,
+  "id": 2530977643,
+  "tags": {
+   "bench": "yes",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "ref": "15335",
+   "shelter": "yes"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9676452,
+  "lon": 2.8374891,
+  "id": 2530977648,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9677202,
+  "lon": 2.8371278,
+  "id": 2530977653,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "shelter": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9657806,
+  "lon": 2.837422,
+  "id": 2989155937,
+  "tags": {
+   "button_operated": "yes",
+   "crossing": "traffic_signals",
+   "crossing:island": "no",
+   "highway": "crossing",
+   "tactile_paving": "no",
+   "traffic_signals:sound": "no"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9665184,
+  "lon": 2.8379223,
+  "id": 3109345466,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9662515,
+  "lon": 2.8378976,
+  "id": 3109345467,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9663352,
+  "lon": 2.8377533,
+  "id": 3109345468,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9657464,
+  "lon": 2.8374559,
+  "id": 3109345474,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9659335,
+  "lon": 2.8374436,
+  "id": 3109347329,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9674514,
+  "lon": 2.8370641,
+  "id": 3204736236,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "colour": "white",
+   "material": "plastic",
+   "seats": "4"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9665483,
+  "lon": 2.8298818,
+  "id": 3664805916,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9700032,
+  "lon": 2.8400539,
+  "id": 4813189503,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9716296,
+  "lon": 2.8297028,
+  "id": 5132898205,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "ref": "15367",
+   "route_ref": "L11",
+   "source": "UMAT - Ajuntament de Girona (2017)"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9724493,
+  "lon": 2.8301459,
+  "id": 5132898206,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "ref": "15366",
+   "route_ref": "L11",
+   "source": "UMAT - Ajuntament de Girona (2017)"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9675494,
+  "lon": 2.8384504,
+  "id": 6442248469,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9676182,
+  "lon": 2.8374261,
+  "id": 6485126788,
+  "tags": {
+   "button_operated": "yes",
+   "crossing": "traffic_signals",
+   "crossing:island": "no",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9659382,
+  "lon": 2.8373259,
+  "id": 6517995122,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9675048,
+  "lon": 2.8300976,
+  "id": 9266043419,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "metal"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9673112,
+  "lon": 2.8299785,
+  "id": 9266043545,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "metal"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9673771,
+  "lon": 2.8299948,
+  "id": 9266043546,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "metal"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9674858,
+  "lon": 2.8300553,
+  "id": 9266043547,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "metal"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9675012,
+  "lon": 2.8299254,
+  "id": 9266043548,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "metal"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9675396,
+  "lon": 2.8298737,
+  "id": 9266043549,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "metal"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9675572,
+  "lon": 2.8297097,
+  "id": 9266043550,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "metal"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9675824,
+  "lon": 2.8295443,
+  "id": 9266043551,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "metal"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9674715,
+  "lon": 2.8294631,
+  "id": 9266043552,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "metal"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9673254,
+  "lon": 2.8295103,
+  "id": 9266043553,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "metal"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9671948,
+  "lon": 2.8295591,
+  "id": 9266043554,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "metal"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9670575,
+  "lon": 2.8295857,
+  "id": 9266043555,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "metal"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9669389,
+  "lon": 2.8296388,
+  "id": 9266043556,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "metal"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9668752,
+  "lon": 2.8297038,
+  "id": 9266043557,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "metal"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9696612,
+  "lon": 2.8339457,
+  "id": 10721932698,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "wood",
+   "seats": "3"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9640516,
+  "lon": 2.8305618,
+  "id": 10893615742,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9688264,
+  "lon": 2.8339206,
+  "id": 13283147167,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9688808,
+  "lon": 2.8365732,
+  "id": 13681769027,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "wood",
+   "seats": "2"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9693112,
+  "lon": 2.8362266,
+  "id": 13681769029,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "wood",
+   "seats": "2"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9716401,
+  "lon": 2.8404699,
+  "id": 771973171,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9712234,
+  "lon": 2.8402633,
+  "id": 771981593,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9731402,
+  "lon": 2.8449631,
+  "id": 771984651,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9707841,
+  "lon": 2.8430239,
+  "id": 771993356,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9719885,
+  "lon": 2.8419372,
+  "id": 771994364,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9716836,
+  "lon": 2.8422499,
+  "id": 771997302,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9721163,
+  "lon": 2.8430258,
+  "id": 771999990,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9732753,
+  "lon": 2.8447179,
+  "id": 772021559,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9721017,
+  "lon": 2.8410359,
+  "id": 772025614,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9710684,
+  "lon": 2.8408295,
+  "id": 772047874,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9720896,
+  "lon": 2.8421375,
+  "id": 772048697,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9726371,
+  "lon": 2.8421763,
+  "id": 772056612,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9720038,
+  "lon": 2.8399759,
+  "id": 772068451,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9724706,
+  "lon": 2.841832,
+  "id": 772070774,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9698701,
+  "lon": 2.8420723,
+  "id": 772077262,
+  "tags": {
+   "crossing": "traffic_signals",
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.971107,
+  "lon": 2.844524,
+  "id": 772086540,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9709988,
+  "lon": 2.8435906,
+  "id": 772111159,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9706174,
+  "lon": 2.8406801,
+  "id": 772117845,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9708564,
+  "lon": 2.8400863,
+  "id": 772137965,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9721253,
+  "lon": 2.8431689,
+  "id": 772160821,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9707924,
+  "lon": 2.8394485,
+  "id": 772168487,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9706186,
+  "lon": 2.8412406,
+  "id": 772187871,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9727681,
+  "lon": 2.8421304,
+  "id": 772189298,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9707798,
+  "lon": 2.8399287,
+  "id": 772190052,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9707443,
+  "lon": 2.8429574,
+  "id": 772193875,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9703679,
+  "lon": 2.8411038,
+  "id": 772209171,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9717703,
+  "lon": 2.8421464,
+  "id": 772219422,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.970772,
+  "lon": 2.8431431,
+  "id": 772246946,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9670313,
+  "lon": 2.8394122,
+  "id": 772252985,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9719859,
+  "lon": 2.840132,
+  "id": 772254886,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9712559,
+  "lon": 2.843986,
+  "id": 772258740,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9705305,
+  "lon": 2.840994,
+  "id": 772267220,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9701674,
+  "lon": 2.8417813,
+  "id": 1819147455,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "ref": "15281"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9708452,
+  "lon": 2.8430616,
+  "id": 1819147456,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "ref": "15086"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9711991,
+  "lon": 2.8437472,
+  "id": 1929152612,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "ref": "15103"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9719409,
+  "lon": 2.8418887,
+  "id": 1942375317,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "ref": "15101"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9668031,
+  "lon": 2.8382716,
+  "id": 2530977593,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "ref": "15334"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9668285,
+  "lon": 2.8380894,
+  "id": 2530977596,
+  "tags": {
+   "bench": "yes",
+   "bin": "yes",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "ref": "15337",
+   "shelter": "no",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9670506,
+  "lon": 2.8393273,
+  "id": 2530977619,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.967134,
+  "lon": 2.8393522,
+  "id": 2530977621,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.966449,
+  "lon": 2.8380472,
+  "id": 3109345469,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9663522,
+  "lon": 2.8380261,
+  "id": 3109345475,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9671155,
+  "lon": 2.8386641,
+  "id": 5563106488,
+  "tags": {
+   "bench": "no",
+   "bin": "no",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "lit": "yes",
+   "name": "Girona, Parc Tecnologic (direcció Palamos)",
+   "operator": "Sarbus - Sarfa",
+   "public_transport": "platform",
+   "ref": "16677",
+   "shelter": "no",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9700536,
+  "lon": 2.8402483,
+  "id": 6517995121,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9699302,
+  "lon": 2.8400415,
+  "id": 10087635162,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "drinking_water",
+  "lat": 41.9645806,
+  "lon": 2.8390996,
+  "id": 11232238906,
+  "tags": {
+   "amenity": "drinking_water"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9690799,
+  "lon": 2.8407856,
+  "id": 13681769026,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "wood",
+   "seats": "2"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9794077,
+  "lon": 2.8212126,
+  "id": 370330726,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.974194,
+  "lon": 2.8282971,
+  "id": 771970758,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9776802,
+  "lon": 2.8263329,
+  "id": 771979830,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9806496,
+  "lon": 2.8263859,
+  "id": 771983271,
+  "tags": {
+   "crossing:markings": "yes",
+   "crossing:signals": "no",
+   "highway": "crossing",
+   "kerb": "flush",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9790726,
+  "lon": 2.8225557,
+  "id": 771985076,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9739594,
+  "lon": 2.8250642,
+  "id": 771986653,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9784755,
+  "lon": 2.8205103,
+  "id": 771988289,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9782936,
+  "lon": 2.8217112,
+  "id": 771990761,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9763642,
+  "lon": 2.8259727,
+  "id": 771994771,
+  "tags": {
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.980201,
+  "lon": 2.8215917,
+  "id": 772008395,
+  "tags": {
+   "highway": "traffic_signals",
+   "traffic_signals": "signal",
+   "traffic_signals:direction": "backward"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.973286,
+  "lon": 2.8204435,
+  "id": 772008726,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9777447,
+  "lon": 2.8243369,
+  "id": 772017032,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9776749,
+  "lon": 2.8256035,
+  "id": 772030651,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9767607,
+  "lon": 2.8208392,
+  "id": 772036297,
+  "tags": {
+   "crossing:signals": "yes",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9795714,
+  "lon": 2.8283804,
+  "id": 772048569,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9768818,
+  "lon": 2.825766,
+  "id": 772049269,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9733236,
+  "lon": 2.8305125,
+  "id": 772050120,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9748651,
+  "lon": 2.8240565,
+  "id": 772050893,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9794564,
+  "lon": 2.8211212,
+  "id": 772053541,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "highway": "crossing",
+   "kerb": "flush",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9774943,
+  "lon": 2.8256255,
+  "id": 772057219,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9736464,
+  "lon": 2.8265481,
+  "id": 772058058,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9773644,
+  "lon": 2.8212616,
+  "id": 772060594,
+  "tags": {
+   "crossing:signals": "yes",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9789299,
+  "lon": 2.8280547,
+  "id": 772064569,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9787357,
+  "lon": 2.8265489,
+  "id": 772066905,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9744842,
+  "lon": 2.8243504,
+  "id": 772079137,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9766578,
+  "lon": 2.8213316,
+  "id": 772080353,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9776124,
+  "lon": 2.8255415,
+  "id": 772080477,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9755212,
+  "lon": 2.8248502,
+  "id": 772094897,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "crossing:island": "no",
+   "highway": "crossing",
+   "tactile_paving": "no",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9757152,
+  "lon": 2.8216636,
+  "id": 772100411,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9762194,
+  "lon": 2.8228088,
+  "id": 772105442,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9752798,
+  "lon": 2.8235194,
+  "id": 772105988,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9787852,
+  "lon": 2.8237044,
+  "id": 772106673,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9794717,
+  "lon": 2.8280845,
+  "id": 772109199,
+  "tags": {
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9794753,
+  "lon": 2.8212711,
+  "id": 772110464,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "highway": "crossing",
+   "kerb": "lowered",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9748151,
+  "lon": 2.8262097,
+  "id": 772114586,
+  "tags": {
+   "crossing": "traffic_signals",
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9788855,
+  "lon": 2.8235605,
+  "id": 772116301,
+  "tags": {
+   "crossing": "traffic_signals",
+   "crossing:island": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.978735,
+  "lon": 2.8222713,
+  "id": 772117002,
+  "tags": {
+   "crossing:island": "no",
+   "crossing:markings": "yes",
+   "crossing:signals": "no",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9759973,
+  "lon": 2.8262275,
+  "id": 772132819,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9770219,
+  "lon": 2.8257176,
+  "id": 772141408,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.97704,
+  "lon": 2.8197958,
+  "id": 772144083,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.978264,
+  "lon": 2.8215343,
+  "id": 772148918,
+  "tags": {
+   "crossing": "uncontrolled",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9779596,
+  "lon": 2.8232511,
+  "id": 772150539,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9786595,
+  "lon": 2.8264179,
+  "id": 772153210,
+  "tags": {
+   "crossing": "unmarked",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.975019,
+  "lon": 2.8251651,
+  "id": 772159840,
+  "tags": {
+   "highway": "traffic_signals"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9764494,
+  "lon": 2.8258207,
+  "id": 772164772,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9770682,
+  "lon": 2.8230115,
+  "id": 772166988,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9761701,
+  "lon": 2.8251579,
+  "id": 772173025,
+  "tags": {
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9789087,
+  "lon": 2.8245082,
+  "id": 772174882,
+  "tags": {
+   "highway": "crossing",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9768831,
+  "lon": 2.8209021,
+  "id": 772181297,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9759306,
+  "lon": 2.8260305,
+  "id": 772186403,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9766821,
+  "lon": 2.82201,
+  "id": 772187423,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9745259,
+  "lon": 2.8246618,
+  "id": 772188666,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9755605,
+  "lon": 2.8216053,
+  "id": 772188684,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9779792,
+  "lon": 2.8233342,
+  "id": 772191015,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9744946,
+  "lon": 2.8247642,
+  "id": 772191202,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9778578,
+  "lon": 2.8200878,
+  "id": 772191230,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9770314,
+  "lon": 2.8228914,
+  "id": 772199096,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.97685,
+  "lon": 2.8207682,
+  "id": 772202554,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9797662,
+  "lon": 2.8280003,
+  "id": 772204189,
+  "tags": {
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.974134,
+  "lon": 2.8295936,
+  "id": 772206816,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9765675,
+  "lon": 2.821974,
+  "id": 772207319,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.97763,
+  "lon": 2.8257201,
+  "id": 772209769,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9782452,
+  "lon": 2.8265406,
+  "id": 772211252,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9785269,
+  "lon": 2.8202499,
+  "id": 772215191,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9747679,
+  "lon": 2.8213183,
+  "id": 772215683,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9761984,
+  "lon": 2.8271226,
+  "id": 772217707,
+  "tags": {
+   "crossing:markings": "zebra",
+   "crossing:signals": "no",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9736151,
+  "lon": 2.826717,
+  "id": 772220033,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9789058,
+  "lon": 2.823255,
+  "id": 772221206,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9786606,
+  "lon": 2.8268868,
+  "id": 772221600,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9797664,
+  "lon": 2.8225514,
+  "id": 772222680,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.978401,
+  "lon": 2.8203437,
+  "id": 772223039,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9759173,
+  "lon": 2.8261678,
+  "id": 772225089,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9731055,
+  "lon": 2.8217985,
+  "id": 772227502,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9769373,
+  "lon": 2.8256507,
+  "id": 772229182,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9795285,
+  "lon": 2.8265338,
+  "id": 772230538,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9789995,
+  "lon": 2.8282346,
+  "id": 772231730,
+  "tags": {
+   "crossing:island": "no",
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.97965,
+  "lon": 2.8244269,
+  "id": 772241061,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9759816,
+  "lon": 2.8204703,
+  "id": 772259266,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9747726,
+  "lon": 2.8263665,
+  "id": 772264242,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9760436,
+  "lon": 2.8261156,
+  "id": 772265110,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9800148,
+  "lon": 2.8200292,
+  "id": 772273126,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9785796,
+  "lon": 2.8204583,
+  "id": 772274046,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9747306,
+  "lon": 2.8205121,
+  "id": 772274222,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "crossing:island": "no",
+   "crossing:markings": "dots",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "yes",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9806524,
+  "lon": 2.8268421,
+  "id": 772275759,
+  "tags": {
+   "crossing:markings": "yes",
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9746437,
+  "lon": 2.8164264,
+  "id": 773374924,
+  "tags": {
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9789113,
+  "lon": 2.8244646,
+  "id": 795717285,
+  "tags": {
+   "highway": "crossing",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9774904,
+  "lon": 2.825752,
+  "id": 850456442,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9775612,
+  "lon": 2.8257924,
+  "id": 850456457,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.976872,
+  "lon": 2.820742,
+  "id": 1291781437,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "route_ref": "L11",
+   "source": "UMAT - Ajuntament de Girona (2017)"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9755013,
+  "lon": 2.8248159,
+  "id": 1883558707,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "crossing:island": "no",
+   "highway": "crossing",
+   "tactile_paving": "no",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9756481,
+  "lon": 2.8248028,
+  "id": 1942373324,
+  "tags": {
+   "bench": "yes",
+   "bin": "yes",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "ref": "15284",
+   "shelter": "no",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9779112,
+  "lon": 2.8244209,
+  "id": 1942373326,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "ref": "15114"
+  }
+ },
+ {
+  "kind": "drinking_water",
+  "lat": 41.9795026,
+  "lon": 2.8235146,
+  "id": 1942373328,
+  "tags": {
+   "amenity": "drinking_water"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9796819,
+  "lon": 2.8235443,
+  "id": 1942373329,
+  "tags": {
+   "bench": "yes",
+   "bin": "yes",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Plaça del Lleó",
+   "name:ca": "Plaça del Lleó",
+   "public_transport": "platform",
+   "ref": "15085",
+   "route_ref": "L11, L6",
+   "shelter": "yes",
+   "source": "UMAT - Ajuntament de Girona (2017)",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9788861,
+  "lon": 2.8237959,
+  "id": 3489728133,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "drinking_water",
+  "lat": 41.9765485,
+  "lon": 2.820118,
+  "id": 3687238936,
+  "tags": {
+   "amenity": "drinking_water",
+   "man_made": "water_tap"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9754753,
+  "lon": 2.8247711,
+  "id": 3825496151,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "crossing:island": "no",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9796093,
+  "lon": 2.8223689,
+  "id": 4880808082,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "highway": "crossing",
+   "kerb": "flush",
+   "tactile_paving": "yes",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9734293,
+  "lon": 2.8273298,
+  "id": 5132898207,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Emili Grahit",
+   "public_transport": "platform",
+   "ref": "15072",
+   "route_ref": "L11",
+   "source": "UMAT - Ajuntament de Girona (2017)"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9741577,
+  "lon": 2.8237089,
+  "id": 5132898208,
+  "tags": {
+   "bench": "yes",
+   "bin": "yes",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Països Catalans",
+   "name:ca": "Països Catalans",
+   "public_transport": "platform",
+   "ref": "15070",
+   "route_ref": "L11, L8",
+   "shelter": "yes",
+   "source": "UMAT - Ajuntament de Girona (2017)"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.975653,
+  "lon": 2.820484,
+  "id": 5132898209,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Migdia/C. Creu",
+   "public_transport": "platform",
+   "ref": "15306",
+   "route_ref": "L11, L1, L8, L10",
+   "shelter": "no",
+   "source": "UMAT - Ajuntament de Girona (2017)",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9776284,
+  "lon": 2.8212605,
+  "id": 5132898210,
+  "tags": {
+   "bench": "yes",
+   "bin": "yes",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "La Salle",
+   "name:ca": "La Salle",
+   "public_transport": "platform",
+   "ref": "15305",
+   "route_ref": "L11",
+   "shelter": "no",
+   "source": "UMAT - Ajuntament de Girona (2017)"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9788635,
+  "lon": 2.820772,
+  "id": 5133001521,
+  "tags": {
+   "bench": "yes",
+   "bin": "yes",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "lit": "yes",
+   "name": "Plaça de Miquel Santaló",
+   "public_transport": "platform",
+   "ref": "15127",
+   "route_ref": "L11",
+   "shelter": "no",
+   "source": "UMAT - Ajuntament de Girona (2017)",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9748632,
+  "lon": 2.820707,
+  "id": 5133001522,
+  "tags": {
+   "bench": "yes",
+   "bin": "no",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "lit": "yes",
+   "name": "C. Emili Graith- C. Migdia",
+   "public_transport": "platform",
+   "ref": "15071",
+   "route_ref": "L11",
+   "shelter": "no",
+   "source": "UMAT - Ajuntament de Girona (2017)",
+   "tactile_paving": "no",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9743489,
+  "lon": 2.8234238,
+  "id": 5133001523,
+  "tags": {
+   "bench": "yes",
+   "bin": "yes",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Girona, Emili Grahit",
+   "public_transport": "platform",
+   "ref": "15073",
+   "route_ref": "L11, L8",
+   "shelter": "yes",
+   "source": "UMAT - Ajuntament de Girona (2017)",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9757235,
+  "lon": 2.8205108,
+  "id": 5513030852,
+  "tags": {
+   "crossing": "traffic_signals",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9741596,
+  "lon": 2.823693,
+  "id": 5563106490,
+  "tags": {
+   "bench": "yes",
+   "bin": "yes",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Girona, Emili Grahit (direcció Palamos)",
+   "operator": "Sarbus - Sarfa",
+   "public_transport": "platform",
+   "ref": "16683",
+   "shelter": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9742727,
+  "lon": 2.8235195,
+  "id": 5741200996,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "crossing:island": "no",
+   "crossing:markings": "dots",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9742903,
+  "lon": 2.823405,
+  "id": 5741200997,
+  "tags": {
+   "highway": "traffic_signals",
+   "traffic_signals": "signal"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9742677,
+  "lon": 2.8235523,
+  "id": 5741200998,
+  "tags": {
+   "highway": "traffic_signals",
+   "traffic_signals": "signal",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9749872,
+  "lon": 2.8205073,
+  "id": 5741200999,
+  "tags": {
+   "highway": "traffic_signals",
+   "traffic_signals": "signal"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9746831,
+  "lon": 2.8205123,
+  "id": 5741201000,
+  "tags": {
+   "highway": "traffic_signals",
+   "traffic_signals": "signal"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.974782,
+  "lon": 2.8207204,
+  "id": 5741201001,
+  "tags": {
+   "highway": "traffic_signals",
+   "traffic_signals": "signal"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.974878,
+  "lon": 2.8202524,
+  "id": 5741201002,
+  "tags": {
+   "highway": "traffic_signals",
+   "traffic_signals": "signal"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9747958,
+  "lon": 2.8206506,
+  "id": 5741201003,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "crossing:island": "no",
+   "crossing:markings": "dots",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "yes",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9748634,
+  "lon": 2.8203229,
+  "id": 5741201004,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "crossing:island": "no",
+   "crossing:markings": "dots",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "yes",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9749396,
+  "lon": 2.8205105,
+  "id": 5741201005,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "crossing:island": "no",
+   "crossing:markings": "dots",
+   "highway": "crossing",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "yes",
+   "traffic_signals:vibration": "no"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9735451,
+  "lon": 2.8284538,
+  "id": 6485126808,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.976224,
+  "lon": 2.8232667,
+  "id": 6485126831,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9763852,
+  "lon": 2.8232441,
+  "id": 6485126832,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.979763,
+  "lon": 2.8223521,
+  "id": 6510829308,
+  "tags": {
+   "crossing:island": "no",
+   "crossing:markings": "yes",
+   "crossing:signals": "no",
+   "highway": "crossing",
+   "kerb": "raised",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9799629,
+  "lon": 2.8220036,
+  "id": 6510829309,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "crossing:island": "no",
+   "highway": "crossing",
+   "kerb": "lowered",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9775917,
+  "lon": 2.8201281,
+  "id": 6510829330,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "kerb": "lowered",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9774072,
+  "lon": 2.8210454,
+  "id": 6510829331,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9774426,
+  "lon": 2.8212225,
+  "id": 6510829332,
+  "tags": {
+   "crossing:island": "no",
+   "crossing:signals": "yes",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9781433,
+  "lon": 2.821623,
+  "id": 6510829333,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:island": "no",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9739762,
+  "lon": 2.8205941,
+  "id": 6532088016,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9810829,
+  "lon": 2.8232386,
+  "id": 6532088019,
+  "tags": {
+   "crossing:markings": "yes",
+   "crossing:signals": "no",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9805131,
+  "lon": 2.8242033,
+  "id": 6532088021,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9796101,
+  "lon": 2.8265928,
+  "id": 6532088022,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9785873,
+  "lon": 2.8242736,
+  "id": 6532088024,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9750987,
+  "lon": 2.8250551,
+  "id": 6532088025,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9750813,
+  "lon": 2.8250926,
+  "id": 6532088026,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9750465,
+  "lon": 2.8251672,
+  "id": 6532088027,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9750312,
+  "lon": 2.8252002,
+  "id": 6532088028,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9745023,
+  "lon": 2.8220995,
+  "id": 6532088030,
+  "tags": {
+   "crossing": "traffic_signals",
+   "highway": "crossing",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9744506,
+  "lon": 2.8223849,
+  "id": 6532088031,
+  "tags": {
+   "crossing": "traffic_signals",
+   "highway": "crossing",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9745699,
+  "lon": 2.8222737,
+  "id": 6532088032,
+  "tags": {
+   "crossing": "traffic_signals",
+   "highway": "crossing",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9737932,
+  "lon": 2.8219752,
+  "id": 6532088033,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9737743,
+  "lon": 2.8221163,
+  "id": 6532088034,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9738278,
+  "lon": 2.822071,
+  "id": 6532088035,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9736147,
+  "lon": 2.8233471,
+  "id": 6532088036,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9736331,
+  "lon": 2.8232165,
+  "id": 6532088037,
+  "tags": {
+   "crossing": "uncontrolled",
+   "crossing:markings": "zebra",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9793301,
+  "lon": 2.8211374,
+  "id": 6544892748,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "highway": "crossing",
+   "kerb": "lowered",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "yes",
+   "traffic_signals:vibration": "no",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9790515,
+  "lon": 2.8225771,
+  "id": 6544892749,
+  "tags": {
+   "button_operated": "yes",
+   "crossing": "traffic_signals",
+   "crossing:island": "no",
+   "highway": "crossing",
+   "kerb": "lowered",
+   "tactile_paving": "yes",
+   "traffic_signals:sound": "yes",
+   "traffic_signals:vibration": "yes"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9766082,
+  "lon": 2.8220676,
+  "id": 6544892754,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9766394,
+  "lon": 2.8219016,
+  "id": 6544892755,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9765012,
+  "lon": 2.8228319,
+  "id": 6544892756,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.976479,
+  "lon": 2.8227581,
+  "id": 6544892757,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9759144,
+  "lon": 2.8202683,
+  "id": 6544892763,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9758191,
+  "lon": 2.8207269,
+  "id": 6544892766,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9756457,
+  "lon": 2.8215588,
+  "id": 6544892767,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9754394,
+  "lon": 2.8225583,
+  "id": 6544892768,
+  "tags": {
+   "crossing": "traffic_signals",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9753765,
+  "lon": 2.8224827,
+  "id": 6544892769,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9755257,
+  "lon": 2.8225257,
+  "id": 6544892770,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9754655,
+  "lon": 2.8224268,
+  "id": 6544892771,
+  "tags": {
+   "crossing": "traffic_signals",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9736676,
+  "lon": 2.8272584,
+  "id": 6546254215,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9779307,
+  "lon": 2.8235056,
+  "id": 6546254648,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.977776,
+  "lon": 2.820206,
+  "id": 7312997893,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "check_date": "2023-09-02",
+   "material": "stone"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9777372,
+  "lon": 2.8202382,
+  "id": 7312997894,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "check_date": "2023-09-02",
+   "material": "stone"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9777202,
+  "lon": 2.8201725,
+  "id": 7312997895,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "check_date": "2023-09-02",
+   "material": "stone"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.977779,
+  "lon": 2.820147,
+  "id": 7312997896,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "check_date": "2023-09-02"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9775969,
+  "lon": 2.8213681,
+  "id": 7415332540,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "La Salle",
+   "name:ca": "La Salle",
+   "network": "ATM Girona",
+   "operator": "TMG",
+   "public_transport": "platform",
+   "ref": "15149",
+   "shelter": "yes"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9795141,
+  "lon": 2.8284066,
+  "id": 7415332545,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Hotel Bellavista",
+   "public_transport": "platform",
+   "ref": "15195"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9794071,
+  "lon": 2.8283775,
+  "id": 7415332584,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Hotel Bellavista",
+   "public_transport": "platform",
+   "ref": "15193"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9738613,
+  "lon": 2.8220099,
+  "id": 7415332631,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "C. Rutlla 132",
+   "public_transport": "platform",
+   "ref": "15214"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9742063,
+  "lon": 2.8205651,
+  "id": 7415332646,
+  "tags": {
+   "bench": "yes",
+   "bin": "no",
+   "bus": "yes",
+   "highway": "bus_stop",
+   "lit": "no",
+   "public_transport": "platform",
+   "ref": "15141",
+   "shelter": "no",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9737103,
+  "lon": 2.826745,
+  "id": 7835010925,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9737372,
+  "lon": 2.8265811,
+  "id": 7835010929,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9787564,
+  "lon": 2.82082,
+  "id": 8316255163,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "wood"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9787201,
+  "lon": 2.8207682,
+  "id": 8316255164,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "wood"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9786755,
+  "lon": 2.8207468,
+  "id": 8316255165,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "wood"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9787594,
+  "lon": 2.8208942,
+  "id": 8316255166,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "wood"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9787397,
+  "lon": 2.8209562,
+  "id": 8316255167,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "wood"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9786997,
+  "lon": 2.8209989,
+  "id": 8316255168,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "wood"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9786241,
+  "lon": 2.8209999,
+  "id": 8316255169,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "no",
+   "material": "stone",
+   "seats": "15"
+  }
+ },
+ {
+  "kind": "drinking_water",
+  "lat": 41.9785267,
+  "lon": 2.8206909,
+  "id": 8316255170,
+  "tags": {
+   "access": "yes",
+   "amenity": "drinking_water",
+   "bottle": "no",
+   "drinking_water": "yes",
+   "drinking_water:legal": "yes",
+   "fountain": "bubbler",
+   "wheelchair": "no"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9756084,
+  "lon": 2.8205709,
+  "id": 8758818655,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "C. Migdia - C. Emili Grahit",
+   "network": "ATM Girona",
+   "operator": "TMG",
+   "public_transport": "platform",
+   "ref": "15141"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9793831,
+  "lon": 2.823618,
+  "id": 8758818659,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Pg. General Mendoza Mercat",
+   "public_transport": "platform"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9743873,
+  "lon": 2.8222244,
+  "id": 9246233764,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9735059,
+  "lon": 2.8241658,
+  "id": 9272858172,
+  "tags": {
+   "crossing:island": "no",
+   "crossing:markings": "yes",
+   "crossing:signals": "no",
+   "highway": "crossing",
+   "tactile_paving": "no"
+  }
+ },
+ {
+  "kind": "drinking_water",
+  "lat": 41.9763862,
+  "lon": 2.823955,
+  "id": 9641645851,
+  "tags": {
+   "amenity": "drinking_water",
+   "bottle": "yes",
+   "fee": "no",
+   "source": "survey 2021"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9765604,
+  "lon": 2.8241067,
+  "id": 9641645856,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.977962,
+  "lon": 2.8242434,
+  "id": 9641649604,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9780337,
+  "lon": 2.8242602,
+  "id": 9641649605,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "wood"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.975733,
+  "lon": 2.8242724,
+  "id": 9641748725,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9758521,
+  "lon": 2.8241698,
+  "id": 9641748728,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9760974,
+  "lon": 2.824149,
+  "id": 9641748731,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.974654,
+  "lon": 2.8209425,
+  "id": 9643550655,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "seats": "4",
+   "source": "survey 2021"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9741671,
+  "lon": 2.8236295,
+  "id": 9644020952,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.974425,
+  "lon": 2.8242614,
+  "id": 9644020957,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.974374,
+  "lon": 2.8241952,
+  "id": 9644020958,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9799297,
+  "lon": 2.8220609,
+  "id": 9645490784,
+  "tags": {
+   "highway": "traffic_signals",
+   "traffic_signals": "signal",
+   "traffic_signals:direction": "forward"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9799184,
+  "lon": 2.8216802,
+  "id": 9645614864,
+  "tags": {
+   "button_operated": "no",
+   "crossing": "traffic_signals",
+   "highway": "crossing",
+   "kerb": "lowered",
+   "source": "survey 2021",
+   "tactile_paving": "no",
+   "traffic_signals:sound": "no",
+   "traffic_signals:vibration": "no",
+   "wheelchair": "yes"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9799023,
+  "lon": 2.8216656,
+  "id": 9645614865,
+  "tags": {
+   "highway": "traffic_signals",
+   "traffic_signals": "signal"
+  }
+ },
+ {
+  "kind": "traffic_signals",
+  "lat": 41.9793145,
+  "lon": 2.8211232,
+  "id": 9645682238,
+  "tags": {
+   "highway": "traffic_signals",
+   "traffic_signals": "signal"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9784334,
+  "lon": 2.8204041,
+  "id": 9645711805,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "wood",
+   "seats": "4",
+   "source": "survey 2021"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9784842,
+  "lon": 2.8203008,
+  "id": 9645711806,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "material": "wood",
+   "seats": "4",
+   "source": "survey 2021"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.978562,
+  "lon": 2.8203476,
+  "id": 9646100566,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "direction": "310",
+   "material": "wood",
+   "seats": "4",
+   "source": "survey 2021"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9785754,
+  "lon": 2.8203593,
+  "id": 9646100567,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes",
+   "direction": "310",
+   "material": "wood",
+   "seats": "4",
+   "source": "survey 2021"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9795081,
+  "lon": 2.8224055,
+  "id": 10759306987,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9796187,
+  "lon": 2.8224878,
+  "id": 10759306988,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9734068,
+  "lon": 2.8252168,
+  "id": 10837288849,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9734535,
+  "lon": 2.8252499,
+  "id": 10837288854,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.973515,
+  "lon": 2.8252764,
+  "id": 10837288856,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9739535,
+  "lon": 2.8250919,
+  "id": 11277147128,
+  "tags": {
+   "crossing:markings": "yes",
+   "crossing:signals": "no",
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9773872,
+  "lon": 2.8241348,
+  "id": 12379111168,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "drinking_water",
+  "lat": 41.9775519,
+  "lon": 2.8259866,
+  "id": 12694851402,
+  "tags": {
+   "amenity": "drinking_water"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9789133,
+  "lon": 2.822494,
+  "id": 13983525490,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9788463,
+  "lon": 2.822393,
+  "id": 13983531423,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9789424,
+  "lon": 2.8225238,
+  "id": 13983540162,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.978319,
+  "lon": 2.8216879,
+  "id": 13983542741,
+  "tags": {
+   "amenity": "bench",
+   "backrest": "yes"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9734619,
+  "lon": 2.8303824,
+  "id": 6485126805,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9734847,
+  "lon": 2.8299655,
+  "id": 6485126806,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bench",
+  "lat": 41.9735005,
+  "lon": 2.8295246,
+  "id": 6485126807,
+  "tags": {
+   "amenity": "bench"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9774214,
+  "lon": 2.8351568,
+  "id": 7415332520,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Torre Alfons XII (Piruli)",
+   "public_transport": "platform",
+   "ref": "15390"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9792962,
+  "lon": 2.8339328,
+  "id": 7415332521,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "name": "Torre Alfons XII (Transformador)",
+   "public_transport": "platform",
+   "ref": "15389"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9748277,
+  "lon": 2.8426211,
+  "id": 771980245,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9747662,
+  "lon": 2.842265,
+  "id": 771988843,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9750175,
+  "lon": 2.8436643,
+  "id": 772091756,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9738213,
+  "lon": 2.8423156,
+  "id": 772093327,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "crossing",
+  "lat": 41.9746742,
+  "lon": 2.842143,
+  "id": 772148447,
+  "tags": {
+   "highway": "crossing"
+  }
+ },
+ {
+  "kind": "bus_stop",
+  "lat": 41.9730917,
+  "lon": 2.8449923,
+  "id": 1929222010,
+  "tags": {
+   "bus": "yes",
+   "highway": "bus_stop",
+   "public_transport": "platform",
+   "ref": "17005"
+  }
  }
 ]

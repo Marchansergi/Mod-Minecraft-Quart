@@ -4,7 +4,8 @@ Mod de **Fabric para Minecraft 1.21.1** que genera el pueblo de **Quart (Girona)
 (1 bloque = 1 metro)** alrededor del punto de aparición. El resto del mundo es Minecraft normal.
 
 - El jugador aparece delante de la **Estació de Quart**.
-- La zona del pueblo (unos 2 × 2,4 km, de la Estació a la C-65 y hasta Casa 1 al sureste) usa
+- La zona del pueblo (unos 2 × 4,6 km: de la C-65 al sur hasta **la Creueta** y el Parc Científic i
+  Tecnològic de la UdG al norte, con la carretera C-250z y el Onyar entre medio) usa
   el **relieve real**, las **calles**, las **parcelas**, los **edificios** y los **usos del suelo** reales.
 - Alrededor hay una franja de 96 bloques en la que el terreno real se funde con el terreno vanilla.
   Más allá, el mundo es un mundo normal (con la semilla que elijas).
@@ -72,6 +73,10 @@ de paneles granate y beige con montantes, y la bóveda roja con borde blanco.
 - Carrer de Mas Ferriol: calzada con carril de aparcamiento, árboles en alcorque, la explanada de sauló
   con pilones y los dos pasos de cebra que se ven en la foto.
 
+**La Creueta (norte, ya en Girona):** el barrio entero con sus calles y casas, y la casa de un amigo en el
+Carrer de la Creu medida sobre la foto aérea: la parte de dos plantas con tejado de teja y placa solar, la
+terraza plana de una planta, el patio de tierra con la balsa redonda y el muro blanco de la parcela.
+
 **Calles:** pasos de cebra donde están registrados en OpenStreetMap, y los bancos, fuentes y paradas de
 autobús que constan allí.
 
@@ -109,7 +114,8 @@ escribe `src/main/resources/data/quartmod/town/`.
 
 ```bash
 pip install numpy scipy shapely pillow
-python3 tools/fetch_ortho.py       # (opcional) descarga la ortofoto PNOA a tools/cache/ (~1.600 imágenes)
+python3 tools/fetch_data.py        # relieve, edificios de Microsoft y usos del suelo de la zona
+python3 tools/fetch_ortho.py       # (opcional) descarga la ortofoto PNOA a tools/cache/ (~3.100 imágenes)
 python3 tools/ortho_features.py    # (opcional) extrae suelos, árboles y piscinas -> tools/data/
 python3 tools/build_town.py        # regenera los datos y docs/preview.png
 ./gradlew build                    # compila el mod
